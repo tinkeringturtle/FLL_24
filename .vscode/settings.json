@@ -1,5 +1,6 @@
 {
     "git.postCommitCommand": "sync",
+    "task.allowAutomaticTasks": "on",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
