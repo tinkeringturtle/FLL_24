@@ -7,8 +7,8 @@ from pybricks.parameters import (
  Button
 )
 
-WHEEL_DIAMETER = 62
-AXLE_TRACK = 112
+WHEEL_DIAMETER = 62.4
+AXLE_TRACK = 128
 
 SPEED = 216
 ACCELERATION = 811
