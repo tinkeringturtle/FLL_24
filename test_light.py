@@ -4,7 +4,8 @@ from pybricks.tools import wait
 
 hub = PrimeHub()
 
-for i in range(5):
+# Blick RED light 10 times, only for testing
+for i in range(10):
     hub.light.on(Color.RED)
     wait(1000)
     hub.light.off()
