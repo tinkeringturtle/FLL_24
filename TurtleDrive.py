@@ -27,6 +27,12 @@ class TurtleDrive:
     #self.set_speed()
     self.drive_base.use_gyro(GYRO)
 
+    # add attachement motor 
+
+    # add color sensor
+    #self.e_color=ColorSensor(Port.E)
+    #self.f_color=ColorSensor(Port.F)
+
   """
   drive the robot straight to spcified distance 
   """
