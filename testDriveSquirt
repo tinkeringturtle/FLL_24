@@ -1,0 +1,14 @@
+from TurtleDrive import *
+
+
+def run():
+    td = TurtleDrive()
+    # to drive stright do - td.drive(x mm)
+
+
+
+    #td.turn(-90)
+    td.drive(780)
+    td.turn(50)
+    td.drive(80)
+run()
