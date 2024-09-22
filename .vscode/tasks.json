@@ -9,7 +9,7 @@
                 "run",
                 "ble",
                 "--name",
-                "Squirt",
+                "Chaos",
                 "${file}"
             ],
             "problemMatcher": {
