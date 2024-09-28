@@ -35,21 +35,8 @@ device_names = {
 }
 
 # Make a list of known ports.
-ports = [Port.A, Port.B]
+ports = [Port.A, Port.B, Port.C, Port.D, Port.E, Port.F]
 
-# On hubs that support it, add more ports.
-try:
-    ports.append(Port.C)
-    ports.append(Port.D)
-except AttributeError:
-    pass
-
-# On hubs that support it, add more ports.
-try:
-    ports.append(Port.E)
-    ports.append(Port.F)
-except AttributeError:
-    pass
 
 # Go through all available ports.
 for port in ports:
