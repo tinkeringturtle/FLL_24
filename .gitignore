@@ -1,3 +1,4 @@
 .venv
+.vscode/*
 .vscode/tasks.json
 ./pybricks-api/
