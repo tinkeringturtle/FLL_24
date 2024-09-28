@@ -4,14 +4,16 @@ from pybricks.robotics import DriveBase
 from pybricks.parameters import Stop, Color, Button
 from pybricks.tools import wait
 from TurtleConstant import *
+from TurtleHelper import *
 
 
 class TurtleDrive:
-    def __init__(self, ENABLE_GYRO=True):
+    def __init__(self, ENABLE_GYRO=True, ENABLE_LOGS=False):
         # Initialize both motors. In this example, the motor on the
         # left must turn counterclockwise to make the robot go forward.
         self.left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
         self.right_motor = Motor(Port.B)
+        self.log_enabled = ENABLE_LOGS
         # Initialize the drive base. In this example, the wheel diameter is 56mm.
         # The distance between the two wheel-ground contact points is 112mm.
         self.drive_base = DriveBase(
@@ -20,8 +22,8 @@ class TurtleDrive:
             wheel_diameter=WHEEL_DIAMETER,
             axle_track=AXLE_TRACK,
         )
-        # self.set_speed_settings()
         self.use_gyro(ENABLE_GYRO)
+        self.set_speed_percentage()
 
         # add attachement motor
         # TODO:
@@ -30,6 +32,9 @@ class TurtleDrive:
         # TODO:
         # self.e_color=ColorSensor(Port.E)
         # self.f_color=ColorSensor(Port.F)
+
+    def log(self, enable=True):
+        self.log_enabled = enable
 
     def use_gyro(self, enable=True):
         self.drive_base.use_gyro(enable)
@@ -61,51 +66,7 @@ class TurtleDrive:
     Get the speed setting in tuple(straight_speed, straing_aceel, turn_speed, turn_accel)
     """
 
-    def percentage_to_value(self, percentage_value, max_actual_value):
-        negative = False
-        if percentage_value < 0:
-            negative = True
-        percentage_value = abs(percentage_value)
-        if percentage_value < 0:
-            percentage_value = 0
-        if percentage_value > 100:
-            percentage_value = 100
-
-        speed_mmsec = (percentage_value / 100) * max_actual_value
-        if negative == True:
-            return speed_mmsec * -1
-        else:
-            return speed_mmsec
-
-    def get_speed_mmsec(self, percentage_value):
-        return self.percentage_to_value(self, percentage_value, DEFAULT_MAX_SPEED_MMSEC)
-
-    def get_acceleration_mmsec2(self, percentage_value):
-        return self.percentage_to_value(
-            percentage_value, DEFAULT_MAX_ACCELERATION_MMSEC
-        )
-
-    def get_turn_rate_degsec(self, percentage_value):
-        return self.percentage_to_value(percentage_value, DEFAULT_MAX_TURN_RATE_DEGSEC)
-
-    def get_turn_acceleration_degsec2(self, percentage_value):
-        return self.percentage_to_value(
-            percentage_value, DEFAULT_MAX_TURN_ACCELERATION_DEGSEC2
-        )
-
-    def get_speed_settings(self):
-        return self.drive_base.settings()
-
-    def set_speed(
-        self,
-        speed=DEFAULT_SPEED,
-        acceleration=DEFAULT_ACCELERATION,
-        turn_rate=DEFAULT_TURN_RATE,
-        turn_acceleration=DEFAULT_TURN_ACCELERATION,
-    ):
-        self.drive_base.settings(speed, acceleration, turn_rate, turn_acceleration)
-
-    def set_speed_settings(
+    def set_speed_percentage(
         self,
         speed_percentage=DEFAULT_SPEED_PERCENTAGE,
         acceleration_percentage=DEFAULT_ACCELERATION_PERCENTAGE,
@@ -113,9 +74,26 @@ class TurtleDrive:
         turn_acceleration_percentage=DEFAULT_TURN_ACCELERATION_PERCENTAGE,
     ):
         speed = self.get_speed_mmsec(speed_percentage)
-        acceleration = self.get_acceleration_mmsec2(acceleration_percen)
+        acceleration = self.get_acceleration_mmsec2(acceleration_percentage)
         turn_rate = self.get_turn_rate_degsec(turn_rate_percentage)
         turn_acceleration = self.get_turn_acceleration_degsec2(
             turn_acceleration_percentage
         )
+        if self.log_enabled:
+            print("\tset speed {}% = {} mm/sec".format(speed_percentage, speed))
+            print(
+                "\tset accel {}% = {} mm/sec2".format(
+                    acceleration_percentage, acceleration
+                )
+            )
+            print(
+                "\tset turn_rate {}% = {} deg/sec".format(
+                    turn_rate_percentage, turn_rate
+                )
+            )
+            print(
+                "\tset turn_accel {}% = {} deg/sec2".format(
+                    turn_acceleration_percentage, turn_acceleration
+                )
+            )
         self.drive_base.settings(speed, acceleration, turn_rate, turn_acceleration)
