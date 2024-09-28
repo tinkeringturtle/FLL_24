@@ -10,7 +10,7 @@
                 "ble",
                 "--name",
                 "Squirt",
-                "${file}"
+                "test_run.py"
             ],
             "problemMatcher": {
                 "owner": "python",

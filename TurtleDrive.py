@@ -2,7 +2,7 @@ from pybricks.pupdevices import Motor
 from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Stop, Color, Button
-from pybricks.tools import wait
+from pybricks.tools import wait, multitask, run_task
 from TurtleConstant import *
 from TurtleHelper import *
 

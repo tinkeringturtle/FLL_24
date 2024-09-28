@@ -3,8 +3,8 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 
 # Initialize the sensor.
-bottom_sensor = ColorSensor(Port.E)
-front_sensor = ColorSensor(Port.F)
+bottom_sensor = ColorSensor(Port.E)  # this is bottom sesor
+front_sensor = ColorSensor(Port.F)  # this is front sensor
 
 
 def scan_colors(sensor):

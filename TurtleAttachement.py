@@ -12,7 +12,7 @@ class TurtleAttachment:
         self.left = Motor(Port.C)
         self.right = Motor(Port.D)
 
-    def move_left_angle(
+    async def move_left_angle(
         self,
         angle=0,
         speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE,
@@ -20,9 +20,9 @@ class TurtleAttachment:
         wait=True,
     ):
         speed = get_speed_mmsec(speed_percentage)
-        print("Left Speed = {}".format(self.left.speed()))
-        self.left.run_angle(speed, angle, then, wait)
-        print("Left Speed = {}".format(self.left.speed()))
+        # print("Left Speed = {}".format(self.left.speed()))
+        await self.left.run_angle(speed, angle, then, wait)
+        # print("Left Speed = {}".format(self.left.speed()))
 
     def move_left_time(
         self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, time_millisec=500
@@ -31,7 +31,7 @@ class TurtleAttachment:
         self.left.run(speed)
         wait(time_millisec)
 
-    def move_right_angle(
+    async def move_right_angle(
         self,
         angle=0,
         speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE,
@@ -39,7 +39,7 @@ class TurtleAttachment:
         wait=True,
     ):
         speed = get_speed_mmsec(speed_percentage)
-        self.right.run_angle(speed, angle, then, wait)
+        await self.right.run_angle(speed, angle, then, wait)
 
     def move_right_time(
         self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, time_millisec=500
