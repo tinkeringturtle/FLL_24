@@ -62,6 +62,25 @@ class TurtleDrive:
     def curve(self, radius, angle, wait=True):
         self.drive_base.curve(radius, angle, then=Stop.HOLD, wait=wait)
 
+    def get_speed_raw(self):
+        settings = self.drive_base.settings()
+        if self.log_enabled:
+            print(
+                "speed={}, accel={}, turn_speed={} turn_accel={}".format(
+                    settings[0], settings[1], settings[2], settings[3]
+                )
+            )
+        return settings
+
+    def set_speed_raw(
+        self,
+        speed=DEFAULT_SPEED,
+        acceleration=DEFAULT_ACCELERATION,
+        turn_rate=DEFAULT_TURN_RATE,
+        turn_acceleration=DEFAULT_TURN_ACCELERATION,
+    ):
+        self.drive_base.settings(speed, acceleration, turn_rate, turn_acceleration)
+
     """
     Get the speed setting in tuple(straight_speed, straing_aceel, turn_speed, turn_accel)
     """
@@ -73,12 +92,10 @@ class TurtleDrive:
         turn_rate_percentage=DEFAULT_TURN_RATE_PERCENTAGE,
         turn_acceleration_percentage=DEFAULT_TURN_ACCELERATION_PERCENTAGE,
     ):
-        speed = self.get_speed_mmsec(speed_percentage)
-        acceleration = self.get_acceleration_mmsec2(acceleration_percentage)
-        turn_rate = self.get_turn_rate_degsec(turn_rate_percentage)
-        turn_acceleration = self.get_turn_acceleration_degsec2(
-            turn_acceleration_percentage
-        )
+        speed = get_speed_mmsec(speed_percentage)
+        acceleration = get_acceleration_mmsec2(acceleration_percentage)
+        turn_rate = get_turn_rate_degsec(turn_rate_percentage)
+        turn_acceleration = get_turn_acceleration_degsec2(turn_acceleration_percentage)
         if self.log_enabled:
             print("\tset speed {}% = {} mm/sec".format(speed_percentage, speed))
             print(
