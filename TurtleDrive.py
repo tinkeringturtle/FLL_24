@@ -2,20 +2,8 @@ from pybricks.pupdevices import Motor
 from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Stop, Color, Button
+from pybricks.tools import wait
 from TurtleConstant import *
-
-
-DEFUALT_MIN_SPEED_MMSEC = 20  # it can be set to 0, setting 25 as lowest speed
-DEFAULT_MAX_SPEED_MMSEC = 800  #
-
-DEFAULT_MIN_ACCELERATION_MMSEC = 20
-DEFAULT_MAX_ACCELERATION_MMSEC = 800
-
-DEFAULT_MIN_TURN_RATE_DEGSEC = 20
-DEFAULT_MAX_TURN_RATE_DEGSEC = 180
-
-DEFAULT_MIN_TURN_ACCELERATION_DEGSEC2 = 20
-DEFAULT_MAX_TURN_ACCELERATION_DEGSEC2 = 360
 
 
 class TurtleDrive:
@@ -53,7 +41,7 @@ class TurtleDrive:
     def straight_drive(self, distance=0, wait=True):
         self.drive_base.straight(distance, then=Stop.HOLD, wait=wait)
 
-    def turn_drive(self, speed, turn_rate, time_millis, wait=True):
+    def turn_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
         wait(time_millis)
 
@@ -110,10 +98,10 @@ class TurtleDrive:
 
     def set_speed(
         self,
-        speed=DEFAULT_SPEED_PERCENTAGE,
-        acceleration=DEFAULT_ACCELERATION_PERCENTAGE,
-        turn_rate=DEFAULT_TURN_RATE_PERCENTAGE,
-        turn_acceleration=DEFAULT_TURN_ACCELERATION_PERCENTAGE,
+        speed=DEFAULT_SPEED,
+        acceleration=DEFAULT_ACCELERATION,
+        turn_rate=DEFAULT_TURN_RATE,
+        turn_acceleration=DEFAULT_TURN_ACCELERATION,
     ):
         self.drive_base.settings(speed, acceleration, turn_rate, turn_acceleration)
 
