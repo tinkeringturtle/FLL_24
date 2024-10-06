@@ -4,21 +4,22 @@ from TurtleDrive import *
 from TurtleAttachement import *
 
 
-def run_whale():
-    td = TurtleDrive()
-    ta = TurtleAttachment()
+async def runAttachemnt(ta, angle):
+    await ta.move_C_angle(angle=angle, speed_percentage=50)
 
+
+def run_whale(td, ta):
     td.set_speed_percentage(speed_percentage=60)
     td.straight_drive(685)
     td.turn(45)
-    td.straight_drive(180)
-    ta.move_C_angle(200)
-    # td.curve(angle=30, radius=5)
-    # ta.move_c_angle(10)
-    # td.set_speed_percentage(100)
-    # td.curve(-30)
-    # td.straight_drive(100)""
+    td.set_speed_percentage(speed_percentage=10)
+    td.straight_drive(195)
+    run_task(runAttachemnt(ta, -90))
+
+    td.stop()
 
 
-# if __name__ == "__main__":
-run_whale()
+if __name__ == "__main__":
+    td = TurtleDrive()
+    ta = TurtleAttachment()
+    run_whale(td, ta)
