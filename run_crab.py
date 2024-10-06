@@ -5,6 +5,7 @@ from pybricks.parameters import Button, Icon
 from TurtleDrive import *
 
 
+# doing lane change and unknown creature
 def runBannana_Boat():
     td = TurtleDrive()
     # to drive stright do - td.drive(x mm)
@@ -19,6 +20,15 @@ def runBannana_Boat():
     td.turn(-90)
     td.set_speed_percentage(speed_percentage=100)
     td.straight_drive(-350)
+    td.stop()
+
+
+def runCrab_Tower():
+    td = TurtleDrive()
+     # to drive stright do - td.drive(x mm)
+
+    td.straight_drive(320)
+
 
 
 def main():
@@ -31,14 +41,12 @@ def main():
             # check for the button press
             pressed = hub.buttons.pressed()
 
-
         # Display an arrow to indicate which button was pressed.
         if Button.LEFT in pressed:
-            hub.display.icon(Icon.HAPPY)
-        
-
+            hub.display.icon(Icon.ARROW_LEFT)
+            
         elif Button.RIGHT in pressed:
-            hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+            hub.display.icon(Icon.ARROW_RIGHT)
             runBannana_Boat()
 
 
