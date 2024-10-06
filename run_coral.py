@@ -10,13 +10,14 @@ async def runAttachemnt(ta, angle):
 
 def runCoral(td, ta):
     td.set_speed_percentage(50)
+   # td.straight_drive(-5)
     td.straight_drive(665)
     # ta.move_D_time(75, 100)
     run_task(runAttachemnt(ta, -52))
     td.turn(-85)
-    td.straight_drive(50)
+    td.straight_drive(60)
 
-    run_task(runAttachemnt(ta,40))
+    run_task(runAttachemnt(ta, 40))
     td.straight_drive(-10)
     td.turn(90)
     td.straight_drive(40)
@@ -28,7 +29,6 @@ def runCoral(td, ta):
     td.turn(140)
     td.straight_drive(160)
     td.turn(-90)
-    
 
 
 if __name__ == "__main__":
