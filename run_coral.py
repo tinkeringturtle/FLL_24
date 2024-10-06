@@ -16,7 +16,7 @@ def runCoral(td, ta):
     td.turn(-85)
     td.straight_drive(50)
 
-    run_task(runAttachemnt(ta, 28))
+    run_task(runAttachemnt(ta,40))
     td.straight_drive(-10)
     td.turn(90)
     td.straight_drive(40)
@@ -24,6 +24,11 @@ def runCoral(td, ta):
     td.set_speed_percentage(40)
     td.straight_drive(120)
     td.set_speed_percentage(50)
+    td.straight_drive(-120)
+    td.turn(140)
+    td.straight_drive(160)
+    td.turn(-90)
+    
 
 
 if __name__ == "__main__":
