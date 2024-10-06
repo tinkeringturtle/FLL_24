@@ -12,8 +12,13 @@ def run_kracken():
     td.set_speed_percentage(speed_percentage=40)
     td.straight_drive(220)
     td.curve(300, 90)
-    td.set_speed_percentage(speed_percentage=5)
-    td.straight_drive(65)
+    td.set_speed_percentage(speed_percentage=50)
+    td.straight_drive(20)
+    td.set_speed_percentage(speed_percentage=1, acceleration_percentage=1)
+    td.straight_drive(55)
+    td.straight_drive(-65)
+
+    td.stop()
 
 
 if __name__ == "__main__":
