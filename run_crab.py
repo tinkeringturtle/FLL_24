@@ -1,7 +1,8 @@
+# Abby, Elly
 from TurtleDrive import *
 
 
-def run():
+def runCrab():
     td = TurtleDrive()
     # to drive stright do - td.drive(x mm)
     td.drive(100)
@@ -15,5 +16,5 @@ def turn():
     td.turn(90)
 
 
-# run()
+# runCrab()
 turn()

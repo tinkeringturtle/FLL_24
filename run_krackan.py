@@ -1,7 +1,8 @@
+# Meghna, Emma
 from TurtleDrive import *
 
 
-def run():
+def runKracken():
     td = TurtleDrive()
     # print(td.get_speed_settings())
     # to drive stright do - td.drive(x mm)
@@ -14,4 +15,4 @@ def run():
     # td.curve(radius=500, angle=360)
 
 
-run()
+runKracken()
