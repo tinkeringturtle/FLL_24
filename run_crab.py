@@ -6,8 +6,8 @@ from TurtleDrive import *
 
 
 # doing lane change and unknown creature
-def runBannana_Boat():
-    td = TurtleDrive()
+def runBannana_Boat(td):
+
     # to drive stright do - td.drive(x mm)
 
     td.curve(200, -45)
@@ -23,16 +23,15 @@ def runBannana_Boat():
     td.stop()
 
 
-def runCrab_Tower():
-    td = TurtleDrive()
-     # to drive stright do - td.drive(x mm)
-
+def runCrab_Tower(td):
+    # to drive stright do - td.drive(x mm)
+    td.set_speed_percentage(speed_percentage=40)
     td.straight_drive(320)
+    td.turn(-20)
+    td.straight_drive(35)
 
 
-
-def main():
-    # Initialize the hub.
+def main(td):
     hub = PrimeHub()
 
     while True:
@@ -44,11 +43,13 @@ def main():
         # Display an arrow to indicate which button was pressed.
         if Button.LEFT in pressed:
             hub.display.icon(Icon.ARROW_LEFT)
-            
+            runCrab_Tower(td)  ##
+
         elif Button.RIGHT in pressed:
             hub.display.icon(Icon.ARROW_RIGHT)
-            runBannana_Boat()
+            runBannana_Boat(td)  ##
 
 
 if __name__ == "__main__":
-    main()
+    td = TurtleDrive()
+    main(td)
