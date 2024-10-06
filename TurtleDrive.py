@@ -33,6 +33,9 @@ class TurtleDrive:
         # self.e_color=ColorSensor(Port.E)
         # self.f_color=ColorSensor(Port.F)
 
+    def stop(self):
+        self.drive_base.stop()
+
     def log(self, enable=True):
         self.log_enabled = enable
 
