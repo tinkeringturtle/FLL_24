@@ -47,3 +47,4 @@ class TurtleAttachment:
         speed = get_speed_mmsec(speed_percentage)
         self.right.run(speed)
         wait(time_millisec)
+        self.right.stop()
