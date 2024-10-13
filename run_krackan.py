@@ -5,8 +5,8 @@ from TurtleAttachement import *
 
 
 def run_kracken():
-    def runCrab():
     td = TurtleDrive()
+    ta = TurtleAttachment()
     # to drive stright do - td.drive(x mm)
     # td.straight_drive(200)
     td.set_speed_percentage(speed_percentage=40)
@@ -18,11 +18,11 @@ def run_kracken():
     td.straight_drive(55)
     ta.move_D_time(speed_percentage=10, time_millisec=80)
     # returning back
-    td.straight_drive(-90)
-    td.set_speed_percentage(speed_percentage=20)
+    td.straight_drive(-200)
+    td.set_speed_percentage(speed_percentage=1)
     td.turn(-70)
     td.set_speed_percentage(speed_percentage=70)
-    td.straight_drive(-400)
+    td.straight_drive(-445)
     td.stop()
 
 def turn():
