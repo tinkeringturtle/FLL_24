@@ -30,6 +30,7 @@ class TurtleAttachment:
         speed = get_speed_mmsec(speed_percentage)
         self.left.run(speed)
         wait(time_millisec)
+        self.left.stop()
 
     async def move_D_angle(
         self,
@@ -46,5 +47,7 @@ class TurtleAttachment:
     ):
         speed = get_speed_mmsec(speed_percentage)
         self.right.run(speed)
+        # self.right.run_until_stalled(500)
         wait(time_millisec)
         self.right.stop()
+        self.right.reset_angle(0)
