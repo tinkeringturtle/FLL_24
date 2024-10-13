@@ -21,7 +21,7 @@ def run_kracken():
     # getting qrill
     run_task(runAttachemnt(ta, 118))
     # returning back
-    td.straight_drive(-75)
+    td.straight_drive(-90)
     td.set_speed_percentage(speed_percentage=30)
     td.curve(-300, 90)
     td.set_speed_percentage(speed_percentage=70)
