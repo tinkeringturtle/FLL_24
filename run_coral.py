@@ -6,8 +6,8 @@ from TurtleAttachement import *
 
 async def move_down(ta):
     await multitask(
-        ta.move_C_angle(angle=120, speed_percentage=10),
-        ta.move_D_angle(angle=-35, speed_percentage=10),
+        ta.move_C_angle(angle=140, speed_percentage=5),
+        ta.move_D_angle(angle=-20, speed_percentage=8),
     )
 
 
@@ -20,12 +20,12 @@ def runCoral(td, ta):
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     td.straight_drive(665)
     ta.move_D_time(speed_percentage=20, time_millisec=200)
-    run_task(runAttachemnt(ta, -50, 15))  # lowering arm for jimmy
+    run_task(runAttachemnt(ta, -60, 15))  # lowering arm for jimmy
     td.set_speed_percentage(30)
     td.turn(-85)
     td.set_speed_percentage(50)
     td.straight_drive(60)
-    run_task(runAttachemnt(ta, 20, 10))  # raising jimmy
+    run_task(runAttachemnt(ta, 20, 8))  # raising jimmy
     td.straight_drive(-10)
     td.turn(90)
     td.straight_drive(40)
@@ -37,8 +37,10 @@ def runCoral(td, ta):
     td.turn(140)
     td.straight_drive(160)
     td.turn(-95)
-    td.straight_drive(45)
+    td.set_speed_percentage(15)
+    td.straight_drive(44)
     run_task(move_down(ta))
+    td.straight_drive(2)
 
 
 if __name__ == "__main__":
