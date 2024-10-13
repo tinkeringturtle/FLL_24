@@ -21,8 +21,9 @@ def run_whale(td, ta):
     td.set_speed_percentage(speed_percentage=10)
     td.turn(132)
     td.set_speed_percentage(speed_percentage=39)
-    td.straight_drive(-300)
-    td.stright_drive(900)
+    td.straight_drive(-280)
+    td.set_speed_percentage(speed_percentage=60)
+    td.straight_drive(900)
 
 if __name__ == "__main__":
     td = TurtleDrive()
