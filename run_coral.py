@@ -4,20 +4,17 @@ from TurtleDrive import *
 from TurtleAttachement import *
 
 
-async def runAttachemnt(ta, angle):
-    await ta.move_D_angle(angle=angle, speed_percentage=1)
+async def runAttachemnt(ta, angle, speed):
+    await ta.move_D_angle(angle=angle, speed_percentage=speed)
 
 
 def runCoral(td, ta):
     td.set_speed_percentage(50)
-   # td.straight_drive(-5)
     td.straight_drive(665)
-    # ta.move_D_time(75, 100)
-    run_task(runAttachemnt(ta, -52))
+    run_task(runAttachemnt(ta, -50, 15))
     td.turn(-85)
     td.straight_drive(60)
-
-    run_task(runAttachemnt(ta, 40))
+    run_task(runAttachemnt(ta, 40, 5))
     td.straight_drive(-10)
     td.turn(90)
     td.straight_drive(40)
@@ -27,8 +24,9 @@ def runCoral(td, ta):
     td.set_speed_percentage(50)
     td.straight_drive(-120)
     td.turn(140)
-    td.straight_drive(160)
-    td.turn(-90)
+    td.straight_drive(185)
+    td.turn(-95)
+    td.straight_drive(40)
 
 
 if __name__ == "__main__":
