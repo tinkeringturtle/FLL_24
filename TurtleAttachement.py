@@ -24,6 +24,18 @@ class TurtleAttachment:
         await self.left.run_angle(speed, angle, then, wait)
         # print("Left Speed = {}".format(self.left.speed()))
 
+    def move_C_angle_sync(
+        self,
+        angle=0,
+        speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE,
+        then=Stop.HOLD,
+        wait=True,
+    ):
+        speed = get_speed_mmsec(speed_percentage)
+        # print("Left Speed = {}".format(self.left.speed()))
+        self.left.run_angle(speed, angle, then, wait)
+        # print("Left Speed = {}".format(self.left.speed()))
+
     def move_C_time(
         self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, time_millisec=500
     ):
@@ -31,8 +43,19 @@ class TurtleAttachment:
         self.left.run(speed)
         wait(time_millisec)
         self.left.stop()
+        self.left.reset_angle(0)
 
     async def move_D_angle(
+        self,
+        angle=0,
+        speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE,
+        then=Stop.HOLD,
+        wait=True,
+    ):
+        speed = get_speed_mmsec(speed_percentage)
+        await self.right.run_angle(speed, angle, then, wait)
+
+    async def move_D_angle_sync(
         self,
         angle=0,
         speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE,
