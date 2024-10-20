@@ -12,7 +12,7 @@ async def move_down(ta):
 
 
 async def move_down2(ta):
-    await ta.move_D_angle(angle=-20, speed_percentage=3)
+    await ta.move_D_angle(angle=-15, speed_percentage=3)
     await ta.move_C_angle(angle=110, speed_percentage=8)
     # ta.run_D_until_stalled()
     # await ta.move_C_angle(angle=-110, speed_percentage=5)
@@ -38,23 +38,25 @@ def runCoral(td, ta):
     # ta.move_D_angle_sync(30,8)
     td.straight_drive(-10)
     td.turn(90)
-    td.straight_drive(40)  # drive to shark
+    td.straight_drive(40)  #
     td.turn(-50)
     td.set_speed_percentage(40)
-    td.straight_drive(110)  # driving to green thing
+    td.straight_drive(120)  # driving into shark
     td.straight_drive(-150)
     td.set_speed_percentage(30)
     td.turn(140)
     td.straight_drive(160)
     td.turn(-95)
     td.set_speed_percentage(14)
-    td.straight_drive(52)
+    td.straight_drive(50)
     ta.move_C_time(speed_percentage=20, time_millisec=200)
     run_task(move_down2(ta))
 
     ta.move_C_angle_sync(-50)
     td.set_speed_percentage(75)
     td.straight_drive(-400)
+    td.turn(60)
+    td.straight_drive(-200)
 
 
 if __name__ == "__main__":
