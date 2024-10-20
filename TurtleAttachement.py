@@ -74,3 +74,19 @@ class TurtleAttachment:
         wait(time_millisec)
         self.right.stop()
         self.right.reset_angle(0)
+
+    def run_D_until_stalled(
+        self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, duty_limit=50
+    ):
+        speed = get_speed_mmsec(speed_percentage)
+        self.right.run_until_stalled(speed, duty_limit=50, then=Stop.HOLD)
+
+    def run_C_until_stalled(
+        self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, duty_limit=50
+    ):
+        speed = get_speed_mmsec(speed_percentage)
+        self.left.run_until_stalled(
+            speed,
+            duty_limit,
+            then=Stop.HOLD,
+        )
