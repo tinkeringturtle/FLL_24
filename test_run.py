@@ -67,8 +67,8 @@ def run2():
 
 
 async def test_attachement(ta):
-    await ta.move_C_angle(angle=160, speed_percentage=20)
-    ta.move_D_angle(angle=180, speed_percentage=20)
+    await ta.move_C_angle_sync(angle=160, speed_percentage=20)
+    # ta.move_D_angle(angle=180, speed_percentage=20)
     # ta.move_left_time(speed_percentage=20, time_millisec=3000)
     # ta.move_right_time(speed_percentage=20, time_millisec=3000)
 
@@ -80,14 +80,10 @@ async def test_attachement(ta):
     )
 """
 
-## Below doesn't work
-# await multitask(
-#    ta.move_left_time(speed_percentage=20, time_millisec=3000),
-#    ta.move_right_time(speed_percentage=20, time_millisec=3000),
-# )
-
-
 if __name__ == "__main__":
     # run2()
     ta = TurtleAttachment()
-    run_task(test_attachement(ta))
+    ta.move_C_angle_sync(360, speed_percentage=100)
+    # test_attachement(ta)
+    # ta.move_D_angle(100)
+    # run_task(test_attachement(ta))

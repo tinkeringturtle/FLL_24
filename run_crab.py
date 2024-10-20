@@ -7,9 +7,7 @@ from TurtleDrive import *
 
 # doing lane change and unknown creature
 def runBannana_Boat(td):
-
     # to drive stright do - td.drive(x mm)
-
     td.curve(200, -45)
     td.set_speed_percentage(speed_percentage=40)
     td.straight_drive(390)
