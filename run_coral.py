@@ -56,7 +56,7 @@ def runCoral(td, ta):
     td.set_speed_percentage(75)
     td.straight_drive(-400)
     td.turn(60)
-    td.straight_drive(-200)
+    td.straight_drive(-475)
 
 
 if __name__ == "__main__":
