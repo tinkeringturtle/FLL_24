@@ -42,7 +42,7 @@ def runCoral(td, ta):
     td.turn(-50)
     td.set_speed_percentage(40)
     td.straight_drive(120)  # driving into shark
-    td.straight_drive(-150)
+    td.straight_drive(-155)
     td.set_speed_percentage(30)
     td.turn(140)
     td.straight_drive(160)
@@ -51,6 +51,7 @@ def runCoral(td, ta):
     td.straight_drive(50)
     ta.move_C_time(speed_percentage=20, time_millisec=200)
     run_task(move_down2(ta))
+    td.straight_drive(-30)
 
     ta.move_C_angle_sync(-50)
     td.set_speed_percentage(75)
