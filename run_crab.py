@@ -23,10 +23,9 @@ def runBannana_Boat(td):
 
 def runCrab_Tower(td):
     # to drive stright do - td.drive(x mm)
-    td.set_speed_percentage(speed_percentage=40)
-    td.straight_drive(320)
-    td.turn(-20)
-    td.straight_drive(35)
+    td.set_speed_percentage(50)
+    td.straight_drive(100)
+    td.turn(-90)
 
 
 def main(td):
