@@ -79,7 +79,7 @@ class TurtleAttachment:
         self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, duty_limit=50
     ):
         speed = get_speed_mmsec(speed_percentage)
-        self.right.run_until_stalled(speed, duty_limit=50, then=Stop.HOLD)
+        self.right.run_until_stalled(speed, duty_limit, then=Stop.HOLD)
 
     def run_C_until_stalled(
         self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, duty_limit=50
