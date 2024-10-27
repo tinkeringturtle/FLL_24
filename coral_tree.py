@@ -6,8 +6,10 @@ from TurtleAttachement import *
 
 def CoralTree(td, ta):
 
-    td.straight_drive(370)
-    td.straight_drive(-371)
+    td.straight_drive(-10)
+    td.straight_drive(385)
+    wait(650)
+    td.straight_drive(-385)
 
 
 if __name__ == "__main__":
