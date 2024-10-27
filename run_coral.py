@@ -12,8 +12,8 @@ async def move_down(ta):
 
 
 async def move_down2(ta):
-    await ta.move_D_angle(angle=-15, speed_percentage=3)
-    await ta.move_C_angle(angle=110, speed_percentage=8)
+    await ta.move_D_angle(angle=-13, speed_percentage=3)
+    await ta.move_C_angle(angle=110, speed_percentage=6.5)
     # ta.run_D_until_stalled()
     # await ta.move_C_angle(angle=-110, speed_percentage=5)
     # ta.move_C_time(2000, )
@@ -25,38 +25,41 @@ async def runAttachemnt(ta, angle, speed):
 
 def runCoral(td, ta):
     td.set_speed_percentage(50)
-    ta.move_D_time(speed_percentage=20, time_millisec=200)
-    td.straight_drive(665)
+    ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
+    td.straight_drive(665)  # driving to coral
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, -60, 15))  # lowering arm for jimmy
     td.set_speed_percentage(30)
-    td.turn(-85)
+    td.turn(-85)  # To drive into coral to get jimmy
     td.set_speed_percentage(50)
-    td.straight_drive(60)
-    run_task(runAttachemnt(ta, 20, 8))  # raising jimmy
+    td.straight_drive(60)  # driving into mission model
+    run_task(runAttachemnt(ta, 20, 9))  # raising jimmy
     wait(400)
-    # ta.move_D_angle_sync(30,8)
-    td.straight_drive(-10)
-    td.turn(90)
-    td.straight_drive(40)  #
-    td.turn(-50)
+    td.straight_drive(-10)  # driving back from the coral mission
+    # starting shark
+    td.turn(90)  # turn to face shark
+    td.straight_drive(40)  # driving closer to shark
+    td.turn(-50)  # to get ready to turn into shark
     td.set_speed_percentage(40)
-    td.straight_drive(120)  # driving into shark
-    td.straight_drive(-150)
+    td.straight_drive(120)  # drives into shark
+    td.straight_drive(-155)  # driving away from shark
     td.set_speed_percentage(30)
-    td.turn(140)
-    td.straight_drive(160)
-    td.turn(-95)
+    # starting nursery
+    td.turn(140)  # turn to go closer to nursery
+    td.straight_drive(160)  # to be in front of nursery, not face in front
+    td.turn(-95)  # turn with face in front of nursery
     td.set_speed_percentage(14)
-    td.straight_drive(50)
-    ta.move_C_time(speed_percentage=20, time_millisec=200)
-    run_task(move_down2(ta))
-
-    ta.move_C_angle_sync(-50)
+    td.straight_drive(50)  # to drive into nursery
+    ta.move_C_time(speed_percentage=20, time_millisec=200)  # to lower both arms
+    run_task(runAttachemnt(ta, -40, 15))  # bringing C arm up
+    ta.move_C_angle_sync(-50)  # lifting D arm up
     td.set_speed_percentage(75)
-    td.straight_drive(-400)
-    td.turn(60)
-    td.straight_drive(-475)
+    td.straight_drive(-400)  # backing from mission model
+    td.turn(60)  # turning to get home
+    td.straight_drive(-475)  # WE GOING HOME
+    run_task(
+        runAttachemnt(ta, 80, 15)
+    )  # lifting D arm so for 2nd run we won't have to do it
 
 
 if __name__ == "__main__":
