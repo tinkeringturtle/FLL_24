@@ -29,7 +29,7 @@ def run_whale(td, ta):
     td.set_speed_percentage(speed_percentage=60)
     td.straight_drive(550)
     td.curve(500, -54)
-
+#whale dose not work
 
 if __name__ == "__main__":
     td = TurtleDrive()
