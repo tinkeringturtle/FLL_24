@@ -7,7 +7,7 @@ from TurtleAttachement import *
 def CoralTree(td, ta):
 
     td.straight_drive(-10)
-    td.straight_drive(385)
+    td.straight_drive(390)
     wait(650)
     td.straight_drive(-385)
 

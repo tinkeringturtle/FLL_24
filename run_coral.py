@@ -51,9 +51,8 @@ def runCoral(td, ta):
     td.set_speed_percentage(14)
     td.straight_drive(50)  # to drive into nursery
     run_task(runAttachemnt(ta, -35, 15))
-    ta.move_C_time(speed_percentage=20, time_millisec=500)  # to lower c arms
+    ta.move_C_time(speed_percentage=20, time_millisec=500)  # to lower  arms
     run_task(runAttachemnt(ta, 40, 15))  # bringing C arm up
-    ta.move_C_angle_sync(50)  # lifting D arm up
     td.set_speed_percentage(75)
     td.straight_drive(-400)  # backing from mission model
     td.turn(60)  # turning to get home
