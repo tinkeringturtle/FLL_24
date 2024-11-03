@@ -30,11 +30,10 @@ def runCoral(td, ta):
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 60, 15))  # lowering arm for jimmy
     td.set_speed_percentage(30)
-    '''
     td.turn(-85)  # To drive into coral to get jimmy
     td.set_speed_percentage(50)
-    td.straight_drive(65)  # driving into mission model
-    run_task(runAttachemnt(ta, 20, 10))  # raising jimmy
+    td.straight_drive(70)  # driving into mission model
+    run_task(runAttachemnt(ta, 75, 10))  # raising jimmy
     wait(400)
     td.straight_drive(-15)  # driving back from the coral mission
     # starting shark
