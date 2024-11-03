@@ -33,7 +33,7 @@ def runCoral(td, ta):
     td.turn(-85)  # To drive into coral to get jimmy
     td.set_speed_percentage(50)
     td.straight_drive(70)  # driving into mission model
-    run_task(runAttachemnt(ta, 75, 10))  # raising jimmy
+    run_task(runAttachemnt(ta, -65, 10))  # raising jimmy
     wait(400)
     td.straight_drive(-15)  # driving back from the coral mission
     # starting shark
@@ -43,6 +43,7 @@ def runCoral(td, ta):
     td.set_speed_percentage(40)
     td.straight_drive(120)  # drives into shark
     td.straight_drive(-155)  # driving away from shark
+    """
     td.set_speed_percentage(30)
     # starting nursery
     td.turn(140)  # turn to go closer to nursery
@@ -60,7 +61,8 @@ def runCoral(td, ta):
     run_task(
         runAttachemnt(ta, 80, 15)
     )  # lifting D arm so for
-    '''
+    """
+
 
 if __name__ == "__main__":
     td = TurtleDrive()
