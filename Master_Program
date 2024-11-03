@@ -29,13 +29,13 @@ def scan_colors(sensor):
         wait(500)
 
 
-def set_colors(sensor):
+def check_colors(sensor):
     # First, decide which objects you want to detect, and measure their HSV values.
     # You can do that with the hsv() method as shown in the previous example.
     #
     # Use your measurements to override the default colors, or add new colors:
     Color.GREEN = Color(h=155, s=72, v=48)
-    Color.MAGENTA = Color(h=340, s=77, v=69)
+    Color.MAGENTA = Color(h=339, s=79, v=70)
     # Color.BROWN = Color(h=17, s=78, v=15)
     Color.RED = Color(h=352, s=88, v=80)
     Color.ORANGE = Color(h=9, s=84, v=99)
@@ -45,7 +45,16 @@ def set_colors(sensor):
     Color.WHITE = Color(h=0, s=0, v=100)
 
     # Put your colors in a list or tuple.
-    my_colors = (Color.GREEN, Color.MAGENTA, Color.BROWN, Color.RED, Color.NONE)
+    my_colors = (
+        Color.GREEN,
+        Color.MAGENTA,
+        Color.RED,
+        Color.ORANGE,
+        Color.BLUE,
+        Color.BLACK,
+        Color.WHITE,
+        Color.NONE,
+    )
 
     # Save your colors.
     sensor.detectable_colors(my_colors)
@@ -59,9 +68,24 @@ def set_colors(sensor):
 
         # Check which one it is.
         if color == Color.GREEN:
-            print("It works!")
+            print("GREEN")
+        if color == Color.MAGENTA:
+            print("MAGENTA")
+        if color == Color.WHITE:
+            print("WHITE")
+        if color == Color.RED:
+            print("RED")
+        if color == Color.YELLOW:
+            print("YELLOW")
+        if color == Color.BLACK:
+            print("BLACK")
+        if color == Color.ORANGE:
+            print("ORANGE")
+        if color == Color.BLUE:
+            print("BLUE")
 
         # Wait so
 
 
-scan_colors(front_sensor)
+# scan_colors(front_sensor)
+check_colors(front_sensor)
