@@ -9,9 +9,8 @@ from test_run import *
 hub = PrimeHub()
 
 
-def run_Krillies():
-    td = TurtleDrive()
-    ta = TurtleAttachment()
+def run_Krillies(td, ta):
+
     td.straight_drive(230)
     td.turn(-40)
     td.straight_drive(180)
@@ -36,11 +35,13 @@ def run_Krillies():
     td.straight_drive(250)
     run_task(ta.move_D_angle(-90))
     td.set_speed_percentage(50)
-    td.curve(400,-45)
+    td.curve(400, -45)
     td.turn(-45)
     td.straight_drive(200)
-    td.curve(500,50)
+    td.curve(500, 50)
 
 
 if __name__ == "__main__":
-    run_Krillies()
+    td = TurtleDrive()
+    ta = TurtleAttachment()
+    run_Krillies(td, ta)
