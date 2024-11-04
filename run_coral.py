@@ -26,7 +26,7 @@ async def runAttachemnt(ta, angle, speed):
 def runCoral(td, ta):
     td.set_speed_percentage(50)
     ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
-    td.straight_drive(665)  # driving to coral
+    td.straight_drive(635)  # driving to coral
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 60, 15))  # lowering arm for jimmy
     td.set_speed_percentage(30)
@@ -42,7 +42,7 @@ def runCoral(td, ta):
     td.turn(-50)  # to get ready to turn into shark
     td.set_speed_percentage(40)
     td.straight_drive(145)  # drives into shark
-    td.straight_drive(-145)  # driving away from shark
+    td.straight_drive(-125)  # driving away from shark
     td.set_speed_percentage(30)
 
 # lifting D arm so for
