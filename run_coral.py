@@ -42,7 +42,7 @@ def runCoral(td, ta):
     td.turn(-50)  # to get ready to turn into shark
     td.set_speed_percentage(40)
     td.straight_drive(145)  # drives into shark
-    td.straight_drive(-45)  # driving away from shark
+    td.straight_drive(-10)  # driving away from shark
     td.set_speed_percentage(30)
 
 # lifting D arm so for
