@@ -11,14 +11,11 @@ async def runAttachemnt(ta, angle, speed):
 def Deliver_Tree(td, ta):
     # driving into misson model
     run_task(runAttachemnt(ta, 30, 15))
-    td.straight_drive(260)
-    td.turn(-10)
-    td.straight_drive(175)
-    td.turn(-20)
-    run_task(runAttachemnt(ta, -80, 15))
-    td.straight_drive(-100)
-    td.turn(50)
-    td.straight_drive(-350)
+    td.straight_drive(450)
+    ta.move_D_time(speed_percentage=20, time_millisec=200)
+    run_task(ta.move_C_angle(angle=-50, speed_percentage=15))
+    # run_task(ta.move_C_angle(angle=3, speed_percentage=15))
+    td.straight_drive(-450)
 
 
 if __name__ == "__main__":
