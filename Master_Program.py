@@ -6,6 +6,7 @@ from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 import run_coral
+import run_collection
 
 
 # Initialize the sensor.
@@ -145,7 +146,6 @@ if __name__ == "__main__":
             wait(100)
             # check for the button press
             pressed = hub.buttons.pressed()
-            print(pressed)
 
             # Display an arrow to indicate which button was pressed.
             if Button.LEFT in pressed:
@@ -153,5 +153,5 @@ if __name__ == "__main__":
             elif Button.RIGHT in pressed:
                 hub.display.icon(Icon.ARROW_RIGHT)
 
-            if color == Color.MY_MAGENTA():
-                run_coral.runCoral()
+            if color == Color.MY_MAGENTA:
+                run_collection.run_Krillies(td, ta)
