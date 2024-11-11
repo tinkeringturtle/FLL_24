@@ -15,12 +15,12 @@ def run_boat_shark():
 
     # coral
     # td.set_speed_percentage(20, 25)
-    # td.straight_drive(162)
-    # .straight_drive(-162)
+    # td.straight_drive(60)
+    # td.straight_drive(-60)
     # td.brake()
     # wait(7000)
-    td.straight_drive(800)
-    td.turn(-45)
+    td.straight_drive(770)
+    td.turn(-55)
     # delivering shark (and(trident?)
 
     # td.straight_drive(50)
