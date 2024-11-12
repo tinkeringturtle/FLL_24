@@ -5,7 +5,7 @@ from TurtleAttachement import *
 
 
 async def runAttachemnt(ta, angle):
-    await ta.move_C_angle(angle=angle, speed_percentage=10)
+    await ta.move_C_angle(angle=angle, speed_percentage=100)
 
 
 def run_boat_shark():
@@ -19,12 +19,7 @@ def run_boat_shark():
     # td.straight_drive(-60)
     # td.brake()
     # wait(7000)
-    td.straight_drive(770)
-    td.turn(-55)
-    # delivering shark (and(trident?)
-
-    # td.straight_drive(50)
-    # ta.move_C_angle(-60)
+    # deliver shark, and get trident
     # getting boat
     # td.turn(-45)
     # td.straight_drive(-200)
