@@ -37,12 +37,13 @@ def runCoral(td, ta):
     wait(400)
     td.straight_drive(-45)  # driving back from the coral mission
     # starting shark
-    td.turn(75)  # turn to face shark
-    td.straight_drive(65)  # driving closer to shark
+    td.turn(85)  # turn to face shark
+    td.straight_drive(80)  # driving closer to shark
     td.turn(-50)  # to get ready to turn into shark
     td.set_speed_percentage(40)
     td.straight_drive(145)  # drives into shark
-    td.straight_drive(-10)  # driving away from shark
+    td.straight_drive(-30)  # driving away from shark
+    td.turn(-10)
     td.set_speed_percentage(30)
     ta.move_C_time(speed_percentage=100, time_millisec=1000)
 
