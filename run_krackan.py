@@ -3,8 +3,10 @@
 from TurtleDrive import *
 from TurtleAttachement import *
 
+
 async def runAttachemnt(ta, angle):
     await ta.move_D_angle(angle=angle, speed_percentage=10)
+
 
 def run_kracken():
     td = TurtleDrive()
@@ -30,9 +32,6 @@ def run_kracken():
     td.stop()
 
 
-
 if __name__ == "__main__":
     run_kracken()
     ta = TurtleAttachment()
-    
-    
