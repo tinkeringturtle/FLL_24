@@ -84,7 +84,7 @@ def set_colors(sensor):
     sensor.detectable_colors(my_colors)
 
 
-def show_icon(color):
+def show_icon(color, first_run):
     if color == Color.MY_GREEN:
         hub.display.icon(Icon.ARROW_RIGHT_DOWN)
         print("Run Green Attanchement")
@@ -97,8 +97,12 @@ def show_icon(color):
         hub.display.icon(Icon.ARROW_RIGHT_DOWN)
         print("Run WHITE Attachment")
 
-    if color == Color.MY_RED:
+    if color == Color.MY_RED and first_run == False:
         hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run RED Attachement ")
+
+    if color == Color.MY_RED and first_run == True:
+        hub.display.icon(Icon.ARROW_LEFT_DOWN)
         print("Run RED Attachement ")
 
     if color == Color.MY_YELLOW:
@@ -129,7 +133,7 @@ if __name__ == "__main__":
 
     # set the color as we tested
     set_colors(front_sensor)
-
+    first_run = False
     # Main loop
     while True:
         while True:
@@ -142,7 +146,7 @@ if __name__ == "__main__":
                 hub.light.on(colorToDefault[color])
 
             # Show the arrow
-            show_icon(color)
+            show_icon(color, first_run)
 
             wait(100)
             # check for the button press
@@ -167,7 +171,13 @@ if __name__ == "__main__":
 
             if Button.RIGHT in pressed and color == Color.MY_YELLOW:
                 print("Run coral")
-                run_coral.runCoral(td, ta)
+                coral_tree.CoralTree(td, ta)
+                first_run = True
+
+            if Button.LEFT in pressed and color == Color.MY_YELLOW:
+                print("Run deliver coral")
+                deliver_coral_tree.Deliver_Tree(td, ta)
+                first_run = False
 
             if Button.RIGHT in pressed and color == Color.MY_RED:
                 print("Run deliver coral tree")
