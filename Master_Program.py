@@ -5,7 +5,8 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
-import run_collection
+import run_collection, run_boat_shark, run_coral, run_crab, run_krackan
+import run_submersible, run_whale
 
 
 # Initialize the sensor.
