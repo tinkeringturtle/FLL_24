@@ -22,7 +22,7 @@ Color.MY_RED = Color(h=352, s=88, v=80)
 Color.MY_ORANGE = Color(h=9, s=84, v=99)
 Color.MY_BLUE = Color(h=217, s=88, v=69)
 Color.MY_BLACK = Color(h=240, s=5, v=24)
-Color.MY_YELLOW = Color(h=52, s=71, v=100)
+Color.MY_YELLOW = Color(h=51, s=71, v=100)
 Color.MY_WHITE = Color(h=0, s=0, v=100)
 Color.MY_NONE = Color(h=0, s=0, v=0)
 
@@ -35,6 +35,7 @@ colorToDefault = {
     Color.MY_BLACK: Color.BLACK,
     Color.MY_WHITE: Color.WHITE,
     Color.MY_NONE: Color.NONE,
+    Color.MY_YELLOW: Color.YELLOW,
 }
 
 
@@ -76,6 +77,7 @@ def set_colors(sensor):
         Color.MY_BLACK,
         Color.MY_WHITE,
         Color.MY_NONE,
+        Color.MY_YELLOW,
     )
 
     # Save your colors.
@@ -123,6 +125,7 @@ def show_icon(color):
 if __name__ == "__main__":
     td = TurtleDrive()
     ta = TurtleAttachment()
+    #  scan_colors(front_sensor)
 
     # set the color as we tested
     set_colors(front_sensor)
@@ -177,7 +180,6 @@ if __name__ == "__main__":
             if Button.RIGHT in pressed and color == Color.MY_ORANGE:
                 print("Run boat shark")
                 run_boat_shark.run_boat_shark(td, ta)
-
 
             # run_collection.run_Krillies(td, ta)
 
