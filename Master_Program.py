@@ -5,7 +5,6 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
-import run_coral
 import run_collection
 
 
@@ -62,7 +61,7 @@ def scan_colors(sensor):
 
 def set_colors(sensor):
     # First, decide which objects you want to detect, and measure their HSV values.
-    # You can do that with the hsv() method as shown in the previous example.
+    # You can do that with the scan_colors() method.
     #
     # Use your measurements to override the default colors, or add new colors:
 
@@ -81,77 +80,72 @@ def set_colors(sensor):
     # Save your colors.
     sensor.detectable_colors(my_colors)
 
-    # Wait so
 
+def show_icon(color):
+    if color == Color.MY_GREEN:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run Green Attanchement")
 
-def check_color(color):
-    # Check which one it is.
-    if color == Color.GREEN:
-        print("GREEN")
-        hub.light.on(Color.GREEN)
-    if color == Color.MAGENTA:
-        print("MAGENTA")
-        hub.light.on(Color.MAGENTA)
-    if color == Color.WHITE:
-        print("WHITE")
-        hub.light.on(Color.WHITE)
-    if color == Color.RED:
-        print("RED")
-        hub.light.on(color.RED)
-    if color == Color.YELLOW:
-        print("YELLOW")
-        hub.light.on(Color.YELLOW)
-    if color == Color.BLACK:
-        print("BLACK")
-        hub.light.on(Color.BLACK)
-    if color == Color.ORANGE:
-        print("ORANGE")
-        hub.light.on(Color.ORANGE)
-    if color == Color.BLUE:
-        print("BLUE")
-        hub.light.on(Color.BLUE)
+    if color == Color.MY_MAGENTA:
+        hub.battery.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run Magenta Attachement")
 
+    if color == Color.MY_WHITE:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run WHITE Attachment")
 
-def check_button():
-    pressed = []
-    while not any(pressed):
-        # check for the button press
-        pressed = hub.buttons.pressed()
+    if color == Color.MY_RED:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run RED Attachement ")
 
-    # Display an arrow to indicate which button was pressed.
-    if Button.LEFT in pressed:
-        hub.display.icon(Icon.ARROW_LEFT)
-    elif Button.RIGHT in pressed:
-        hub.display.icon(Icon.ARROW_RIGHT)
-    return pressed
+    if color == Color.MY_YELLOW:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run YELLOW Attachement")
+
+    if color == Color.MY_BLACK:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run BLACK Attachement")
+
+    if color == Color.MY_ORANGE:
+        print("Run ORANGE Attachement ")
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+
+    if color == Color.MY_BLUE:
+        print("Run BLUE Attachement")
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+
+    if color == Color.MY_NONE:
+        print("NO Attachement")
+        hub.display.icon(Icon.ARROW_UP)
 
 
 if __name__ == "__main__":
     td = TurtleDrive()
     ta = TurtleAttachment()
-    # scan_colors(front_sensor)
+
+    # set the color as we tested
     set_colors(front_sensor)
-    # color() works as usual, but now it returns one of your specified colors.
+
+    # Main loop
     while True:
         while True:
+            # SCan the attchment color
             color = front_sensor.color()
 
             if color == Color.MY_NONE:
-                hub.display.icon(Icon.EYE_LEFT_BROW_UP)
                 hub.light.off()
             else:
-                hub.display.icon(Icon.HEART)
                 hub.light.on(colorToDefault[color])
+
+            # Show the arrow color
+            show_icon(color)
 
             wait(100)
             # check for the button press
             pressed = hub.buttons.pressed()
 
-            # Display an arrow to indicate which button was pressed.
-            if Button.LEFT in pressed:
-                hub.display.icon(Icon.ARROW_LEFT)
-            elif Button.RIGHT in pressed:
-                hub.display.icon(Icon.ARROW_RIGHT)
-
-            if color == Color.MY_MAGENTA:
+            # run the attachment code is button is pressed
+            if Button.LEFT in pressed and color == Color.MY_GREEN:
                 run_collection.run_Krillies(td, ta)
+
+            # Implement all other runs, based on the button presses and color
