@@ -5,8 +5,8 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
-import run_coral
-import run_collection
+import run_collection, run_boat_shark, run_coral, run_crab, run_krackan
+import run_submersible, run_whale, deliver_coral_tree, coral_tree
 
 
 # Initialize the sensor.
@@ -22,7 +22,7 @@ Color.MY_RED = Color(h=352, s=88, v=80)
 Color.MY_ORANGE = Color(h=9, s=84, v=99)
 Color.MY_BLUE = Color(h=217, s=88, v=69)
 Color.MY_BLACK = Color(h=240, s=5, v=24)
-Color.MY_YELLOW = Color(h=52, s=71, v=100)
+Color.MY_YELLOW = Color(h=51, s=71, v=100)
 Color.MY_WHITE = Color(h=0, s=0, v=100)
 Color.MY_NONE = Color(h=0, s=0, v=0)
 
@@ -35,6 +35,7 @@ colorToDefault = {
     Color.MY_BLACK: Color.BLACK,
     Color.MY_WHITE: Color.WHITE,
     Color.MY_NONE: Color.NONE,
+    Color.MY_YELLOW: Color.YELLOW,
 }
 
 
@@ -62,7 +63,7 @@ def scan_colors(sensor):
 
 def set_colors(sensor):
     # First, decide which objects you want to detect, and measure their HSV values.
-    # You can do that with the hsv() method as shown in the previous example.
+    # You can do that with the scan_colors() method.
     #
     # Use your measurements to override the default colors, or add new colors:
 
@@ -76,82 +77,110 @@ def set_colors(sensor):
         Color.MY_BLACK,
         Color.MY_WHITE,
         Color.MY_NONE,
+        Color.MY_YELLOW,
     )
 
     # Save your colors.
     sensor.detectable_colors(my_colors)
 
-    # Wait so
 
+def show_icon(color):
+    if color == Color.MY_GREEN:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run Green Attanchement")
 
-def check_color(color):
-    # Check which one it is.
-    if color == Color.GREEN:
-        print("GREEN")
-        hub.light.on(Color.GREEN)
-    if color == Color.MAGENTA:
-        print("MAGENTA")
-        hub.light.on(Color.MAGENTA)
-    if color == Color.WHITE:
-        print("WHITE")
-        hub.light.on(Color.WHITE)
-    if color == Color.RED:
-        print("RED")
-        hub.light.on(color.RED)
-    if color == Color.YELLOW:
-        print("YELLOW")
-        hub.light.on(Color.YELLOW)
-    if color == Color.BLACK:
-        print("BLACK")
-        hub.light.on(Color.BLACK)
-    if color == Color.ORANGE:
-        print("ORANGE")
-        hub.light.on(Color.ORANGE)
-    if color == Color.BLUE:
-        print("BLUE")
-        hub.light.on(Color.BLUE)
+    if color == Color.MY_MAGENTA:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run Magenta Attachement")
 
+    if color == Color.MY_WHITE:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run WHITE Attachment")
 
-def check_button():
-    pressed = []
-    while not any(pressed):
-        # check for the button press
-        pressed = hub.buttons.pressed()
+    if color == Color.MY_RED:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run RED Attachement ")
 
-    # Display an arrow to indicate which button was pressed.
-    if Button.LEFT in pressed:
-        hub.display.icon(Icon.ARROW_LEFT)
-    elif Button.RIGHT in pressed:
-        hub.display.icon(Icon.ARROW_RIGHT)
-    return pressed
+    if color == Color.MY_YELLOW:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run YELLOW Attachement")
+
+    if color == Color.MY_BLACK:
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        print("Run BLACK Attachement")
+
+    if color == Color.MY_ORANGE:
+        print("Run ORANGE Attachement ")
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+
+    if color == Color.MY_BLUE:
+        print("Run BLUE Attachement")
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+
+    if color == Color.MY_NONE:
+        print("NO Attachement")
+        hub.display.icon(Icon.ARROW_UP)
 
 
 if __name__ == "__main__":
     td = TurtleDrive()
     ta = TurtleAttachment()
-    # scan_colors(front_sensor)
+    #  scan_colors(front_sensor)
+
+    # set the color as we tested
     set_colors(front_sensor)
-    # color() works as usual, but now it returns one of your specified colors.
+
+    # Main loop
     while True:
         while True:
+            # SCan the attchment color
             color = front_sensor.color()
 
             if color == Color.MY_NONE:
-                hub.display.icon(Icon.EYE_LEFT_BROW_UP)
                 hub.light.off()
             else:
-                hub.display.icon(Icon.HEART)
                 hub.light.on(colorToDefault[color])
+
+            # Show the arrow
+            show_icon(color)
 
             wait(100)
             # check for the button press
             pressed = hub.buttons.pressed()
 
-            # Display an arrow to indicate which button was pressed.
-            if Button.LEFT in pressed:
-                hub.display.icon(Icon.ARROW_LEFT)
-            elif Button.RIGHT in pressed:
-                hub.display.icon(Icon.ARROW_RIGHT)
+            # run the attachment code is button is pressed
+            if Button.RIGHT in pressed and color == Color.MY_GREEN:
+                print("Run crab")
+                run_crab.runBannana_Boat(td)
 
-            if color == Color.MY_MAGENTA:
+            if Button.RIGHT in pressed and color == Color.MY_MAGENTA:
                 run_collection.run_Krillies(td, ta)
+                print("run Krilles")
+
+            if Button.RIGHT in pressed and color == Color.MY_BLUE:
+                print("Run whale")
+                run_whale.run_whale(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_WHITE:
+                print("Run sumersible")
+                run_submersible.run_submersible(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_YELLOW:
+                print("Run coral")
+                run_coral.runCoral(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_RED:
+                print("Run deliver coral tree")
+                deliver_coral_tree.Deliver_Tree(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_BLACK:
+                print("Run kracken")
+                run_krackan.run_kracken(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_ORANGE:
+                print("Run boat shark")
+                run_boat_shark.run_boat_shark(td, ta)
+
+            # run_collection.run_Krillies(td, ta)
+
+            # Implement all other runs, based on the button presses and color

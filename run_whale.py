@@ -5,7 +5,7 @@ from TurtleAttachement import *
 
 
 async def runAttachemnt(ta, angle):
-    await ta.move_C_angle(angle=angle, speed_percentage=50)
+    await ta.move_C_angle(angle=angle, speed_percentage=30)
 
 
 # line nine
@@ -15,7 +15,7 @@ def run_whale(td, ta):
     td.turn(43)
     td.set_speed_percentage(speed_percentage=10)
     td.straight_drive(160)
-    run_task(runAttachemnt(ta, -90))
+    run_task(runAttachemnt(ta, -50))
     td.stop()
     td.set_speed_percentage(speed_percentage=60)
     td.straight_drive(-165)
@@ -29,7 +29,7 @@ def run_whale(td, ta):
     td.set_speed_percentage(speed_percentage=60)
     td.straight_drive(550)
     td.curve(500, -54)
-#whale dose not work
+
 
 if __name__ == "__main__":
     td = TurtleDrive()

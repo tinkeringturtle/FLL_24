@@ -35,6 +35,9 @@ class TurtleDrive:
 
     def stop(self):
         self.drive_base.stop()
+        
+    def brake(self):
+        self.drive_base.brake()
 
     def log(self, enable=True):
         self.log_enabled = enable
