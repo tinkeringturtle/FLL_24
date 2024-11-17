@@ -170,14 +170,8 @@ if __name__ == "__main__":
                 run_submersible.run_submersible(td, ta)
 
             if Button.RIGHT in pressed and color == Color.MY_YELLOW:
-                print("Run coral")
-                coral_tree.CoralTree(td, ta)
-                first_run = True
-
-            if Button.LEFT in pressed and color == Color.MY_YELLOW:
                 print("Run deliver coral")
                 run_coral.runCoral(td, ta)
-                first_run = False
 
             if Button.RIGHT in pressed and color == Color.MY_RED:
                 print("Run deliver coral tree")
