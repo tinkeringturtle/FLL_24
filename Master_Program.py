@@ -181,12 +181,12 @@ if __name__ == "__main__":
 
             if Button.RIGHT in pressed and color == Color.MY_RED:
                 print("Run deliver coral tree")
-                deliver_coral_tree.Deliver_Tree(td, ta)
+                coral_tree.CoralTree(td, ta)
                 first_run = True
 
             if Button.LEFT in pressed and color == Color.MY_RED:
                 print("Run deliver coral")
-                coral_tree.CoralTree(td, ta)
+                deliver_coral_tree.Deliver_Tree(td, ta)
                 first_run = False
 
             if Button.RIGHT in pressed and color == Color.MY_BLACK:
