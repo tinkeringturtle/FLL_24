@@ -6,7 +6,7 @@ from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 import run_collection, run_boat_shark, run_coral, run_crab, run_krackan
-import run_submersible, run_whale
+import run_submersible, run_whale, deliver_coral_tree, coral_tree
 
 
 # Initialize the sensor.
@@ -88,7 +88,7 @@ def show_icon(color):
         print("Run Green Attanchement")
 
     if color == Color.MY_MAGENTA:
-        hub.battery.icon(Icon.ARROW_RIGHT_DOWN)
+        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
         print("Run Magenta Attachement")
 
     if color == Color.MY_WHITE:
@@ -138,7 +138,7 @@ if __name__ == "__main__":
             else:
                 hub.light.on(colorToDefault[color])
 
-            # Show the arrow color
+            # Show the arrow
             show_icon(color)
 
             wait(100)
@@ -147,7 +147,38 @@ if __name__ == "__main__":
 
             # run the attachment code is button is pressed
             if Button.RIGHT in pressed and color == Color.MY_GREEN:
-                print("Run Krillies")
+                print("Run crab")
+                run_crab.runBannana_Boat(td)
+
+            if Button.RIGHT in pressed and color == Color.MY_MAGENTA:
                 run_collection.run_Krillies(td, ta)
+                print("run Krilles")
+
+            if Button.RIGHT in pressed and color == Color.MY_BLUE:
+                print("Run whale")
+                run_whale.run_whale(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_WHITE:
+                print("Run sumersible")
+                run_submersible.run_submersible(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_YELLOW:
+                print("Run coral")
+                run_coral.runCoral(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_RED:
+                print("Run deliver coral tree")
+                deliver_coral_tree.Deliver_Tree(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_BLACK:
+                print("Run kracken")
+                run_krackan.run_kracken(td, ta)
+
+            if Button.RIGHT in pressed and color == Color.MY_ORANGE:
+                print("Run boat shark")
+                run_boat_shark.run_boat_shark(td, ta)
+
+
+            # run_collection.run_Krillies(td, ta)
 
             # Implement all other runs, based on the button presses and color

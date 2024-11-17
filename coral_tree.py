@@ -6,10 +6,10 @@ from TurtleAttachement import *
 
 def CoralTree(td, ta):
 
-    td.set_speed_percentage(60)
+    td.set_speed_percentage(65)
     td.straight_drive(-10)
-    td.straight_drive(500)
-    run_task(ta.move_C_angle(angle=-40, speed_percentage=15))
+    td.straight_drive(455)
+    ta.move_C_time(speed_percentage=25, time_millisec=3200)
     td.straight_drive(-385)
 
 
