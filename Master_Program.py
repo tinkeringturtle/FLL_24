@@ -146,7 +146,8 @@ if __name__ == "__main__":
             pressed = hub.buttons.pressed()
 
             # run the attachment code is button is pressed
-            if Button.LEFT in pressed and color == Color.MY_GREEN:
+            if Button.RIGHT in pressed and color == Color.MY_GREEN:
+                print("Run Krillies")
                 run_collection.run_Krillies(td, ta)
 
             # Implement all other runs, based on the button presses and color
