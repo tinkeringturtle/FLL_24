@@ -8,9 +8,8 @@ async def runAttachemnt(ta, angle):
     await ta.move_C_angle(angle=angle, speed_percentage=100)
 
 
-def run_boat_shark():
-    td = TurtleDrive()
-    ta = TurtleAttachment()
+def run_boat_shark(td, ta):
+
     # run starts from here
     td.set_speed_percentage(50, 50)
     td.straight_drive(710)
@@ -30,4 +29,6 @@ def run_boat_shark():
 
 
 if __name__ == "__main__":
-    run_boat_shark()
+    td = TurtleDrive()
+    ta = TurtleAttachment()
+    run_boat_shark(td, ta)

@@ -8,9 +8,8 @@ async def runAttachemnt(ta, angle):
     await ta.move_D_angle(angle=angle, speed_percentage=10)
 
 
-def run_kracken():
-    td = TurtleDrive()
-    ta = TurtleAttachment()
+def run_kracken(td, ta):
+
     # to drive stright do - td.drive(x mm)
     # td.straight_drive(200)
     td.set_speed_percentage(speed_percentage=40)
@@ -33,5 +32,6 @@ def run_kracken():
 
 
 if __name__ == "__main__":
-    run_kracken()
+    td = TurtleDrive()
     ta = TurtleAttachment()
+    run_kracken(td, ta)
