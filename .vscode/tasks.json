@@ -10,7 +10,7 @@
                 "ble",
                 "--name",
                 "Sunset",
-                "${file}"
+                "Master_Program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -42,7 +42,7 @@
                 "ble",
                 "--name",
                 "Sunset",
-                "${file}"
+                "Master_Program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -74,7 +74,7 @@
                 "ble",
                 "--name",
                 "Crush",
-                "${file}"
+                "Master_Program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -106,7 +106,7 @@
                 "ble",
                 "--name",
                 "Chaos",
-                "${file}"
+                "Master_Program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -138,7 +138,7 @@
                 "ble",
                 "--name",
                 "Squirt",
-                "${file}"
+                "Master_Program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
