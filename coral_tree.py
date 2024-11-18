@@ -5,13 +5,13 @@ from TurtleAttachement import *
 
 
 def CoralTree(td, ta):
-    td.straight_drive(-10)
-    td.straight_drive(390)
-    td.turn(20)
-    td.turn(-40)
-    td.turn(20)
-    # td.turn(-40)
-    # td.turn(20)
+    td.straight_drive(350)
+    td.set_speed_percentage(speed_percentage=25, acceleration_percentage=10)
+    td.straight_drive(50)
+    td.turn(-15)
+    td.turn(30)
+    td.turn(-15)
+    td.set_speed_percentage(speed_percentage=75, acceleration_percentage=50)
     td.straight_drive(-385)
 
 
