@@ -14,11 +14,11 @@ def run_kracken(td, ta):
     # td.straight_drive(200)
     td.set_speed_percentage(speed_percentage=40)
     td.straight_drive(220)
-    td.curve(300, 90)
+    td.curve(280, 90)
     td.set_speed_percentage(speed_percentage=50)
     td.straight_drive(20)
     td.set_speed_percentage(speed_percentage=1, acceleration_percentage=1)
-    td.straight_drive(55)
+    td.straight_drive(50)
     # getting qrill
     run_task(runAttachemnt(ta, 118))
     # returning back
