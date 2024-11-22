@@ -20,16 +20,12 @@ def run_kracken(td, ta):
     td.set_speed_percentage(speed_percentage=10)
     td.straight_drive(125)
     td.set_speed_percentage(speed_percentage=2)
-    td.straight_drive(85)
+    td.straight_drive(100)
     td.straight_drive(-45)
     run_task(runAttachemnt(ta, 130))
     # returning home
     td.set_speed_percentage(speed_percentage=10)
-    td.straight_drive(-225)
-    td.set_speed_percentage(speed_percentage=1)
-    td.turn(-60)
-    td.set_speed_percentage(speed_percentage=25)
-    td.straight_drive(-500)
+    td.curve(-690, 23)
     run_task(runAttachemnt(ta, -118))
     td.stop()
 
