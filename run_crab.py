@@ -1,4 +1,5 @@
 # Author:  Abby, Elly
+# line up at right side of robot on middle black line
 
 from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button, Icon

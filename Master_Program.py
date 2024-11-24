@@ -30,6 +30,7 @@ colorToDefault = {
     Color.MY_GREEN: Color.GREEN,
     Color.MY_MAGENTA: Color.MAGENTA,
     Color.MY_RED: Color.RED,
+    
     Color.MY_ORANGE: Color.ORANGE,
     Color.MY_BLUE: Color.BLUE,
     Color.MY_BLACK: Color.BLACK,
