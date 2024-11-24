@@ -192,6 +192,9 @@ if __name__ == "__main__":
                 print("Run boat shark")
                 run_boat_shark.run_boat_shark(td, ta)
 
+            td.brake()
+            td.stop()
+
             # run_collection.run_Krillies(td, ta)
 
             # Implement all other runs, based on the button presses and color
