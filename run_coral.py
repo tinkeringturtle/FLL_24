@@ -23,6 +23,10 @@ async def runAttachemnt(ta, angle, speed):
     await ta.move_D_angle(angle=angle, speed_percentage=speed)
 
 
+async def runAttachemntC(ta, angle, speed):
+    await ta.move_C_angle(angle=angle, speed_percentage=speed)
+
+
 def runCoral(td, ta):
     td.set_speed_percentage(50)
     ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
@@ -42,15 +46,17 @@ def runCoral(td, ta):
     td.turn(-50)  # to get ready to turn into shark
     td.set_speed_percentage(40)
     td.straight_drive(145)  # drives into shark
-    td.straight_drive(-30)  # driving away from shark
+    td.straight_drive(-5)  # driving away from shark
     td.turn(-10)
     td.set_speed_percentage(30)
-    ta.move_C_time(speed_percentage=100, time_millisec=2000)
+    ta.move_C_angle()
+    # ta.move_C_time(speed_percentage=100, time_millisec=2000)
+    run_task(runAttachemntC(ta, -400, 100))
+    run_task(runAttachemntC(ta, 400, 100))
     td.straight_drive(-150)
     td.turn(85)
     td.set_speed_percentage(95)
     td.straight_drive(-745)
-
 
 
 # lifting D arm so for

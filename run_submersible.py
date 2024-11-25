@@ -23,7 +23,7 @@ def run_submersible(td, ta):
     td.turn(90)
     td.straight_drive(-150)
     td.turn(-35)
-    td.straight_drive(145)
+    td.straight_drive(157)
     run_task(runAttachemnt(ta,-450))
     wait(1000)
     td.straight_drive(-60)
