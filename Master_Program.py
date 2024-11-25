@@ -7,6 +7,7 @@ from TurtleDrive import *
 from TurtleAttachement import *
 import run_collection, run_boat_shark, run_coral, run_crab, run_krackan
 import run_submersible, run_whale, deliver_coral_tree, coral_tree
+import run_boat_shark2
 
 
 # Initialize the sensor.
@@ -30,7 +31,6 @@ colorToDefault = {
     Color.MY_GREEN: Color.GREEN,
     Color.MY_MAGENTA: Color.MAGENTA,
     Color.MY_RED: Color.RED,
-    
     Color.MY_ORANGE: Color.ORANGE,
     Color.MY_BLUE: Color.BLUE,
     Color.MY_BLACK: Color.BLACK,
@@ -191,6 +191,10 @@ if __name__ == "__main__":
             if Button.RIGHT in pressed and color == Color.MY_ORANGE:
                 print("Run boat shark")
                 run_boat_shark.run_boat_shark(td, ta)
+
+            if Button.LEFT in pressed and color == Color.MY_ORANGE:
+                print("Run boat shark2")
+                run_boat_shark2.run_boat_shark2(td, ta)
 
             td.brake()
             td.stop()
