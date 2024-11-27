@@ -5,32 +5,35 @@ from TurtleAttachement import *
 
 
 async def runAttachemnt(ta, angle):
-    await ta.move_C_angle(angle=angle, speed_percentage=100)
+    await ta.move_D_angle(angle=angle, speed_percentage=20)
 
 
 def run_boat_shark2(td, ta):
     # boat/shark
     td.set_speed_percentage(50, 50)
     td.straight_drive(710)
-    td.straight_drive(-35)
-    td.turn(-100)
-    td.set_speed_percentage(25, 25)
-    td.straight_drive(-125)
-    td.turn(72)
-    td.straight_drive(-95) #catching the boat
+    td.straight_drive(-150)
+    td.turn(30)
+    td.straight_drive(400)
+    run_task(runAttachemnt(ta, 110))
+    td.straight_drive(-175)
+    run_task(runAttachemnt(ta, -5))
+    td.straight_drive(-15)
+    run_task(runAttachemnt(ta, -105))
+    td.turn(-55)
+    td.straight_drive(-140)
     td.straight_drive(150)
     td.set_speed_percentage(15, 10)
-    td.turn(45)
+    td.turn(25)
     td.set_speed_percentage(25, 10)
     td.straight_drive(100)
     td.set_speed_percentage(50, 50)
-    td.straight_drive(400)
-    td.set_speed_percentage(15, 10)
-    td.turn(35)
-    td.set_speed_percentage(75, 50)
-    td.straight_drive(900)
-    # td.set_speed_percentage(10, 10)
-    # td.curve(radius=150, angle=55)
+    td.straight_drive(100)
+    td.turn(20)
+    td.set_speed_percentage(70, 70)
+    td.straight_drive(500)
+    td.turn(45)
+    td.straight_drive(600)
 
 
 """
