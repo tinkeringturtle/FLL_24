@@ -13,11 +13,9 @@ def run_boat_shark(td, ta):
     # run starts from here
     # coral
     td.set_speed_percentage(20, 25)
-    td.straight_drive(162)
-    td.straight_drive(-162)
+    td.straight_drive(-100)
+    td.straight_drive(100)
     td.stop()
-    td.brake()
-    
 
     # run has ended
 
