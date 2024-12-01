@@ -16,11 +16,14 @@ def run_kracken(td, ta):
     # from TurtleDrive import *from TurtleAttachement import *
 
     async def runAttachemnt(ta, angle):
-        await ta.move_D_angle(angle=angle, speed_percentage=10)
+        await ta.move_D_angle(angle=angle, speed_percentage=30)
 
 
 def run_kracken(td, ta):
     # line up is on the middile of the 4rth line (coming from left counting)
+    #coral
+    \
+    #going for chest
     td.set_speed_percentage(speed_percentage=40)
     td.straight_drive(80)
     td.turn(10)
@@ -35,9 +38,9 @@ def run_kracken(td, ta):
     # returning home
     td.set_speed_percentage(speed_percentage=20)
     td.straight_drive(-225)
-    td.turn(-60)
+    td.turn(-70)
     td.set_speed_percentage(speed_percentage=60)
-    td.straight_drive(-520)
+    td.straight_drive(-580)
     run_task(runAttachemnt(ta, -118))
     td.stop()
 

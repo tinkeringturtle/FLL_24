@@ -5,7 +5,7 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
-import run_collection, run_boat_shark, run_coral, run_crab, run_krackan
+import run_collection, run_coral_delivery, run_coral, run_crab, run_krackan
 import run_submersible, run_whale, deliver_coral_tree, coral_tree
 import run_boat_shark2
 
@@ -188,13 +188,13 @@ if __name__ == "__main__":
                 print("Run kracken")
                 run_krackan.run_kracken(td, ta)
 
-            if Button.RIGHT in pressed and color == Color.MY_ORANGE:
-                print("Run boat shark")
-                run_boat_shark.run_boat_shark(td, ta)
+            if Button.LEFT in pressed and color == Color.MY_BLACK:
+                print("coral delivery")
+                run_coral_delivery.run_boat_shark(td, ta)
 
-            if Button.LEFT in pressed and color == Color.MY_ORANGE:
+            if Button.RIGHT in pressed and color == Color.MY_ORANGE:
                 print("Run boat shark2")
-                run_boat_shark2.run_boat_shark2(td, ta)
+                run_boat_shark2.run_boat_shark(td, ta)
 
             td.brake()
             td.stop()
