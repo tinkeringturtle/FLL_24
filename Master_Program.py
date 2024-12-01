@@ -194,7 +194,7 @@ if __name__ == "__main__":
 
             if Button.RIGHT in pressed and color == Color.MY_ORANGE:
                 print("Run boat shark2")
-                run_boat_shark2.run_boat_shark(td, ta)
+                run_boat_shark2.run_boat_shark2(td, ta)
 
             td.brake()
             td.stop()
