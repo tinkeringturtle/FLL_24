@@ -13,7 +13,7 @@ hub = PrimeHub()
 def run_Krillies(td, ta):
     td.set_speed_percentage(50, 50)
     td.curve(200, -45)
-    td.straight_drive(400)
+    td.straight_drive(410)
     td.straight_drive(-275)
     td.turn(30)
     td.straight_drive(175)
