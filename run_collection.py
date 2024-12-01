@@ -30,6 +30,7 @@ def run_Krillies(td, ta):
     td.set_speed_percentage(75)
     td.straight_drive(230)
     td.turn(-20)
+    
     td.straight_drive(95)
     td.turn(10)
     td.straight_drive(60)
