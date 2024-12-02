@@ -27,21 +27,22 @@ def run_Krillies(td, ta):
     run_task(ta.move_D_angle(150))
     td.set_speed_percentage(50)
     td.curve(-200, 87)
-    td.curve(500, -50)
+    td.curve(450, -55)
     td.set_speed_percentage(75)
-    td.straight_drive(230)
+    td.straight_drive(250)
     td.turn(-20)
     td.straight_drive(95)
     td.turn(10)
     td.straight_drive(60)
     td.turn(15)
-    td.straight_drive(250)
+    td.straight_drive(300)
     run_task(ta.move_D_angle(-90))
     td.set_speed_percentage(50)
     td.curve(400, -45)
     td.turn(-45)
     td.straight_drive(200)
     td.curve(500, 50)
+    
 
 
 if __name__ == "__main__":
