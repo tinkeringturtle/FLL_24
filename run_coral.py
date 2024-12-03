@@ -53,9 +53,9 @@ def runCoral(td, ta):
     # ta.move_C_time(speed_percentage=100, time_millisec=2000)
     run_task(runAttachemntC(ta, -400, 100))
     run_task(runAttachemntC(ta, 400, 100))
-    td.straight_drive(-150)
-    td.turn(85)
-    td.set_speed_percentage(95)
+    td.straight_drive(-100)
+    td.turn(70)
+    td.set_speed_percentage(130)
     td.straight_drive(-745)
 
 
