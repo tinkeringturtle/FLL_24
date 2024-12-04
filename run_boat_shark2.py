@@ -14,9 +14,9 @@ def run_boat_shark2(td, ta):
     td.set_speed_percentage(50, 45)
     td.curve(1100, -37)
     td.straight_drive(-150)
+    td.turn(40)
     # crab
-    td.turn(38)
-    td.straight_drive(420)
+    td.straight_drive(410)
     run_task(runAttachemnt(ta, 110))
     td.straight_drive(-175)
     run_task(runAttachemnt(ta, -4))
