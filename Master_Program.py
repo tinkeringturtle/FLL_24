@@ -187,9 +187,6 @@ if __name__ == "__main__":
             if Button.RIGHT in pressed and color == Color.MY_BLACK:
                 print("Run kracken")
 
-
-
-                
                 run_krackan.run_kracken(td, ta)
 
             if Button.LEFT in pressed and color == Color.MY_BLACK:
