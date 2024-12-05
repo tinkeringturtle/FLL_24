@@ -11,10 +11,14 @@ hub = PrimeHub()
 
 
 def run_Krillies(td, ta):
-    td.set_speed_percentage(50, 50)
+    run_task(ta.move_D_angle(-150))
+    td.set_speed_percentage(50)
     td.curve(200, -45)
+    td.set_speed_percentage(60)
     td.straight_drive(410)
-    td.straight_drive(-275)
+    td.straight_drive(-310)
+
+    """
     td.turn(30)
     td.straight_drive(175)
     td.turn(40)
@@ -24,10 +28,22 @@ def run_Krillies(td, ta):
     td.turn(12)
     td.turn(60)
     td.straight_drive(250)
+    """
+
+    td.set_speed_percentage(30)
+    td.curve(100, 50)
+    td.straight_drive(340)
+    td.curve(100, 45)
+    td.straight_drive(130)
     run_task(ta.move_D_angle(150))
     td.set_speed_percentage(50)
-    td.curve(-200, 87)
-    td.curve(450, -55)
+    td.curve(-200, 85)
+    td.curve(450, -53)
+    td.straight_drive(630)
+    run_task(ta.move_D_angle(-150))
+
+    """
+
     td.set_speed_percentage(75)
     td.straight_drive(250)
     td.turn(-20)
@@ -38,11 +54,11 @@ def run_Krillies(td, ta):
     td.straight_drive(300)
     run_task(ta.move_D_angle(-90))
     td.set_speed_percentage(50)
+    """
     td.curve(400, -45)
     td.turn(-45)
     td.straight_drive(200)
     td.curve(500, 50)
-    
 
 
 if __name__ == "__main__":
