@@ -15,8 +15,8 @@ def run_Krillies(td, ta):
     td.set_speed_percentage(50)
     td.curve(200, -45)
     td.set_speed_percentage(60)
-    td.straight_drive(410)
-    td.straight_drive(-310)
+    td.straight_drive(410)  # collect octopus
+    td.straight_drive(-340)
 
     """
     td.turn(30)
@@ -30,17 +30,18 @@ def run_Krillies(td, ta):
     td.straight_drive(250)
     """
 
-    td.set_speed_percentage(30)
-    td.curve(100, 50)
-    td.straight_drive(340)
+    td.set_speed_percentage(50)
     td.curve(100, 45)
-    td.straight_drive(130)
+    td.straight_drive(320)
+    td.curve(100, 45)
+    td.straight_drive(160)  # collect seaweed
     run_task(ta.move_D_angle(150))
     td.set_speed_percentage(50)
-    td.curve(-200, 85)
-    td.curve(450, -53)
-    td.straight_drive(630)
+    td.curve(-200, 80)
+    td.curve(470, -53)
+    td.straight_drive(630)  # drive past angler fish
     run_task(ta.move_D_angle(-150))
+    td.straight_drive(50)
 
     """
 
