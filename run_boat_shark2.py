@@ -37,7 +37,7 @@ def run_boat_shark2(td, ta):
     td.set_speed_percentage(70, 70)
     td.straight_drive(500)
     td.turn(35)
-    td.straight_drive(670)
+    td.straight_drive(690)
 
 
 """
