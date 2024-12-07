@@ -19,13 +19,13 @@ def run_Krillies(td, ta):
     td.straight_drive(-340)
     td.set_speed_percentage(50)
     td.curve(100, 45)
-    td.straight_drive(350)  # adjust length to get past banana boat
+    td.straight_drive(320)  # adjust length to get past banana boat
     td.curve(100, 45)
     td.straight_drive(180)  # collect seaweed
     run_task(ta.move_D_angle(150))
     td.set_speed_percentage(50)
     td.curve(-230, 80)  # adjust radius to go around banana boat
-    td.curve(525, -53)  # adjust radium to get closer or further from angular fish)
+    td.curve(510, -53)  # adjust radium to get closer or further from angular fish)
     td.straight_drive(640)  # drive past angler fish
     run_task(ta.move_D_angle(-150))
     td.straight_drive(50)
