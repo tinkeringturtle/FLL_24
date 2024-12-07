@@ -10,24 +10,22 @@ async def runAttachemnt(ta, angle):
 
 def run_boat_shark2(td, ta):
     # boat/shark
-    # shark
-
     td.set_speed_percentage(50, 45)
-    td.curve(1100, -35)
+    td.curve(1090, -35)
     td.straight_drive(-150)
-    td.turn(37)
+    td.turn(38)
     # crab
-    td.straight_drive(485)
+    td.straight_drive(545)
     run_task(runAttachemnt(ta, 110))
-    td.straight_drive(-175)
+    td.straight_drive(-170)
     run_task(runAttachemnt(ta, -2))
     td.straight_drive(-35)
     run_task(runAttachemnt(ta, -109))
     # boat
-    td.turn(-55)
-    td.straight_drive(-165)
+    td.turn(-60)
+    td.straight_drive(-175)
     # going to other side
-    td.straight_drive(150)
+    td.straight_drive(130)
     td.set_speed_percentage(15, 10)
     td.turn(30)
     td.set_speed_percentage(25, 10)
@@ -37,8 +35,8 @@ def run_boat_shark2(td, ta):
     td.turn(25)
     td.set_speed_percentage(70, 70)
     td.straight_drive(500)
-    td.turn(35)
-    td.straight_drive(800)
+    td.turn(40)
+    td.straight_drive(930)
 
 
 """
