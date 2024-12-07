@@ -1,4 +1,4 @@
-# Author: Meghana, Emma (awesome Team)
+# Author: Meghana, Emma (awesome Team )
 #
 from TurtleDrive import *
 from TurtleAttachement import *
@@ -10,6 +10,7 @@ async def runAttachemnt(ta, angle):
 
 def run_boat_shark2(td, ta):
     # boat/shark
+
     td.set_speed_percentage(50, 45)
     td.curve(1100, -40)
     td.straight_drive(-150)
