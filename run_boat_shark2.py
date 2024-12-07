@@ -18,7 +18,7 @@ def run_boat_shark2(td, ta):
     # crab
     td.straight_drive(420)
     run_task(runAttachemnt(ta, 110))
-    td.straight_drive(-220)
+    td.straight_drive(-210)
     run_task(runAttachemnt(ta, -1))
     td.straight_drive(-50)
     run_task(runAttachemnt(ta, -110))
