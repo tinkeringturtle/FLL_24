@@ -15,28 +15,28 @@ def run_boat_shark2(td, ta):
     td.straight_drive(-150)
     td.turn(45)
     # crab
-    td.straight_drive(520)
+    td.straight_drive(420)
     run_task(runAttachemnt(ta, 110))
-    td.straight_drive(-170)
+    td.straight_drive(-190)
     run_task(runAttachemnt(ta, -2))
-    td.straight_drive(-35)
+    td.straight_drive(-30)
     run_task(runAttachemnt(ta, -109))
     # boat
-    td.turn(-60)
-    td.straight_drive(-175)
+    td.turn(-55)
+    td.straight_drive(-180)
     # going to other side
     td.straight_drive(130)
     td.set_speed_percentage(15, 10)
-    td.turn(30)
+    td.turn(20)
     td.set_speed_percentage(25, 10)
     td.straight_drive(100)
     td.set_speed_percentage(50, 50)
     td.straight_drive(100)
     td.turn(25)
     td.set_speed_percentage(70, 70)
-    td.straight_drive(500)
-    td.turn(40)
-    td.straight_drive(930)
+    td.straight_drive(485)
+    td.turn(50)
+    td.straight_drive(1100)
 
 
 """
