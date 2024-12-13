@@ -1,6 +1,100 @@
 # Tinkering Turtle 
 
+## Software to be installed 
+* VS Code https://code.visualstudio.com/ 
+    Editing python programs. Use the "System Installer".
 
+* Python 3 https://www.python.org/  
+  Install in C:\python\ (use the "custom installation" option)
+
+* git for Windows https://git-scm.com/downloads 
+  Be sure to select VS code as your default editor.
+
+### These are Optional:
+* git Desktop for windows https://desktop.github.com/ Gives a bit more integration 
+  with git and github, Not needed as integration with VS code works good..
+
+* Stud.io https://www.bricklink.com/v3/studio/download.page 
+  3D Lego designer. Used to design base robot and base attachments
+
+## VS code Extension
+* Error Lens: https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens  
+* Git Autoconfig: https://marketplace.visualstudio.com/items?itemName=shyykoserhiy.git-autoconfig 
+* GitHub Pull Requests: https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github 
+* Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance 
+* Python: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+* Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter 
+
+## Optional plugins for advance coding
+
+* Auto docstring: https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring 
+* GitLens: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens 
+* Live Share: https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare 
+
+
+## Instruction 
+* Install necessary software.
+* Each team member creates their own github account. 
+* Recommend taking a few extra minutes to set up two-factor authentication. 
+* In VS Code add the necessary extensions and restart VS Code. When you restart, you should have the option to Clone a Repository. 
+* Clone this repository: 
+    https://github.com/tinkeringturtle/FLL_24.git 
+* Save the repository somewhere in the computer, recommended to save it in 'My Documents'
+* Add a python virtual environment. Press `Ctrl+Shifyt-P` and then type `Python: Create Environment` and select that by clicking
+
+> Alternatively for advance user create the python virtual enviroment as belwo 
+> * Open a new terminal with ctrl-shift-`  or Ctrl-Shift-P > Create Terminal 
+> * Make sure it is in the python virtual environment. 
+> ``` 
+> python -m venv .venv 
+> ./Scripts/bin/activate.bat
+> ```
+> * Run the below command to setup the dependencies 
+> ```
+> python -m pip install -r requirements.txt
+> ```
+
+> Note: It will start with a green "(.venv)". If there are executionPolicy errors, you will need to elevate the permissions for 
+> Powershell. Instructions here (copied here), but basically just run Set-ExecutionPolicy RemoteSigned in an Administrative PowerShell.
+
+* Create a new python file, named teamMemberName-test-mission.py, copy and paste the code below, and save it, but don't try to run it just yet. Wait for step below. Note that after saving the file, the python Black Formatter should correct the "incorrect" spacing around the equals signs and commas.
+* Commit the changes, and push. It will probably prompt for github registration/login and then sync all files. This link may help: https://pages.nist.gov/git-novice-MSE/08-collab/. It may also ask you to set your git username and email. Open a terminal and run these two commands to set your username and email 
+```
+git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email "MY_NAME@example.com"
+```
+
+> #### Installing Pybricks on robot 
+> Install pybricks on each robot at https://beta.pybricks.com/. If the computer has never connected to a pybricks hub, you will > probably need to manually install the USB drivers, which will require the use of the windows Device Manager. To run device manager as an admin, run a powershell as an administrator, then type devmgmt.msc. Then complete the usual steps. Name the robot at this time. Avoid spaces and special characters in the robot name. Put a label sticker on the top of the robot with the robot name.
+
+
+* Last step, Add a keyboard shortcut to run the programs that we write. Ctrl-Shift-P > Preferences: Open Keyboard Shortcuts (JSON). Edit the JSON to add the keyboard shortcut to run the task. Paste in the code below at the bottom of keybindings.json.
+
+[
+    {
+        "key" : "ctrl+shift+l",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Execute-on-Robot"
+    }
+]
+
+
+
+
+## RUN PROGRAM ON ROBOT
+* Turn the robot on and ensure the keyboard shortcut ctrl-shift-L runs the command, which should also run their program. 
+* Also, Ctrl-Shift-P > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly.
+
+
+
+## Refrence
+* pybricks https://pybricks.com/ https://code.pybricks.com/ and https://beta.pybricks.com/  
+  Nothing to install on your computer, but you will need to install it on your robot.
+
+
+---
+
+# Coding Documentation
 ## TrutleDrive.py : Main motor class
 
 td = TurtleDrive()
@@ -16,6 +110,7 @@ td = TurtleDrive()
     ):
 
 td.set_speed_settings(speed_percentage=10)
+
 td.set_speed_settings(accerlation_percentage=10,turn_accerlation=25)
 
 
