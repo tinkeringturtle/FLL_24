@@ -10,9 +10,12 @@ async def runAttachemnt(ta, angle):
 
 def run_boat_shark2(td, ta):
     # boat/shark
-    td.straight_drive(40)
-    td.turn(65)
-    td.straight_drive(290)
+    td.straight_drive(30)
+    td.turn(-20)
+    td.straight_drive(800)
+    td.straight_drive(-300)
+    td.turn(35)
+    td.straight_drive(600)
 
     """
     td.set_speed_percentage(50, 45)
