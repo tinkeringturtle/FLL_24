@@ -11,28 +11,27 @@ hub = PrimeHub()
 
 
 def run_Krillies(td, ta):
-    run_task(ta.move_D_angle(-150))
     td.set_speed_percentage(50)
     td.curve(200, -45)
     td.set_speed_percentage(60)
-    td.straight_drive(435)  # collect octopus
-    td.straight_drive(-340)
+    td.straight_drive(410)  # collect octopus
+    td.straight_drive(-300)
+    run_task(ta.move_C_angle(75))
     td.set_speed_percentage(50)
     td.curve(100, 45)
-    td.straight_drive(320)  # adjust length to get past banana boat
+    td.straight_drive(370)  # adjust length to get past banana boat
     td.curve(100, 45)
-    td.straight_drive(180)  # collect seaweed
-    run_task(ta.move_D_angle(150))
-    td.set_speed_percentage(50)
-    td.curve(-230, 80)  # adjust radius to go around banana boat
-    td.curve(510, -53)  # adjust radium to get closer or further from angular fish)
-    td.straight_drive(640)  # drive past angler fish
-    run_task(ta.move_D_angle(-150))
-    td.straight_drive(50)
-    td.curve(400, -45)
-    td.turn(-45)
-    td.straight_drive(200)
-    td.curve(500, 50)
+    td.straight_drive(110)  # collect seaweed
+    run_task(ta.move_C_angle(-75))
+    td.curve(-550, 40)
+    td.curve(255, -90)
+    #td.straight_drive(620)  # drive past angler fish
+    #run_task(ta.move_D_angle(-150))
+    #td.straight_drive(50)
+   # td.curve(400, -45)
+    #td.turn(-45)
+    #td.straight_drive(200)
+    #td.curve(500, 50)
 
 
 if __name__ == "__main__":
