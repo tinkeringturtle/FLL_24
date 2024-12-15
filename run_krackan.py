@@ -22,6 +22,7 @@ def run_kracken(td, ta):
 def run_kracken(td, ta):
     # line up is on the middile of the 4rth line (coming from left counting)
     td.set_speed_percentage(speed_percentage=40, acceleration_percentage=35)
+
     td.straight_drive(80)
     td.turn(10)
     td.straight_drive(460)
@@ -31,7 +32,7 @@ def run_kracken(td, ta):
     td.set_speed_percentage(speed_percentage=5, acceleration_percentage=5)
     td.straight_drive(78)
     td.straight_drive(-45)
-    run_task(runAttachemnt(ta, 118))
+    run_task(runAttachemnt(ta.move_C_angle(30))(ta, 118))
     # returning home
     td.set_speed_percentage(speed_percentage=20, acceleration_percentage=15)
     td.straight_drive(-225)
