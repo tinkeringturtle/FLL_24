@@ -189,7 +189,7 @@ if __name__ == "__main__":
 
                 run_krackan.run_kracken(td, ta)
 
-            if Button.LEFT in pressed and color == Color.MY_BLACK:
+            if Button.LEFT in pressed and color == Color.MY_ORANGE:
                 print("coral delivery")
                 run_coral_delivery.run_boat_shark(td, ta)
 
