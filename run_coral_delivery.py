@@ -1,7 +1,7 @@
 # Author: Meghana, Emma (awesome Team)
 #
 from TurtleDrive import *
-from TurtleAttachement import *
+from TurtleAttachement import 
 
 
 async def runAttachemnt(ta, angle):
@@ -23,5 +23,4 @@ def run_boat_shark(td, ta):
 
 if __name__ == "__main__":
     td = TurtleDrive()
-    ta = TurtleAttachment()
-    run_boat_shark(td, ta)
+    run_boat_shark(td)
