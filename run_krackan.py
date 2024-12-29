@@ -31,7 +31,7 @@ def run_kracken(td, ta):
     td.straight_drive(125)
     td.set_speed_percentage(speed_percentage=10, acceleration_percentage=10)
     td.straight_drive(85)  # getting chest (adjust for length)
-    td.straight_drive(-10)
+    td.straight_drive(-20)
     # ta.set_speed_percentage(speed_percentage=10, acceleration_percentage=10)
     run_task(ta.move_D_angle(-90))
     td.straight_drive(-200)
