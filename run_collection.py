@@ -36,14 +36,15 @@ def run_Krillies(td, ta):
     run_task(ta.move_C_angle(140))
     td.straight_drive(100)
     run_task(ta.move_D_angle(-700))
-    td.turn(-15)
+    td.turn(-6)
     td.straight_drive(350)  # getting krill and other sample
     td.turn(-75)
     td.straight_drive(60)
     td.straight_drive(135)
-    td.turn(35)
+   # td.turn(35)
     td.set_speed_percentage(100)
     td.straight_drive(600)
+
     """
     td.straight_drive(100)
     td.curve(320, -755)
