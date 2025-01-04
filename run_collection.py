@@ -20,9 +20,9 @@ def run_Krillies(td, ta):
     td.straight_drive(410)  # collect octopus
     td.straight_drive(-340)
     td.set_speed_percentage(50)
-    td.curve(100, 45)
+    td.curve(110, 45)
     td.straight_drive(330)  # adjust length to get past banana boat
-    td.curve(100, 50)
+    td.curve(100, 55)
     td.straight_drive(150)  # collect seaweed
     run_task(ta.move_C_angle(-140))
     td.set_speed_percentage(50)
@@ -30,18 +30,18 @@ def run_Krillies(td, ta):
     run_task(ta.move_D_angle(250))
     td.curve(460, -57)  # adjust radium to get closer or further from angular fish)
     run_task(ta.move_D_angle(-250))
-    td.straight_drive(500)  # drive past angler fish and sample adjust for reach
-    run_task(ta.move_D_angle(730))
+    td.straight_drive(495)  # drive past angler fish and sample adjust for reach
+    run_task(ta.move_D_angle(715))
     td.set_speed_percentage(50, 50)
     run_task(ta.move_C_angle(140))
-    td.straight_drive(100)
+    td.straight_drive(105)
     run_task(ta.move_D_angle(-700))
     td.turn(-6)
-    td.straight_drive(350)  # getting krill and other sample
+    td.straight_drive(345)  # getting krill and other sample
     td.turn(-75)
     td.straight_drive(60)
     td.straight_drive(135)
-   # td.turn(35)
+    # td.turn(35)
     td.set_speed_percentage(100)
     td.straight_drive(600)
 
