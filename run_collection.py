@@ -34,7 +34,7 @@ def run_Krillies(td, ta):
     run_task(ta.move_D_angle(715))
     td.set_speed_percentage(50, 50)
     run_task(ta.move_C_angle(140))
-    td.straight_drive(170)
+    td.straight_drive(175)
     run_task(ta.move_D_angle(-700))
     td.turn(-15)
     td.straight_drive(300)  # getting krill and other sample number 3
