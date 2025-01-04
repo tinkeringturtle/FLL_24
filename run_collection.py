@@ -8,6 +8,7 @@ from test_run import *
 
 # Initialize the hub.
 hub = PrimeHub()
+# pybricksdev run ble --name Chaos Master_Program.py
 
 
 def run_Krillies(td, ta):
@@ -30,18 +31,18 @@ def run_Krillies(td, ta):
     run_task(ta.move_D_angle(250))
     td.curve(470, -57)  # adjust radium to get closer or further from angular fish)
     run_task(ta.move_D_angle(-250))
-    td.straight_drive(475)  # drive past angler fish and sample adjust for reach
-    run_task(ta.move_D_angle(715))
+    td.straight_drive(470)  # drive past angler fish and sample adjust for reach
+    run_task(ta.move_D_angle(715))  # send rack out to collect seabed
     td.set_speed_percentage(50, 50)
     run_task(ta.move_C_angle(140))
-    td.straight_drive(175)
+    td.straight_drive(185)
     run_task(ta.move_D_angle(-700))
     td.turn(-15)
-    td.straight_drive(300)  # getting krill and other sample number 3
+    td.straight_drive(280)  # getting krill and other sample number 3
     td.turn(-40)
     td.straight_drive(50)
     run_task(ta.move_C_angle(-140))
-    wait(1000)
+    wait(500)
     run_task(ta.move_C_angle(140))
     td.turn(-50)
     td.set_speed_percentage(100)
