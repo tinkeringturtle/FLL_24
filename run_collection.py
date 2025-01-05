@@ -32,7 +32,7 @@ def run_Krillies(td, ta):
     td.curve(470, -57)  # adjust radium to get closer or further from angular fish)
     run_task(ta.move_D_angle(-250))
     td.straight_drive(470)  # drive past angler fish and sample adjust for reach
-    run_task(ta.move_D_angle(715))  # send rack out to collect seabed
+    run_task(ta.move_D_angle(720))  # send rack out to collect seabed
     td.set_speed_percentage(50, 50)
     run_task(ta.move_C_angle(140))
     td.straight_drive(185)
