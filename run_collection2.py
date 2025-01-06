@@ -33,7 +33,17 @@ def run_Krillies(td, ta):
 
 
 def run_anglerfish(td, ta):
-    
+    td.straight_drive(280)
+    td.turn(-90)
+    td.straight_drive(475)
+    td.turn(52)
+    td.straight_drive(700)
+    td.turn(-70)
+    run_task(ta.move_C_angle(150))
+    td.straight_drive(450)
+    td.turn(-20)
+    td.straight_drive(50)
+   
 
 
 if __name__ == "__main__":

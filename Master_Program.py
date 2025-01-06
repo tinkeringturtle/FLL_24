@@ -92,7 +92,7 @@ def show_icon(color, first_run):
         print("Run Green Attanchement")
 
     if color == Color.MY_MAGENTA:
-        hub.display.icon(Icon.ARROW_RIGHT_DOWN)
+        hub.display.icon(Icon.ARROW_LEFT_DOWN)
         print("Run Magenta Attachement")
 
     if color == Color.MY_WHITE:
@@ -162,6 +162,10 @@ if __name__ == "__main__":
             if Button.RIGHT in pressed and color == Color.MY_MAGENTA:
                 run_collection2.run_Krillies(td, ta)
                 print("run Krilles")
+
+            if Button.LEFT in pressed and color == Color.MY_MAGENTA:
+                run_collection2.run_anglerfish(td, ta)
+                print("run angler fish")
 
             if Button.RIGHT in pressed and color == Color.MY_BLUE:
                 print("Run whale")
