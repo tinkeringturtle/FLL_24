@@ -4,6 +4,8 @@ from pybricks.parameters import Button, Icon
 from TurtleDrive import *
 from TurtleAttachement import *
 
+# 10th line attachment
+
 
 async def runAttachemnt(ta, angle):
     await ta.move_D_angle(angle=angle, speed_percentage=50)
@@ -19,10 +21,13 @@ def run_submersible(td, ta):
     td.turn(20)
     td.straight_drive(-300)
     td.turn(-16)
-    td.straight_drive(235)
+    td.straight_drive(225)
     run_task(runAttachemnt(ta, -450))
     wait(1050)
-    td.straight_drive(-50)
+    td.straight_drive(-230)
+    td.turn(-50)
+    td.straight_drive(410)
+    td.straight_drive(-200)
 
 
 if __name__ == "__main__":
