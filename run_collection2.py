@@ -15,7 +15,7 @@ def run_Krillies(td, ta):
     # run_task(ta.move_C_angle(140))
     #  ta.move_C_angle_sync(140)
     td.set_speed_percentage(100, 90)
-    td.curve(210, -45)
+    td.curve(200, -45)
     td.straight_drive(410)  # collect octopus
     td.set_speed_percentage(75, 70)
     td.straight_drive(-340)
@@ -46,9 +46,9 @@ def run_anglerfish(td, ta):
     td.turn(-40)
     td.straight_drive(50)
     td.turn(-17)
+    td.set_speed_percentage(100, 90)
     td.straight_drive(350)
     td.turn(20)
-    td.set_speed_percentage(100, 90)
     td.straight_drive(350)
 
 
