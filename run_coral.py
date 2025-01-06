@@ -33,23 +33,21 @@ def runCoral(td, ta):
     td.straight_drive(655)  # driving to coral
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 60, 15))  # lowering arm for jimmy
-    td.set_speed_percentage(60)
+    td.set_speed_percentage(60, 55)
     td.turn(-85)  # To drive into coral to get jimmy
-    td.set_speed_percentage(70)
-    td.straight_drive(63)  # driving into mission model
-    wait(30)
+    td.set_speed_percentage(70, 65)
+    td.straight_drive(90)  # driving into mission model
     run_task(runAttachemnt(ta, -100, 10))  # raising jimmy
-    wait(400)
     td.straight_drive(-45)  # driving back from the coral mission
     # starting shark
     td.turn(85)  # turn to face shark
     td.straight_drive(80)  # driving closer to shark
     td.turn(-50)  # to get ready to turn into shark
-    td.set_speed_percentage(55)
+    td.set_speed_percentage(55, 50)
     td.straight_drive(155)  # drives into shark
     td.straight_drive(-5)  # driving away from shark
     td.turn(-10)
-    td.set_speed_percentage(90)
+    td.set_speed_percentage(90, 85)
     td.straight_drive(-130)
     td.turn(59)
     td.set_speed_percentage(100)
