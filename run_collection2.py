@@ -18,12 +18,10 @@ def run_Krillies(td, ta):
     td.straight_drive(25)
     td.curve(210, -45)
     td.set_speed_percentage(75, 90)
-    td.straight_drive(25)
-    td.curve(210, -45)
     td.straight_drive(410)  # collect octopus
     td.set_speed_percentage(75, 70)
     td.straight_drive(-340)
-    td.set_speed_percentage(50, -45)
+    td.set_speed_percentage(50, 45)
     td.curve(110, 45)
     td.straight_drive(330)  # adjust length to get past banana boat
     td.curve(120, 50)
