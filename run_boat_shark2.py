@@ -9,7 +9,7 @@ async def runAttachemnt(ta, angle):
 
 
 def run_boat_shark2(td, ta):
-    # boat/shark
+    # boat/shark woohooo
     td.turn(-20)
     td.straight_drive(780)
     td.straight_drive(-250)

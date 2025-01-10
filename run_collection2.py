@@ -13,17 +13,21 @@ from test_run import *
 
 def run_Krillies(td, ta):
     # run_task(ta.move_C_angle(140))
-    #  ta.move_C_angle_sync(140)
-    td.set_speed_percentage(100, 90)
-    td.curve(200, -45)
+    #  ta.move_C_angle_sync(140)HEAD
+    td.set_speed_percentage(75, 90)
+    td.straight_drive(25)
+    td.curve(210, -45)
+    td.set_speed_percentage(75, 90)
+    td.straight_drive(25)
+    td.curve(210, -45)
     td.straight_drive(410)  # collect octopus
     td.set_speed_percentage(75, 70)
     td.straight_drive(-340)
-    td.set_speed_percentage(50, 45)
+    td.set_speed_percentage(50, -45)
     td.curve(110, 45)
     td.straight_drive(330)  # adjust length to get past banana boat
     td.curve(120, 50)
-    td.straight_drive(150)  # collect seaweed
+    td.straight_drive(130)  # collect seaweed
     # run_task(ta.move_C_angle(-140))
     ta.move_C_angle_sync(-150)
     td.set_speed_percentage(50, 45)
