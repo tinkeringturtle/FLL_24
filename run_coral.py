@@ -35,6 +35,9 @@ def runCoral(td, ta):
     run_task(runAttachemnt(ta, 60, 15))  # lowering arm for jimmy
     td.set_speed_percentage(60, 55)
     td.turn(-85)  # To drive into coral to get jimmy
+    # run_task(ta.move_C_time(speed_percentage=20, time_millisec=1000))
+    ta.move_C_angle_sync(300)
+    ta.move_C_time(speed_percentage=75, time_millisec=1000)
     td.set_speed_percentage(70, 65)
     td.straight_drive(90)  # driving into mission model
     run_task(runAttachemnt(ta, -100, 10))  # raising jimmy
