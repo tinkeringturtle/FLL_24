@@ -29,21 +29,19 @@ async def runAttachemntC(ta, angle, speed):
 
 def runCoral(td, ta):
     td.set_speed_percentage(75)
-    ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
-    td.straight_drive(655)  # driving to coral
+    # ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
+    td.straight_drive(670)  # driving to coral was 655
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 60, 15))  # lowering arm for jimmy
     td.set_speed_percentage(60, 55)
-    td.turn(-85)  # To drive into coral to get jimmy
-    # run_task(ta.move_C_time(speed
-    # _percentage=20, time_millisec=1000))
-    run_task(ta.move_C_angle(-300))
-    # ta.move_C_angle_sync(300)
-    # ta.move_C_time(speed_percentage=75, time_millisec=1000)
+    td.turn(-90)  # To drive into coral to get jimmy
+    run_task(ta.move_C_angle(-480))  # lowering arm for coral tree
     td.set_speed_percentage(70, 65)
     td.straight_drive(90)  # driving into mission model
+    run_task(ta.move_C_angle(580))  # raising the coral tree
+    run_task(ta.move_C_angle(-150))
     run_task(runAttachemnt(ta, -100, 10))  # raising jimmy
-    td.straight_drive(-45)  # driving back from the coral mission
+    td.straight_drive(-100)  # driving back from the coral mission was -45
     # starting shark
     td.turn(85)  # turn to face shark
     td.straight_drive(80)  # driving closer to shark
