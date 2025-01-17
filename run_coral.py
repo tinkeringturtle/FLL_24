@@ -30,31 +30,25 @@ async def runAttachemntC(ta, angle, speed):
 def runCoral(td, ta):
     td.set_speed_percentage(75)
     # ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
-    td.straight_drive(670)  # driving to coral was 655
+    td.straight_drive(70)  # driving to coral
+    td.turn(45)  # turning
+    td.straight_drive(270)
+    td.turn(-45)
+    td.straight_drive(410)
     ta.move_D_time(speed_percentage=20, time_millisec=200)
-    run_task(runAttachemnt(ta, 60, 15))  # lowering arm for jimmy
+    run_task(runAttachemnt(ta, 80, 15))  # lowering arm for jimmy
     td.set_speed_percentage(60, 55)
-    td.turn(-90)  # To drive into coral to get jimmy
-    run_task(ta.move_C_angle(-480))  # lowering arm for coral tree
+    td.turn(-85)  # To drive into coral to get jimmy
+    td.set_speed_percentage(30)
+    run_task(ta.move_C_angle(-470))  # lowering arm for coral tree
     td.set_speed_percentage(70, 65)
-    td.straight_drive(90)  # driving into mission model
-    run_task(ta.move_C_angle(580))  # raising the coral tree
-    run_task(ta.move_C_angle(-150))
-    run_task(runAttachemnt(ta, -100, 10))  # raising jimmy
-    td.straight_drive(-100)  # driving back from the coral mission was -45
-    # starting shark
-    td.turn(85)  # turn to face shark
-    td.straight_drive(80)  # driving closer to shark
-    td.turn(-50)  # to get ready to turn into shark
-    td.set_speed_percentage(55, 50)
-    td.straight_drive(155)  # drives into shark
-    td.straight_drive(-5)  # driving away from shark
-    td.turn(-10)
-    td.set_speed_percentage(90, 85)
-    td.straight_drive(-130)
-    td.turn(64)
-    td.set_speed_percentage(100, 95)
-    td.straight_drive(-750)
+    td.straight_drive(85)  # about to drive into mission model
+    run_task(ta.move_C_angle(550))  # raising the coral tree
+    run_task(runAttachemnt(ta, -100, 100))  # raising jimmy
+    td.straight_drive(-60)  # driving back from the coral mission
+    td.turn(110)
+    td.set_speed_percentage(100, 100)
+    td.straight_drive(-660)
 
 
 # lifting D arm so for
