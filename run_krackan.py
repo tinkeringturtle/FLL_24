@@ -35,7 +35,7 @@ def run_kracken(td, ta):
     td.straight_drive(-20)
     # ta.set_speed_percentage(speed_percentage=10, acceleration_percentage=10)
     run_task(ta.move_D_angle(-90))
-    td.straight_drive(-200)
+    td.straight_drive(-190)
     td.turn(90)
     # returning home
     td.set_speed_percentage(speed_percentage=60, acceleration_percentage=55)
