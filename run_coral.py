@@ -41,10 +41,17 @@ def runCoral(td, ta):
     td.set_speed_percentage(60, 55)
     td.turn(-85)  # To drive into coral to get jimmy
     td.set_speed_percentage(30)
-    run_task(ta.move_C_angle(-470))  # lowering arm for coral tree
+    run_task(ta.run_C_until_stalled(-50))
+    # run_task(
+    #   ta.move_C_angle(-470, then=Stop., wait=True)
+    # )  # lowering arm for coral tree
     td.set_speed_percentage(70, 65)
     td.straight_drive(85)  # about to drive into mission model
-    run_task(ta.move_C_angle(515))  # raising the coral tree
+
+    run_task(ta.run_C_until_stalled(50))
+    # run_task(
+    #    ta.move_C_angle(515, then=Stop.COAST_SMART, wait=False)
+    # )  # raising the coral tree
     run_task(runAttachemnt(ta, -110, 100))  # raising jimmy
     wait(500)
     run_task(runAttachemnt(ta, 100, 15))  # lowering arm for shark
