@@ -34,7 +34,7 @@ def runCoral(td, ta):
     td.turn(45)  # turning
     td.straight_drive(270)
     td.turn(-45)
-    td.straight_drive(410)
+    td.straight_drive(415)
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 100, 15))  # lowering arm for jimmy
     wait(500)
@@ -46,7 +46,7 @@ def runCoral(td, ta):
     #   ta.move_C_angle(-470, then=Stop., wait=True)
     # )  # lowering arm for coral tree
     td.set_speed_percentage(70, 65)
-    td.straight_drive(85)  # about to drive into mission model
+    td.straight_drive(95)  # about to drive into mission model
 
     run_task(ta.run_C_until_stalled(50))
     # run_task(
@@ -54,8 +54,8 @@ def runCoral(td, ta):
     # )  # raising the coral tree
     run_task(runAttachemnt(ta, -110, 100))  # raising jimmy
     wait(500)
-    run_task(runAttachemnt(ta, 100, 15))  # lowering arm for shark
-    run_task(runAttachemnt(ta, -110, 100))  # raising shark
+    # run_task(runAttachemnt(ta, 100, 15))  # lowering arm for shark
+    # run_task(runAttachemnt(ta, -110, 100))  # raising shark
     td.straight_drive(-60)  # driving back from the coral mission
     td.turn(100)
     td.set_speed_percentage(100, 100)
