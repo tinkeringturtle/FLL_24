@@ -15,7 +15,7 @@ def run_boat_shark2(td, ta):
     td.straight_drive(780)  # shark is being delivered
     td.straight_drive(-250)  # backing up
     td.turn(45)
-    td.straight_drive(370)
+    td.straight_drive(360)  # chhange distance depending on whether its going in or not
     td.turn(-22)
     td.straight_drive(130)  # going into crabpot
     run_task(runAttachemnt(ta, 80))
