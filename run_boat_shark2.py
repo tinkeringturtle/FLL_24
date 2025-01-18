@@ -12,12 +12,12 @@ def run_boat_shark2(td, ta):
     # boat/shark woohooo
     td.turn(-20)
     td.set_speed_percentage(50, 45)
-    td.straight_drive(780)
-    td.straight_drive(-250)
+    td.straight_drive(780)  # shark is being delivered
+    td.straight_drive(-250)  # backing up
     td.turn(45)
-    td.straight_drive(380)
+    td.straight_drive(370)
     td.turn(-22)
-    td.straight_drive(130)
+    td.straight_drive(130)  # going into crabpot
     run_task(runAttachemnt(ta, 80))
     td.set_speed_percentage(20, 15)
     td.straight_drive(-180)
