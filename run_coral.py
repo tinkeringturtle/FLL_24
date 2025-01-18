@@ -54,8 +54,8 @@ def runCoral(td, ta):
     # )  # raising the coral tree
     run_task(runAttachemnt(ta, -110, 100))  # raising jimmy
     wait(500)
-    # run_task(runAttachemnt(ta, 100, 15))  # lowering arm for shark
-    # run_task(runAttachemnt(ta, -110, 100))  # raising shark
+    run_task(runAttachemnt(ta, 100, 15))  # lowering arm for shark
+    run_task(runAttachemnt(ta, -110, 100))  # raising shark
     td.straight_drive(-60)  # driving back from the coral mission
     td.turn(100)
     td.set_speed_percentage(100, 100)
