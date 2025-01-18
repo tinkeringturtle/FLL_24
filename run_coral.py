@@ -34,7 +34,7 @@ def runCoral(td, ta):
     td.turn(45)  # turning
     td.straight_drive(270)
     td.turn(-45)
-    td.straight_drive(415)
+    td.straight_drive(410)
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 100, 15))  # lowering arm for jimmy
     wait(500)

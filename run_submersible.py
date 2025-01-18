@@ -14,7 +14,7 @@ async def runAttachemnt(ta, angle):
 def run_submersible(td, ta):
     td.set_speed_percentage(speed_percentage=60)
     td.straight_drive(500)
-    td.turn(-47)
+    td.turn(-50)
     td.set_speed_percentage(80)
     td.straight_drive(650)
     td.set_speed_percentage(50)
