@@ -23,7 +23,7 @@ def run_boat_shark2(td, ta):
     td.straight_drive(-180)
     run_task(runAttachemnt(ta, -80))
     td.straight_drive(-80)
-    td.turn(-20)
+    td.turn(-25)
     td.set_speed_percentage(75, 70)
     td.straight_drive(450)
     td.turn(35)
