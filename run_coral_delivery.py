@@ -5,21 +5,23 @@ from TurtleAttachement import *
 
 
 async def runAttachemnt(ta, angle):
-    await ta.move_C_angle(angle=angle, speed_percentage=100)
+    await ta.move_D_angle(angle=angle, speed_percentage=100)
 
 
 def run_boat_shark(td, ta):
 
     # run starts from here
     # coral
-    td.set_speed_percentage(70, 75)
-    td.straight_drive(80)
-    td.straight_drive(-80)
-    td.stop()
+    td.set_speed_percentage(30)
+    td.straight_drive(200)
+    run_task(runAttachemnt(ta, 200))
+    td.straight_drive(-400)
 
-    # run has ended
+
+# run has ended
 
 
 if __name__ == "__main__":
     td = TurtleDrive()
-    run_boat_shark(td)
+    ta = TurtleAttachment()
+    run_boat_shark(td, ta)
