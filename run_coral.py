@@ -37,7 +37,7 @@ def runCoral(td, ta):
     td.straight_drive(405)
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 100, 15))  # lowering arm for jimmy
-    wait(500)
+    wait(100)
     td.set_speed_percentage(60, 55)
     td.turn(-88)  # To drive into coral to get jimmy
     td.set_speed_percentage(30)
