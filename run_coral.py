@@ -28,7 +28,7 @@ async def runAttachemntC(ta, angle, speed):
 
 
 def runCoral(td, ta):
-    td.set_speed_percentage(75)
+    td.set_speed_percentage(80, 75)
     # ta.move_D_time(speed_percentage=20, time_millisec=200)  # reseting arm
     td.straight_drive(70)  # driving to coral
     td.turn(45)  # turning
@@ -37,26 +37,26 @@ def runCoral(td, ta):
     td.straight_drive(405)
     ta.move_D_time(speed_percentage=20, time_millisec=200)
     run_task(runAttachemnt(ta, 100, 15))  # lowering arm for jimmy
-    wait(100)
-    td.set_speed_percentage(60, 55)
+    # wait(100)
+    td.set_speed_percentage(50, 45)
     td.turn(-88)  # To drive into coral to get jimmy
-    td.set_speed_percentage(30)
-    run_task(ta.run_C_until_stalled(-50))
+    # td.set_speed_percentage(30, 25)
+    run_task(ta.run_C_until_stalled(-90))  # lower arm for tree
     # run_task(
     #   ta.move_C_angle(-470, then=Stop., wait=True)
     # )  # lowering arm for coral tree
-    td.set_speed_percentage(70, 65)
+    td.set_speed_percentage(80, 75)
     td.straight_drive(95)  # about to drive into mission model
 
-    run_task(ta.run_C_until_stalled(50))
+    run_task(ta.run_C_until_stalled(80))  # raise tree
     # run_task(
     #    ta.move_C_angle(515, then=Stop.COAST_SMART, wait=False)
     # )  # raising the coral tree
     run_task(runAttachemnt(ta, -110, 100))  # raising jimmy
-    wait(500)
+    # wait(500)
     td.straight_drive(-60)  # driving back from the coral mission
     td.turn(105)
-    td.set_speed_percentage(100, 100)
+    td.set_speed_percentage(100, 95)
     td.straight_drive(-660)
 
 
