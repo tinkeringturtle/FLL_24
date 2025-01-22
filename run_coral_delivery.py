@@ -1,4 +1,4 @@
-# Author: Meghana, Emma (awesome Team)
+# Author: Meghana, Emma (amazing Team)
 #
 from TurtleDrive import *
 from TurtleAttachement import *
@@ -12,11 +12,11 @@ def run_boat_shark(td, ta):
 
     # run starts from here
     # coral
-    td.set_speed_percentage(20)
+    td.set_speed_percentage(20, 15)
     td.straight_drive(200)
-    # run_task(runAttachemnt(ta, 100))
-    td.set_speed_percentage(60)
-    td.straight_drive(-400)
+    run_task(ta.move_D_angle(80))
+    td.set_speed_percentage(65, 60)
+    td.straight_drive(-330)
 
 
 # run has ended
