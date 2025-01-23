@@ -38,7 +38,7 @@ def run_whale(td, ta):
     td.turn(-30)
     td.set_speed_percentage(speed_percentage=80)
     td.straight_drive(540)
-    td.curve(430, -45)
+    td.curve(450, -45)
 
 
 if __name__ == "__main__":
