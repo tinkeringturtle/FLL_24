@@ -10,26 +10,27 @@ async def runAttachemnt(ta, angle):
 
 def run_boat_shark2(td, ta):
     # boat/shark woohooo
-    td.turn(-20)
+    td.turn(-15)
     td.set_speed_percentage(90, 85)
-    td.straight_drive(780)  # shark is being delivered
+    td.straight_drive(790)  # shark is being delivered
     td.straight_drive(-250)  # backing up
     td.turn(55)
-    td.straight_drive(320)  # chhange distance depending on whether its going in or not
+    td.straight_drive(230)  # chhange distance depending on whether its going in or not
     td.turn(-35)
-    td.straight_drive(210)  # going into crabpot
+    td.straight_drive(300)  # going into crabpot
     run_task(runAttachemnt(ta, 80))
     td.set_speed_percentage(35, 30)
-    td.straight_drive(-180)
+    td.straight_drive(-185)  # lifting crabs up
     wait(250)
-    run_task(runAttachemnt(ta, -80))
+    td.straight_drive(20)  # use this if the arm is knocking off the crabbies.
+    run_task(runAttachemnt(ta, -80))  # raising arm
     td.set_speed_percentage(65, 60)
     td.straight_drive(-100)
-    td.turn(-25)
+    td.turn(-20)  # change turn to make sre it doenst hit crabs or shark.
     td.set_speed_percentage(105, 100)
     td.straight_drive(450)
     td.turn(45)
-    td.straight_drive(730)
+    td.straight_drive(730)  # going home
     # WHERE RUN ENDS
     """
     td.set_speed_percentage(50, 45)

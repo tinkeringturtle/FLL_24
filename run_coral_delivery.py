@@ -16,7 +16,9 @@ def run_boat_shark(td, ta):
     td.straight_drive(200)
     run_task(ta.move_D_angle(80))
     td.set_speed_percentage(65, 60)
-    td.straight_drive(-420)
+    td.straight_drive(-450)
+    td.straight_drive(20)
+    run_task(ta.move_D_angle(-80))
 
 
 # run has ended
