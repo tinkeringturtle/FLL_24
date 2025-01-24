@@ -16,10 +16,10 @@ def run_whale(td, ta):
     td.turn(-10)
     td.straight_drive(395)
     td.turn(45)
-    td.straight_drive(150)
+    td.straight_drive(150)  # Aproaches boat
     td.set_speed_percentage(speed_percentage=75)
     td.turn(45)
-    td.turn(-65)
+    td.turn(-65)  # flip yellow boat
     td.set_speed_percentage(speed_percentage=60)
     td.straight_drive(170)
     td.set_speed_percentage(speed_percentage=25)

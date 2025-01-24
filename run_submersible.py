@@ -19,10 +19,10 @@ def run_submersible(td, ta):
     td.straight_drive(670)
     run_task(runAttachemnt(ta, 430))
     wait(1060)
-    td.straight_drive(-225)  # -240 hitting model again
-    td.turn(-45)
-    td.straight_drive(470)
-    td.straight_drive(-200)
+    td.straight_drive(-240)  # -240 hitting model again
+    td.turn(-47)
+    td.straight_drive(490)
+    td.straight_drive(-205)
 
 
 if __name__ == "__main__":
