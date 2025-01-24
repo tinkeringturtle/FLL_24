@@ -56,8 +56,7 @@ def runCoral(td, ta):
     # wait(500)
     td.straight_drive(-60)  # driving back from the coral mission
     td.turn(105)
-    td.set_speed_percentage(100, 95)
-    td.straight_drive(-660)
+    td.turn(-55)
 
 
 # lifting D arm so for
