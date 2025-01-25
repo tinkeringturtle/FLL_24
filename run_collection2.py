@@ -49,7 +49,7 @@ def run_anglerfish(td, ta):
     td.straight_drive(50)
     td.turn(-17)
     td.set_speed_percentage(100, 95)
-    td.straight_drive(600)
+    td.straight_drive(700)
     # td.turn(20)
     # td.straight_drive(350)
     # td.curve(300, 40)
