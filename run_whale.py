@@ -34,8 +34,8 @@ def run_whale(td, ta):
     td.set_speed_percentage(44, 39)
     td.straight_drive(-355)
     td.set_speed_percentage(10, 5)
-    td.turn(35)  # go behind the sonar
-    td.turn(-30)
+    td.turn(40)  # go behind the sonar
+    td.turn(-40)
     td.set_speed_percentage(100, 95)
     td.straight_drive(600)  # Flip the first sonar
     td.curve(450, -45)  # come home
