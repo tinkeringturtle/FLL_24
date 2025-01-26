@@ -26,13 +26,14 @@ def run_boat_shark2(td, ta):
     # td.straight_drive(20)  # use this if the arm is knocking off the crabbies.
     # run_task(runAttachemnt(ta, -60))  # raising arm a little bit
     td.set_speed_percentage(40, 35)
+    td.straight_drive(7)  # change distance if arm is hitting something
     run_task(runAttachemnt(ta, -80))
     td.set_speed_percentage(65, 60)
     td.straight_drive(-100)
     td.turn(-20)  # change turn to make sre it doenst hit crabs or shark.
     td.set_speed_percentage(105, 100)
     td.straight_drive(450)
-    td.turn(45)
+    td.turn(35)
     td.straight_drive(730)  # going home
     # WHERE RUN ENDS
     """
