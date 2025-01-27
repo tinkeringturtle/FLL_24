@@ -15,18 +15,17 @@ def run_boat_shark2(td, ta):
     td.straight_drive(790)  # shark is being delivered
     td.straight_drive(-250)  # backing up
     td.turn(55)
-    td.straight_drive(240)  # chhange distance depending on whether its going in or not
+    td.straight_drive(260)  # chhange distance depending on whether its going in or not
     td.turn(-35)
     td.set_speed_percentage(80, 75)
-    td.straight_drive(320)  # going into crabpot
+    td.straight_drive(340)  # going into crabpot
     run_task(runAttachemnt(ta, 80))
-    td.set_speed_percentage(35, 30)
-    td.straight_drive(-185)  # lifting crabs up
+    td.set_speed_percentage(20, 15)
+    td.straight_drive(-180)  # lifting crabs up
     wait(250)
     # td.straight_drive(20)  # use this if the arm is knocking off the crabbies.
     # run_task(runAttachemnt(ta, -60))  # raising arm a little bit
-    td.set_speed_percentage(40, 35)
-    td.straight_drive(7)  # change distance if arm is hitting something
+    # td.straight_drive(7)  # change distance if arm is hitting something
     run_task(runAttachemnt(ta, -80))
     td.set_speed_percentage(65, 60)
     td.straight_drive(-100)
