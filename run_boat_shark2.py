@@ -1,4 +1,4 @@
-# Author: Meghana, Emma (awesome Team )
+# Author: Meghana, Emma ( meghana is the sigma one ofc )
 #
 from TurtleDrive import *
 from TurtleAttachement import *
@@ -15,17 +15,18 @@ def run_boat_shark2(td, ta):
     td.straight_drive(790)  # shark is being delivered
     td.straight_drive(-250)  # backing up
     td.turn(54)
-    td.straight_drive(262)  # chhange distance depending on whether its going in or not
+    td.straight_drive(255)  # chhange distance depending on whether its going in or not
     td.turn(-35)
     td.set_speed_percentage(80, 75)
     td.straight_drive(340)  # going into crabpot
     run_task(runAttachemnt(ta, 80))
     td.set_speed_percentage(20, 15)
     td.straight_drive(-180)  # lifting crabs up
-    wait(250)
+    wait(90)
     # td.straight_drive(20)  # use this if the arm is knocking off the crabbies.
     # run_task(runAttachemnt(ta, -60))  # raising arm a little bit
     # td.straight_drive(7)  # change distance if arm is hitting something
+    td.straight_drive(1.5)
     run_task(runAttachemnt(ta, -80))
     td.set_speed_percentage(65, 60)
     td.straight_drive(-100)
