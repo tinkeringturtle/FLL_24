@@ -1,5 +1,6 @@
 # Elly, Abby hi
 # line up right side of robot 2 lines from middle black line
+# collection part 1
 
 from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button, Icon

@@ -1,4 +1,4 @@
-# Author: Meghana, Emma, Sunny (trust meganator is the sigma one trust)
+# Author: Meghana, Emma, Sunny (meganator is the sigma one tho)
 #
 from TurtleDrive import *
 from TurtleAttachement import *

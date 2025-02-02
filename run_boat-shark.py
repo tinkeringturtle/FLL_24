@@ -1,4 +1,5 @@
-# Author: Meghana, Emma (awesome Team )
+# Author: Meghana, Emma (SIGMAMAMAM (im talking about megna) )
+#boat and coral run
 #
 from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button, Icon
@@ -12,9 +13,9 @@ async def runAttachemnt(ta, angle):
 
 def run_boat_shark(td, ta):
     td.set_speed_percentage(30)
-    td.straight_drive(200)
-    run_task(runAttachemnt(ta, 80))
-    td.straight_drive(-200)
+    td.straight_drive(200)#delivering coral
+    run_task(runAttachemnt(ta, 80))#picking up boat
+    td.straight_drive(-200)#bringing boat home
 
 
 # run ends here

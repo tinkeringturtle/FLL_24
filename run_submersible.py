@@ -17,11 +17,11 @@ def run_submersible(td, ta):
     td.turn(-50)
     td.set_speed_percentage(90, 75)
     td.straight_drive(670)
-    run_task(runAttachemnt(ta, 430))
+    run_task(runAttachemnt(ta, 430))#raising sumbersible
     wait(1060)
     td.straight_drive(-240)  # -240 hitting model again
     td.turn(-47)
-    td.straight_drive(490)
+    td.straight_drive(490)#hitting anglerfish
     td.straight_drive(-205)
 
 
