@@ -1,5 +1,5 @@
 # Author: Meghana, Emma ( meghana is the sigma one ofc )
-#crabpot run and shark run
+# crabpot run and shark run
 from TurtleDrive import *
 from TurtleAttachement import *
 
@@ -15,7 +15,7 @@ def run_boat_shark2(td, ta):
     td.straight_drive(790)  # shark is being delivered
     td.straight_drive(-250)  # backing up
     td.turn(54)
-    td.straight_drive(255)  # chhange distance depending on whether its going in or not
+    td.straight_drive(247)  # chhange distance depending on whether its going in or not
     td.turn(-35)
     td.set_speed_percentage(80, 75)
     td.straight_drive(340)  # going into crabpot
