@@ -135,3 +135,4 @@ ta.move_c_angle()
 ### Contributor
 * Jessica
 * Paige
+* Nitya
