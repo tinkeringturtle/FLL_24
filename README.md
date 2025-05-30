@@ -1,21 +1,7 @@
 # :turtle: :turtle: :turtle: Tinkering Turtle :turtle: :turtle: :turtle:
 
 ## Software to be installed 
-* VS Code https://code.visualstudio.com/ 
-    Editing python programs. Use the "System Installer".
-
-* Python 3 https://www.python.org/  
-  Install in C:\python\ (use the "custom installation" option)
-
-* git for Windows https://git-scm.com/downloads 
-  Be sure to select VS code as your default editor.
-
-### These are Optional:
-* git Desktop for windows https://desktop.github.com/ Gives a bit more integration 
-  with git and github, Not needed as integration with VS code works good..
-
-* Stud.io https://www.bricklink.com/v3/studio/download.page 
-  3D Lego designer. Used to design base robot and base attachments
+* we are using local hosted code server
 
 ## VS code Extension
 * Error Lens: https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens  
@@ -26,14 +12,11 @@
 * Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter 
 
 ## Optional plugins for advance coding
-
 * Auto docstring: https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring 
 * GitLens: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens 
 * Live Share: https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare 
 
-
 ## Instruction 
-* Install necessary software.
 * Each team member creates their own github account. 
 * Recommend taking a few extra minutes to set up two-factor authentication. 
 * In VS Code add the necessary extensions and restart VS Code. When you restart, you should have the option to Clone a Repository. 
@@ -42,7 +25,7 @@
 * Save the repository somewhere in the computer, recommended to save it in 'My Documents'
 * Add a python virtual environment. Press `Ctrl+Shifyt-P` and then type `Python: Create Environment` and select that by clicking
 
-> Alternatively for advance user create the python virtual enviroment as belwo 
+> Alternatively for advance user create the python virtual enviroment as below
 > * Open a new terminal with ctrl-shift-`  or Ctrl-Shift-P > Create Terminal 
 > * Make sure it is in the python virtual environment. 
 > ``` 
@@ -74,15 +57,29 @@ git config --global user.email "MY_NAME@example.com"
     {
         "key" : "ctrl+shift+l",
         "command" : "workbench.action.tasks.runTask",
-        "args": "Execute-on-Robot"
+        "args": "Run-on-my-robot"
+    },
+    {
+        "key" : "ctrl+alt+l",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run-on-any-robot"
+    },
+    {
+        "key" : "ctrl+shift+r",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run-master_program-on-my-robot"
+    },
+    {
+        "key" : "ctrl+alt+r",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run-master_program-on-any-robot"
     }
 ]
 
 ## RUN PROGRAM ON ROBOT
+* Update the ROBOT_NAME file with your robot name.
 * Turn the robot on and ensure the keyboard shortcut ctrl-shift-L runs the command, which should also run their program. 
-* Also, Ctrl-Shift-P > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly.
-
-
+* Also, Ctrl-Alt-L > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly
 
 ## Refrence
 * pybricks https://pybricks.com/ https://code.pybricks.com/ and https://beta.pybricks.com/  
