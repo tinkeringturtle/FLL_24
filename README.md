@@ -1,4 +1,4 @@
-# Tinkering Turtle :turtle: :turtle: :turtle: :turtle:
+# :turtle: :turtle: :turtle: Tinkering Turtle :turtle: :turtle: :turtle:
 
 ## Software to be installed 
 * we are using local hosted code server
