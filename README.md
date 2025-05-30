@@ -78,9 +78,6 @@ git config --global user.email "MY_NAME@example.com"
     }
 ]
 
-
-
-
 ## RUN PROGRAM ON ROBOT
 * Turn the robot on and ensure the keyboard shortcut ctrl-shift-L runs the command, which should also run their program. 
 * Also, Ctrl-Shift-P > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly.
