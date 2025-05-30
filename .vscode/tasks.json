@@ -1,16 +1,14 @@
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "Execute-on-Squirt",
+{
+            "label": "Run-on-my-robot",
             "type": "shell",
-            "command": "pybricksdev",
+            "command": "/bin/bash",
             "args": [
-                "run",
-                "ble",
-                "--name",
-                "Sunset",
-                "Master_Program.py"
+              "-l",
+              "-c",
+              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/ROBOT_NAME ${file}"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -34,15 +32,46 @@
             }
         },
         {
-            "label": "Execute-on-Sunset",
+            "label": "Run-master_program-on-my-robot",
+            "type": "shell",
+            "command": "/bin/bash",
+            "args": [
+              "-l",
+              "-c",
+              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/ROBOT_NAME ${workspaceFolder}/master_program.py"
+            ],
+            "problemMatcher": {
+                "owner": "python",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": {
+                    "regexp": "^(.*)File(.*)(C:(.*)\\.py)(.*)(line(\\s*))([0-9]+),",
+                    "file": 3,
+                    "line": 8
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "revealProblems": "onProblem"
+            }
+        },
+      
+        {
+            "label": "Run-on-any-robot",
             "type": "shell",
             "command": "pybricksdev",
             "args": [
                 "run",
                 "ble",
                 "--name",
-                "Sunset",
-                "Master_Program.py"
+                "${input:robotName}",
+                "${file}"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -66,79 +95,15 @@
             }
         },
         {
-            "label": "Execute-on-Crush",
+            "label": "Run-master_program.py-on-any-robot",
             "type": "shell",
             "command": "pybricksdev",
             "args": [
                 "run",
                 "ble",
                 "--name",
-                "Crush",
-                "Master_Program.py"
-            ],
-            "problemMatcher": {
-                "owner": "python",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": {
-                    "regexp": "^(.*)File(.*)(C:(.*)\\.py)(.*)(line(\\s*))([0-9]+),",
-                    "file": 3,
-                    "line": 8
-                }
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false,
-                "revealProblems": "onProblem"
-            }
-        },
-        {
-            "label": "Execute-on-Chaos",
-            "type": "shell",
-            "command": "pybricksdev",
-            "args": [
-                "run",
-                "ble",
-                "--name",
-                "Chaos",
-                "Master_Program.py"
-            ],
-            "problemMatcher": {
-                "owner": "python",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": {
-                    "regexp": "^(.*)File(.*)(C:(.*)\\.py)(.*)(line(\\s*))([0-9]+),",
-                    "file": 3,
-                    "line": 8
-                }
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false,
-                "revealProblems": "onProblem"
-            }
-        },
-        {
-            "label": "Execute-on-Squirt",
-            "type": "shell",
-            "command": "pybricksdev",
-            "args": [
-                "run",
-                "ble",
-                "--name",
-                "Squirt",
-                "Master_Program.py"
+                "${input:robotName}",
+                "master_program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
