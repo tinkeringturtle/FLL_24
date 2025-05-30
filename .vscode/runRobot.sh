@@ -5,7 +5,7 @@ echo ">> Executing: $0"
 echo ">> RobotName: $1"
 echo ">> File: $2"
 robotName=$(cat $1)
-echo "Robot Name is ? $robotName"
+echo ">> Robot Name is ? $robotName"
 
 filename=$(basename "$2")
 if [[ "${filename##*.}" != "py" ]]; then
