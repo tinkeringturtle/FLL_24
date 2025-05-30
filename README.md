@@ -1,4 +1,4 @@
-# Tinkering Turtle :turtle: :turtle: :turtle: :turtle:
+# :turtle: :turtle: :turtle: Tinkering Turtle :turtle: :turtle: :turtle:
 
 ## Software to be installed 
 * VS Code https://code.visualstudio.com/ 
