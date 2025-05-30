@@ -131,3 +131,6 @@ ta.move_c_angle()
 
 
 ### Gearsbot robot siimulation https://github.com/QuirkyCort/gears 
+
+### Contributor list
+* Jessica
