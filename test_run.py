@@ -81,7 +81,6 @@ async def test_attachement(ta):
 """
 
 if __name__ == "__main__":
-    print("main")
     # run2()
     ta = TurtleAttachment()
     ta.move_C_angle_sync(360, speed_percentage=100)

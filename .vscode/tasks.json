@@ -129,7 +129,7 @@
         {
             "label": "git pull on startup",
             "type": "shell",
-            "command": "git pull",
+            "command": "git fetch && git pull",
             "windows": {
                 "command": "git pull"
             },
