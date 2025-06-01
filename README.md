@@ -107,7 +107,6 @@ td.set_speed_settings(speed_percentage=10)
 
 td.set_speed_settings(accerlation_percentage=10,turn_accerlation=25)
 
-
 ## TurtleAttachement.py : Main attachement Class
 
 ta = TurtleAttachement()
