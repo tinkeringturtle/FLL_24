@@ -85,6 +85,10 @@ git config --global user.email "MY_NAME@example.com"
 * pybricks https://pybricks.com/ https://code.pybricks.com/ and https://beta.pybricks.com/  
   Nothing to install on your computer, but you will need to install it on your robot.
 
+* we need to run this so that multiple people can easly update the robot name in the file
+```
+git update-index --assume-unchanged MY_ROBOT_NAME .robotName  
+```
 
 ---
 
