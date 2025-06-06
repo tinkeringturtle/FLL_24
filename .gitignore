@@ -5,4 +5,4 @@
 desktop.ini
 __pycache__
 MY_ROBOT_NAME
-.gitignore
+.robotName
