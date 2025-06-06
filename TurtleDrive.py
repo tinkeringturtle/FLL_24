@@ -40,19 +40,24 @@ class TurtleDrive:
         # self.f_color=ColorSensor(Port.F)
 
     def log_data(self, note=""):
-        if not self.long_enabled:
-            return
+        # if not self.long_enabled:
+        #    return
 
         time_now = self.watch.time()
 
         try:
-            yaw = self.hub.imu.angle()
-            yaw_rate = self.hub.imu.angular_velocity()
+            # yaw = self.hub.imu.angle()
+            # yaw_rate = self.hub.imu.angular_velocity()
+            # Read the yaw rate.
+            yaw_rate = self.hub.imu.angular_velocity(Axis.Z)
+            print("Sensor data")
         except:
             yaw = None
             yaw_rate = None
+            print("No Senor data")
 
-        print(time_now, yaw, yaw_rate)
+        # print(time_now, yaw, yaw_rate)
+        print(f"{time_now}, Yaw: {yaw}, Rate: {yaw_rate}, Note: {note}")
 
     def stop(self):
         self.drive_base.stop()
@@ -71,9 +76,9 @@ class TurtleDrive:
     """
 
     def straight_drive(self, distance=0, wait=True):
-        log_data("Drive Start")
+        self.log_data("Drive Start")
         self.drive_base.straight(distance, then=Stop.HOLD, wait=wait)
-        log_data("Drive End")
+        self.log_data("Drive End")
 
     def turn_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
