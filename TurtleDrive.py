@@ -71,9 +71,9 @@ class TurtleDrive:
     """
 
     def straight_drive(self, distance=0, wait=True):
-        log_data()
+        log_data("Drive Start")
         self.drive_base.straight(distance, then=Stop.HOLD, wait=wait)
-        log_data()
+        log_data("Drive End")
 
     def turn_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
