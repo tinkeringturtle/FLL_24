@@ -3,6 +3,8 @@ from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Stop, Color, Button
 from pybricks.tools import wait, multitask, run_task
+from pybricks.hubs import PrimeHub
+from pybricks.tools import StopWatch
 from TurtleConstant import *
 from TurtleHelper import *
 
@@ -25,6 +27,10 @@ class TurtleDrive:
         self.use_gyro(ENABLE_GYRO)
         self.set_speed_percentage()
 
+        self.hub = PrimeHub()
+        self.watch = StopWatch()
+        self.watch.reset()
+
         # add attachement motor
         # TODO:
 
@@ -40,15 +46,13 @@ class TurtleDrive:
         time_now = self.watch.time()
 
         try:
-            yaw=self.hub.imu.angle()
+            yaw = self.hub.imu.angle()
             yaw_rate = self.hub.imu.angular_velocity()
         except:
             yaw = None
             yaw_rate = None
 
         print(time_now, yaw, yaw_rate)
-
-
 
     def stop(self):
         self.drive_base.stop()
@@ -62,14 +66,14 @@ class TurtleDrive:
     def use_gyro(self, enable=True):
         self.drive_base.use_gyro(enable)
 
-
-
     """
     drive the robot straight to spcified distance 
     """
 
     def straight_drive(self, distance=0, wait=True):
+        log_data()
         self.drive_base.straight(distance, then=Stop.HOLD, wait=wait)
+        log_data()
 
     def turn_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
