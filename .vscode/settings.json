@@ -6,6 +6,7 @@
         "**/.venv/": true,
         "**/__pycache__/": true,
         "**/.gitignore": true,
+        "**/.robotName": true,
     },
     "git.postCommitCommand": "sync",
     "task.allowAutomaticTasks": "on",
