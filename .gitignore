@@ -4,4 +4,5 @@
 ./pybricks-api/
 desktop.ini
 __pycache__
-ROBOT_NAME
+MY_ROBOT_NAME
+.gitignore
