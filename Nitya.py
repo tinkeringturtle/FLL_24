@@ -1,1 +1,0 @@
-td.straight_drive(5)
