@@ -33,6 +33,23 @@ class TurtleDrive:
         # self.e_color=ColorSensor(Port.E)
         # self.f_color=ColorSensor(Port.F)
 
+    def log_data(self, note=""):
+        if not self.long_enabled:
+            return
+
+        time_now = self.watch.time()
+
+        try:
+            yaw=self.hub.imu.angle()
+            yaw_rate = self.hub.imu.angular_velocity()
+        except:
+            yaw = None
+            yaw_rate = None
+
+        print(time_now, yaw, yaw_rate)
+
+
+
     def stop(self):
         self.drive_base.stop()
 
@@ -44,6 +61,8 @@ class TurtleDrive:
 
     def use_gyro(self, enable=True):
         self.drive_base.use_gyro(enable)
+
+
 
     """
     drive the robot straight to spcified distance 
