@@ -8,7 +8,7 @@
             "args": [
               "-l",
               "-c",
-              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/ROBOT_NAME ${file}"
+              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/MY_ROBOT_NAME ${file}"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -38,7 +38,7 @@
             "args": [
               "-l",
               "-c",
-              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/ROBOT_NAME ${workspaceFolder}/master_program.py"
+              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/MY_ROBOT_NAME ${workspaceFolder}/master_program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
