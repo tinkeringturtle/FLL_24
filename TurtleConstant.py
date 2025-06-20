@@ -1,5 +1,5 @@
 WHEEL_DIAMETER = 62.4
-AXLE_TRACK = 128
+AXLE_TRACK = 95
 
 
 ######## Drive motor Constant ##########
