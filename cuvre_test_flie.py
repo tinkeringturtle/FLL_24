@@ -5,7 +5,7 @@ from TurtleAttachement import *
 # line nine
 def run_Test(td, ta):
     print("start run")
-    td.curve(178,50)
+    td.curve(385,113)
     
 
 if __name__ == "__main__":
