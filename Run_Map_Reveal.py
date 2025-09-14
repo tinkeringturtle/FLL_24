@@ -19,14 +19,14 @@ def run_Map_Reveal(td, ta):
     td.set_speed_percentage(100)
     td.straight_drive(-100)
     td.set_speed_percentage(50)
-    td.straight_drive(310)
+    td.straight_drive(315)
     td.curve(45, -60)
     td.straight_drive(-5)
     run_task(ta.move_C_angle(-300))
     td.straight_drive(60)
     run_task(ta.move_C_angle(200))
-    td.stop
-    td_straight_drive(-100)
+    td.stop(1)
+    td_straight_drive(-200)
 
 
 if __name__ == "__main__":
