@@ -7,6 +7,7 @@ def run_Anshi(td, ta):
     print("start run")
     td.straight_drive(-100)
     td.curve(-175, 115, wait=True)
+    td.straight_drive(-200)
 
 
 if __name__ == "__main__":
