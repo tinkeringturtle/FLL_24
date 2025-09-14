@@ -9,12 +9,13 @@ def Run_Seal_Jones(td, ta):
     print("start run")
 
 #Run starts here
-    
+td.straight_drive()
+
 #Run ends here
 
 
-
-
+#ATTACHEMENT MOVEMENT ANGLES
+ #run_task(ta.move_D_angle(90))   
  #run_task(runAttachemnt(ta, 180))
     #run_task(runAttachemnt(ta, -180))
 
