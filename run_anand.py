@@ -5,7 +5,8 @@ from TurtleAttachement import *
 # line nine
 def run_anand(td, ta):
     print("start run")
-    td.straight_drive(500)
+    td.straight_drive(30)
+    td.curve(300,50)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,12 @@
 from TurtleDrive import *
 from TurtleAttachement import *
 
-
+#11th line from right
 # line nine
 def run_Anshi(td, ta):
     print("start run")
-    td.straight_drive(500)
+    td.straight_drive(-100)
+    td.curve(-175, 115, wait=True)
 
 
 if __name__ == "__main__":
