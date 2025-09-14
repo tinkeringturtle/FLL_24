@@ -15,8 +15,13 @@ def run_bolders(td, ta):
     td.straight_drive(-200)
     td.turn(10)
     td.straight_drive(650)
-    td.turn(27)
-    td.straight_drive(-150)
+    td.turn(22)
+    td.straight_drive(-200)
+    td.straight_drive(100)
+    td.turn(-10)
+    td.straight_drive(-200)
+    td.turn(40)
+    td.straight_drive(-700)
     
 
 if __name__ == "__main__":
