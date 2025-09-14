@@ -10,7 +10,7 @@ async def runAttachemnt(ta, angle):
 def run_Map_Reveal(td, ta):
     print("start run")
     td.set_speed_percentage(100)
-    td.straight_drive(720)
+    td.straight_drive(685)
     td.set_speed_percentage(7)
    
 
