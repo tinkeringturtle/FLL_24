@@ -4,7 +4,7 @@ from TurtleAttachement import *
 
 
 async def runAttachemnt(ta, angle):
-    await ta.move_C_angle(angle=angle, speed_percentage=40)
+    await ta.move_C_angle(angle=angle, speed_percentage=20)
 
 
 # line nine
@@ -12,9 +12,17 @@ def Run_Seal_Jones(td, ta):
     print("start run")
 
     # Run starts here
-
-    td.straight_drive(15)
-    td.turn(90)
+    td.straight_drive(-795)
+    td.straight_drive(20)
+    td.turn(-105)
+    td.set_speed_percentage(10)
+    td.straight_drive(140)
+    run_task(ta.move_C_angle(-120))
+    td.straight_drive(-130)
+    td.set_speed_percentage(speed_percentage=0)
+    td.turn(107)
+    td.set_speed_percentage(200)
+    td.straight_drive(850)
 
 
 # Run ends here
@@ -30,6 +38,9 @@ def Run_Seal_Jones(td, ta):
 
 
 # COMMENTED CODE:
+
+# td.straight_drive(15)
+# td.turn(90)
 
 # td.straight_drive(500)
 # td.turn(25)
