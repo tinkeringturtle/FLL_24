@@ -24,9 +24,11 @@ def run_Map_Reveal(td, ta):
     td.straight_drive(-200)
     run_task(ta.move_C_angle(350))
     td.curve(-100,-100)
+    td.straight_drive(-140)
+    td.turn(-20)
+    td.straight_drive(6)
     
     
-
 
 if __name__ == "__main__":
     print("Hello")
