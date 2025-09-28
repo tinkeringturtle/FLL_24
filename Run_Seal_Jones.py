@@ -3,8 +3,16 @@ from TurtleDrive import *
 from TurtleAttachement import *
 
 
-async def runAttachemnt(ta, angle):
-    await ta.move_C_angle(angle=angle, speed_percentage=20)
+def set_speed_percentage(
+    self,
+    speed_percentage=DEFAULT_SPEED_PERCENTAGE,
+    acceleration_percentage=DEFAULT_ACCELERATION_PERCENTAGE,
+    turn_rate_percentage=DEFAULT_TURN_RATE_PERCENTAGE,
+    turn_acceleration_percentage=DEFAULT_TURN_ACCELERATION_PERCENTAGE,
+):
+
+    async def runAttachemnt(ta, angle):
+        await ta.move_C_angle(angle=angle, speed_percentage=20)
 
 
 # line nine
@@ -12,14 +20,14 @@ def Run_Seal_Jones(td, ta):
     print("start run")
 
     # Run starts here
-    td.straight_drive(-795)
-    td.straight_drive(20)
-    td.turn(-105)
+    td.straight_drive(-790)
+    td.straight_drive(30)
+    td.turn(-110)
     td.set_speed_percentage(10)
     td.straight_drive(140)
     run_task(ta.move_C_angle(-120))
     td.straight_drive(-130)
-    td.set_speed_percentage(speed_percentage=0)
+    td.set_speed_percentage(turn_rate_percentage=5)
     td.turn(107)
     td.set_speed_percentage(200)
     td.straight_drive(850)
