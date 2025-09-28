@@ -20,12 +20,17 @@ def Run_Seal_Jones(td, ta):
     print("start run")
 
     # Run starts here
-    td.straight_drive(-790)
-    td.straight_drive(30)
-    td.turn(-110)
+
+    td.set_speed_percentage(100)
+    td.straight_drive(-795)
+    td.straight_drive(25)
+    td.turn(-105)
     td.set_speed_percentage(10)
-    td.straight_drive(140)
-    run_task(ta.move_C_angle(-120))
+    td.straight_drive(135)
+    wait(2)
+    set_speed_percentage(1)
+    run_task(ta.move_D_angle(-150))
+    run_task(ta.move_C_angle(-110))
     td.straight_drive(-130)
     td.set_speed_percentage(turn_rate_percentage=5)
     td.turn(107)
