@@ -5,29 +5,31 @@ from TurtleAttachement import *
 # line nine
 def run_bolders(td, ta):
     print("start run")
-    td.straight_drive(725)
-    #td.curve(10,100)
+    td.straight_drive(710) #725
+    td.turn(-60)
+    td.straight_drive(25)
+    td.turn(35)
+    td.straight_drive(30)
+    td.turn(90)
+    td.straight_drive(-90)
     td.turn(-90)
-    wait(500) #instead of waiting, turn less than -90 (maybe -60), drive straight a little and then rest of the turn
-    td.straight_drive(100)
-    td.turn(30)
-    td.straight_drive(-100)
-    td.turn(-30)
-    td.straight_drive(-200)
-    td.turn(10)
-    td.straight_drive(650)
-    #td.turn(22)
-    #td.straight_drive(-200)
-    #td.straight_drive(100)
-    #td.turn(-5)
-    #td.straight_drive(-200)
-    #td.turn(40)
-    #td.straight_drive(-700)
-    
+    td.set_speed_percentage(20)
+    td.straight_drive(-260)
+    td.set_speed_percentage(75)
+    td.straight_drive(220)
+    td.turn(-90)
+    td.straight_drive(750)
+
+def run_market(td, ta):
+    td.straight_drive(250)
+    td.turn(-48)
+    td.straight_drive(200)
+    run_task(ta.move_C_angle(160))
 
 if __name__ == "__main__":
     print("Hello")
     td = TurtleDrive()
     ta = TurtleAttachment()
-    run_bolders(td, ta)
+    #run_bolders(td, ta)
+    run_market(td, ta)
 
