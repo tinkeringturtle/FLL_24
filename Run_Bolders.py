@@ -24,7 +24,10 @@ def run_market(td, ta):
     td.straight_drive(250)
     td.turn(-48)
     td.straight_drive(200)
-    run_task(ta.move_C_angle(160))
+    run_task(ta.move_C_angle(180))
+    td.straight_drive(40)
+    td.straight_drive(-120)
+
 
 if __name__ == "__main__":
     print("Hello")
