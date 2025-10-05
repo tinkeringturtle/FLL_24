@@ -25,7 +25,7 @@ def run_Map_Reveal(td, ta):
     td.straight_drive(-200)
     run_task(ta.move_C_angle(-30))
     td.curve(-100,-100)
-    td.straight_drive(-100)
+    td.straight_drive(-25)
     td.turn(-20)
     td.straight_drive(6)
     run_task(ta.move_C_angle(90))
