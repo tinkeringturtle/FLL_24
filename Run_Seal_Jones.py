@@ -24,7 +24,7 @@ def Run_Seal_Jones(td, ta):
     td.set_speed_percentage(100)
     td.straight_drive(-795)
     td.straight_drive(25)
-    td.turn(-105)
+    td.turn(-107)
     td.set_speed_percentage(10)
     td.straight_drive(135)
     wait(2)
