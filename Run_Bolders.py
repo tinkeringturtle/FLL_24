@@ -23,10 +23,14 @@ def run_bolders(td, ta):
 def run_market(td, ta):
     td.straight_drive(250)
     td.turn(-48)
-    td.straight_drive(200)
+    td.straight_drive(250)
     run_task(ta.move_C_angle(180))
-    td.straight_drive(40)
-    td.straight_drive(-120)
+    #td.straight_drive(40)
+    td.straight_drive(-150)
+    td.straight_drive(100)
+    run_task(ta.move_C_angle(-180))
+    td.straight_drive(-150)
+    run_task(ta.move_C_angle(100))
 
 
 if __name__ == "__main__":
