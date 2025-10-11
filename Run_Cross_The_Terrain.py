@@ -12,7 +12,7 @@ def run_Anshi(td, ta):
     td.turn(90)
     td.straight_drive(100)
     run_task(ta.move_D_angle(-1000))
-    td.straight_drive(-100)
+    td.straight_drive(-175)
    
 
 
