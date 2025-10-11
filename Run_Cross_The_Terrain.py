@@ -8,12 +8,15 @@ def run_Anshi(td, ta):
     print("start run")
     td.straight_drive(-120)
     td.turn(-90)
-    td.straight_drive(-710)
-    td.turn(90)
-    td.straight_drive(100)
+    td.straight_drive(-720)
+    td.turn(95)
+    td.straight_drive(140)
     run_task(ta.move_D_angle(-1000))
-    td.straight_drive(-175)
-   
+    td.set_speed_percentage(55)
+    td.straight_drive(-185)
+    td.straight_drive(160)
+    td.straight_drive(20)
+    td.curve(-80,100)
 
 
 if __name__ == "__main__":
