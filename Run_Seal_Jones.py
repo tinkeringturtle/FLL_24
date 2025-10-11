@@ -30,7 +30,7 @@ def Run_Seal_Jones(td, ta):
     wait(2)
     set_speed_percentage(1)
     run_task(ta.move_D_angle(-110))
-    run_task(ta.move_C_angle(-120))
+    run_task(ta.move_C_angle(-135))
     td.straight_drive(-130)
     td.set_speed_percentage(turn_rate_percentage=5)
     td.turn(107)
