@@ -16,7 +16,7 @@ def set_speed_percentage(
 
 
 # line nine
-def Run_Seal_Jones(td, ta):
+def Run_artifact(td, ta):
     print("start run")
 
     # Run starts here
