@@ -10,7 +10,7 @@ def run_Shipreck(td, ta):
     td.straight_drive(535)
     run_task(ta.move_D_angle(-105))
     td.straight_drive(-25)
-    run_task(ta.move_D_angle(125))
+    run_task(ta.move_D_angle(300))
     td.drive_straight(350)
 
 
