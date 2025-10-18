@@ -148,3 +148,12 @@ class TurtleDrive:
                 )
             )
         self.drive_base.settings(speed, acceleration, turn_rate, turn_acceleration)
+
+def loop_motor_movement(motor_name):
+    for i in range(4):
+        if motor_name == "C":
+            ta.move_C_time(speed_percentage=-100, time_millisec=800)
+            ta.move_C_time(speed_percentage=100, time_millisec=1000)
+        elif motor_name == "D":
+            ta.move_D_time(speed_percentage=-100, time_millisec=800)
+            ta.move_D_time(speed_percentage=100, time_millisec=1000)

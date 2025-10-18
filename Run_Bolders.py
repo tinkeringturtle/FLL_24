@@ -54,8 +54,8 @@ def run_market(td, ta):
    
 
 
-if __name__ == "__main__":
-    print("Hello")
+    if __name__ == "__main__":
+        print("Hello")
     td = TurtleDrive()
     ta = TurtleAttachment()
     #run_bolders(td, ta)
