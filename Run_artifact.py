@@ -22,20 +22,20 @@ def Run_artifact(td, ta):
     # Run starts here
 
     td.set_speed_percentage(100)
-    td.straight_drive(-795)
-    td.straight_drive(25)
-    td.turn(-107)
+    td.straight_drive(-795)#drive backwards into wall
+    td.straight_drive(25)#drive a little out of wall
+    td.turn(-107)#turn towards the mineshaft
     td.set_speed_percentage(10)
-    td.straight_drive(145)
+    td.straight_drive(145)#drive into mineshaft
     wait(2)
     set_speed_percentage(1)
-    run_task(ta.move_D_angle(-110))
-    run_task(ta.move_C_angle(-135))
-    td.straight_drive(-130)
+    run_task(ta.move_D_angle(-110))#pick up artifact
+    run_task(ta.move_C_angle(-135))#lift up cart onto other side
+    td.straight_drive(-130)#drive back out
     td.set_speed_percentage(turn_rate_percentage=5)
-    td.turn(107)
+    td.turn(107)#slow turn
     td.set_speed_percentage(200)
-    td.straight_drive(850)
+    td.straight_drive(850)#really fast drive back home
 
 
 # Run ends here
