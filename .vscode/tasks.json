@@ -20,6 +20,17 @@
         "runOptions": {
             "runOn": "folderOpen"
         },
+        "dependsOn": ["git pull on startup"],
+        "dependsOrder": "sequence",
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "dedicated",
+            "showReuseMessage": false,
+            "clear": false,
+            "close": false
+        },
         "problemMatcher": []
         },
         {
@@ -156,10 +167,9 @@
             },
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
-            },
-            "runOptions": {
-                "runOn": "folderOpen"
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "close": false
             },
             "problemMatcher": []
         }
