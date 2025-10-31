@@ -18,11 +18,12 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.terminal.activateEnvironment": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
-    "terminal.integrated.env.windows": {
-        "PSExecutionPolicyPreference": "Bypass"
-    },
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "path": "${env:windir}\\System32\\cmd.exe",
+            "icon": "terminal-cmd"
+        },
         "PowerShell": {
             "source": "PowerShell",
             "icon": "terminal-powershell",

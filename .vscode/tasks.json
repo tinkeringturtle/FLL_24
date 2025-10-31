@@ -42,13 +42,10 @@
                 "source .venv/bin/activate && exec bash"
             ],
             "windows": {
-                "command": "powershell",
+                "command": "cmd.exe",
                 "args": [
-                    "-ExecutionPolicy",
-                    "Bypass",
-                    "-NoExit",
-                    "-Command",
-                    "& { .\.venv\Scripts\Activate.ps1 }"
+                    "/K",
+                    ".venv\\Scripts\\activate.bat"
                 ]
             },
             "presentation": {
