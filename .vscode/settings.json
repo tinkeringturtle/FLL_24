@@ -11,15 +11,15 @@
     },
     "git.postCommitCommand": "sync",
     "task.allowAutomaticTasks": "on",
+    "editor.rulers":[
+        80
+    ],
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.terminal.activateEnvironment": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
     },
-    "editor.rulers":[
-        80
-    ],
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  "python.analysis.typeCheckingMode": "basic",
-  "python.terminal.activateEnvironment": true,
-  "task.runOnFolderOpen": "default",
+    "task.runOnFolderOpen": "default"
 }
