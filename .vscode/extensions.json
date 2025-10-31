@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-python.debugpy",
+        "esbenp.prettier-vscode",
+        "lego-education.ev3-micropython",
+        "lego-education.lego-education-extension-pack",
+        "AnandSingh.pybricks-runner"
+    ],
+    "unwantedRecommendations": []
+}
