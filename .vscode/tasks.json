@@ -34,6 +34,32 @@
         "problemMatcher": []
         },
         {
+            "label": "Activate Python Environment",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "source .venv/bin/activate && exec bash"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-NoExit",
+                    "-Command",
+                    "& { .\.venv\Scripts\Activate.ps1 }"
+                ]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Run-on-my-robot",
             "type": "shell",
             "command": "/bin/bash",
