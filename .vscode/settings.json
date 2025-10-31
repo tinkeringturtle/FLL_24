@@ -17,6 +17,18 @@
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
     "python.analysis.typeCheckingMode": "basic",
     "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "terminal.integrated.env.windows": {
+        "PSExecutionPolicyPreference": "Bypass"
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": ["-ExecutionPolicy", "Bypass", "-NoLogo"]
+        }
+    },
     "editor.formatOnSave": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
