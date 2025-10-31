@@ -18,8 +18,13 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.terminal.activateEnvironment": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt (Python)",
     "terminal.integrated.profiles.windows": {
+        "Command Prompt (Python)": {
+            "path": "${env:windir}\\System32\\cmd.exe",
+            "args": ["/K", "${workspaceFolder}\\script\\auto_activate.bat"],
+            "icon": "terminal-cmd"
+        },
         "Command Prompt": {
             "path": "${env:windir}\\System32\\cmd.exe",
             "icon": "terminal-cmd"
