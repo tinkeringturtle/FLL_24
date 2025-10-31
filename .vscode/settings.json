@@ -17,5 +17,9 @@
     },
     "editor.rulers":[
         80
-    ]
+    ],
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.terminal.activateEnvironment": true,
+  "task.runOnFolderOpen": "default",
 }
