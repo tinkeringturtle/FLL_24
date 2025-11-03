@@ -1,13 +1,12 @@
 from TurtleDrive import *
 from TurtleAttachement import *
-from pybricks.tools import wait, multitask, run_task
 
 
+# line up left side second dark line from left
 def run_market(td, ta):
     td.straight_drive(220)
-
     td.turn(-50)
-    # td.straight_drive(280)
+    td.straight_drive(280)
     # run_task(ta.move_C_angle(200))
 
     # td.straight_drive(40)
