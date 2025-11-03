@@ -147,7 +147,8 @@ self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, time_millisec=500
 
 ### Contributor
 
-- Jessica
+- Jessica - Coach
+- Anand - Tech Admin
 - Paige
 - Nitya
 - Abby
@@ -156,4 +157,4 @@ self, speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE, time_millisec=500
 - Emma
 - Meghana
 
-# Test my commit
+#

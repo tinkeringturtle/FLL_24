@@ -1,54 +1,74 @@
 {
-        "files.exclude": {
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/.venv/": true,
-        "**/__pycache__/": true,
-        "**/.gitignore": true,
-        "**/.robotName": true,
-        "**/.robotNameList": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.venv/": true,
+    "**/__pycache__/": true,
+    "**/.gitignore": true,
+    "**/.robotName": true,
+    "**/.robotNameList": true
+  },
+  "git.postCommitCommand": "sync",
+  "task.allowAutomaticTasks": "on",
+  "editor.rulers": [80],
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "terminal.integrated.defaultProfile.windows": "Command Prompt (Python)",
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt (Python)": {
+      "path": "${env:windir}\\System32\\cmd.exe",
+      "args": ["/K", "${workspaceFolder}\\script\\auto_activate.bat"],
+      "icon": "terminal-cmd"
     },
-    "git.postCommitCommand": "sync",
-    "task.allowAutomaticTasks": "on",
-    "editor.rulers":[
-        80
-    ],
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.terminal.activateEnvironment": true,
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "terminal.integrated.defaultProfile.windows": "Command Prompt (Python)",
-    "terminal.integrated.profiles.windows": {
-        "Command Prompt (Python)": {
-            "path": "${env:windir}\\System32\\cmd.exe",
-            "args": ["/K", "${workspaceFolder}\\script\\auto_activate.bat"],
-            "icon": "terminal-cmd"
-        },
-        "Command Prompt": {
-            "path": "${env:windir}\\System32\\cmd.exe",
-            "icon": "terminal-cmd"
-        },
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell",
-            "args": ["-ExecutionPolicy", "Bypass", "-NoLogo"]
-        }
+    "Command Prompt": {
+      "path": "${env:windir}\\System32\\cmd.exe",
+      "icon": "terminal-cmd"
     },
-    "editor.formatOnSave": true,
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[yaml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-NoLogo"]
     }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    },
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"]
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
