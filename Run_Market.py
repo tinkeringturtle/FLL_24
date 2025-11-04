@@ -4,13 +4,14 @@ from TurtleAttachement import *
 
 # line up left side second dark line from left
 def run_market(td, ta):
-    td.straight_drive(220)
-    td.turn(-50)
-    td.straight_drive(280)
-    # run_task(ta.move_C_angle(200))
+    td.straight_drive(195)
+    td.turn(-45)
+    td.straight_drive(335)
+    run_task(ta.move_C_angle(200))
 
     # td.straight_drive(40)
-    # td.straight_drive(-190)
+    td.straight_drive(-130)
+    run_task(ta.move_C_angle(-200))
 
     # td.straight_drive(120)
     # run_task(ta.move_C_angle(-200))
