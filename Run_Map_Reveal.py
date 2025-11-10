@@ -10,15 +10,15 @@ async def runAttachemnt(ta, angle):
 def run_Map_Reveal(td, ta):
     print("start run")
     td.set_speed_percentage(100)
-    #run_task(ta.move_C_angle(60))
-    #run_task(ta.move_C_angle(100))
-    #run_task(ta.move_C_angle(235))
+    # run_task(ta.move_C_angle(60))
+    # run_task(ta.move_C_angle(100))
+    # run_task(ta.move_C_angle(235))
     td.straight_drive(705)
     td.set_speed_percentage(20)
     td.straight_drive(-255)
-    #td.turn(-10)
-    #td.straight_drive(150
-    #td.straight_drive(-100)
+    # td.turn(-10)
+    # td.straight_drive(150
+    # td.straight_drive(-100)
     run_task(ta.move_C_angle(150))
     wait(1.5)
     td.set_speed_percentage(100)
@@ -32,14 +32,10 @@ def run_Map_Reveal(td, ta):
     run_task(ta.move_D_angle(-150))
     td.set_speed_percentage(100)
     td.straight_drive(-150)
-    td.curve(-100,-60)
+    td.curve(-100, -60)
     td.set_speed_percentage(10000000)
     td.straight_drive(-7000)
 
-    
-   
-    
-    
 
 if __name__ == "__main__":
     print("Hello")

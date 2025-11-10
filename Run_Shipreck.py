@@ -6,17 +6,7 @@ from TurtleAttachement import *
 def run_Shipreck(td, ta):
     print("start run")
     td.set_speed_percentage(100)
-    run_task(ta.move_D_angle(100))
-    td.straight_drive(540)
-    run_task(ta.move_D_angle(-105))
-    td.straight_drive(-40)
-    run_task(ta.move_D_angle(300))
-    td.straight_drive(-100)
-    td.turn(176)
-    td.straight_drive(-260)
-    td.turn(-10)
-    td.straight_drive(750)
-
+    td.straight_drive(700)
 
 
 if __name__ == "__main__":
