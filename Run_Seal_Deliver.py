@@ -14,6 +14,7 @@ def set_speed_percentage(
         await ta.move_C_angle(angle=angle, speed_percentage=20)
 
 
+# curve turn - first number is radius, second number is angle.
 # this is the code for the attachment: run_task(ta.move_D_angle(90))
 # code for looping motor: for i in range(10)
 #   run_task(ta.move_D_angle(-300))
@@ -22,27 +23,38 @@ def set_speed_percentage(
 # line nine
 def Run_Seal_Deliver(td, ta):
     print("start run")
+    # second balck line from the left
     # run starts here
-    td.straight_drive(217)
+    td.straight_drive(550)  # forward
     td.set_speed_percentage(turn_rate_percentage=30)
-    td.curve(90, 67)
-    td.set_speed_percentage(40)  # slowing down
-    td.straight_drive(270)  # going into the area
-    run_task(ta.move_D_angle(300))  # lowering arm
-    td.straight_drive(100)
-    run_task(ta.move_D_angle(-500))  # lifting arm
-    td.set_speed_percentage(20)
-    # td.straight_drive(-50)  # drive back a little bit slowly
-    td.set_speed_percentage(100)  # speed up
-    # td.straight_drive(-350)  # drive back at full speed
+    td.curve(220, 157)  # curving in
+    td.straight_drive(55)  # going in to raise arm
+    run_task(ta.move_D_angle(-510))  # lifting arm
+    td.straight_drive(45)
+    td.straight_drive(-55)
 
 
 # run ends here
 if __name__ == "__main__":
-    print(
-        "the italian brainrot compliation #1 by meghana: tralalao tralala, ballerina capuchina, tung tung tung sahur, bombadilo crocadilo, grenadila gorila,trippi troopa, lirili larila, brr brr patapim, tung tung assasenio boneca, Cacasito La vaca Trippa troppa Bombombini Gusini Tralala Lirilira Tung Satelito Tung Sahur boneka Tung Tung tralalelo cappuccino assasine Tirilikalika Trippi Trenostruzzo Turbo 3000 troppa Crocodina fruli Crocodildo Penosini frulia Bublito Bandito Traktorito. Thats all the brainrot that i know. JK i know more. Part 2 coming soon."
-    )
-    # i love italian brainrot #tralaleotralala
+    print()
     td = TurtleDrive()
     ta = TurtleAttachment()
     Run_Seal_Deliver(td, ta)
+
+
+# old code :
+
+# td.curve(90, 75)
+# td.set_speed_percentage(40)  # slowing down
+# td.straight_drive(270)  # going into the area
+# run_task(ta.move_D_angle(500))  # lowering arm
+# td.straight_drive(100)
+# run_task(ta.move_D_angle(-500))  # lifting arm
+# td.set_speed_percentage(20)
+# td.straight_drive(-50)  # drive back a little bit slowly
+# td.set_speed_percentage(100)  # speed up
+# td.straight_drive(-350)  # drive back at full speed
+
+
+# td.turn(57)
+# td.straight_drive(325)
