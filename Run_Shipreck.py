@@ -6,7 +6,8 @@ from TurtleAttachement import *
 def run_Shipreck(td, ta):
     print("start run")
     td.set_speed_percentage(100)
-    td.straight_drive(700)
+    td.straight_drive(600)
+    td.straight_drive(-100)
 
 
 if __name__ == "__main__":
