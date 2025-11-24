@@ -11,7 +11,7 @@ def run_Shipreck(td, ta):
     run_task(ta.move_C_angle(20))
     td.set_speed_percentage(100)
     td.straight_drive(-120)
-    td.straight_drive(-725)
+    td.straight_drive(-525)
 
 
 if __name__ == "__main__":
