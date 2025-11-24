@@ -21,9 +21,9 @@ def run_Anshi(td, ta):
     td.straight_drive(-230)
     run_task(ta.move_C_angle(300))
     run_task(ta.move_C_angle(-300))
-    td.straight_drive(10)
+    td.straight_drive(15)
     td.turn(90)
-    td.straight_drive(800)
+    td.straight_drive(1000)
 
 
 if __name__ == "__main__":

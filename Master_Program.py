@@ -5,11 +5,9 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
-import run_coral_delivery, run_coral, run_crab, run_krackan
-import run_submersible, run_whale, deliver_coral_tree, coral_tree
-import run_boat_shark2
-import run_collection2
-
+import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
+import Run_Map_Reveal, Run_Market, Run_Seal_Deliver, Run_Shipreck
+import Run_silo
 
 # Initialize the sensor.
 bottom_sensor = ColorSensor(Port.E)  # this is bottom sesor
@@ -18,11 +16,12 @@ front_sensor = ColorSensor(Port.F)  # this is front sensor
 # Initialize the hub.
 hub = PrimeHub()
 
+
 Color.MY_GREEN = Color(h=155, s=72, v=48)
 Color.MY_MAGENTA = Color(h=339, s=79, v=70)
 Color.MY_RED = Color(h=352, s=88, v=80)
 Color.MY_ORANGE = Color(h=9, s=84, v=99)
-Color.MY_BLUE = Color(h=217, s=88, v=69)
+Color.MY_BLUE = Color(h=216, s=86, v=32)
 Color.MY_BLACK = Color(h=240, s=5, v=24)
 Color.MY_YELLOW = Color(h=51, s=71, v=100)
 Color.MY_WHITE = Color(h=0, s=0, v=100)
@@ -174,11 +173,11 @@ if __name__ == "__main__":
 
             if Button.RIGHT in pressed and color == Color.MY_BLUE:
                 print("Run whale")
-                run_whale.run_whale(td, ta)
+                Run_Cross_The_Terrain.run_Anshi(td, ta)
 
             if Button.RIGHT in pressed and color == Color.MY_WHITE:
                 print("Run sumersible")
-                run_submersible.run_submersible(td, ta)
+                Run_.run_submersible(td, ta)
 
             if Button.RIGHT in pressed and color == Color.MY_YELLOW:
                 print("Run deliver coral")

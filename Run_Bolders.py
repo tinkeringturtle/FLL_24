@@ -1,4 +1,3 @@
-
 from TurtleDrive import *
 from TurtleAttachement import *
 from pybricks.tools import wait, multitask, run_task
@@ -7,7 +6,7 @@ from pybricks.tools import wait, multitask, run_task
 # line nine
 def run_bolders(td, ta):
     print("start run")
-    td.straight_drive(725) #725
+    td.straight_drive(725)  # 725
     td.turn(-60)
     td.straight_drive(30)
     td.turn(-35)
@@ -26,11 +25,8 @@ def run_bolders(td, ta):
     td.straight_drive(450)
 
 
-
-
 if __name__ == "__main__":
     print("Hello")
     td = TurtleDrive()
     ta = TurtleAttachment()
     run_bolders(td, ta)
-
