@@ -34,7 +34,7 @@ def run_Map_Reveal(td, ta):
     td.straight_drive(-150)
     td.curve(-100, -60)
     td.set_speed_percentage(10000000)
-    td.straight_drive(-7000)
+    td.straight_drive(-700)
 
 
 if __name__ == "__main__":
