@@ -20,24 +20,24 @@ hub = PrimeHub()
 Color.MY_GREEN = Color(h=155, s=72, v=48)
 Color.MY_MAGENTA = Color(h=339, s=79, v=70)
 Color.MY_RED = Color(h=352, s=88, v=80)
-Color.MY_ORANGE = Color(h=9, s=84, v=99)
+Color.ORANGE #= Color(h=5, s=84, v=43) 
 Color.MY_BLUE = Color(h=216, s=86, v=32)
 Color.MY_BLACK = Color(h=240, s=5, v=24)
 Color.MY_YELLOW = Color(h=51, s=71, v=100)
 Color.MY_WHITE = Color(h=0, s=0, v=100)
 Color.MY_NONE = Color(h=0, s=0, v=0)
 
-colorToDefault = {
-    Color.MY_GREEN: Color.GREEN,
-    Color.MY_MAGENTA: Color.MAGENTA,
-    Color.MY_RED: Color.RED,
-    Color.MY_ORANGE: Color.ORANGE,
-    Color.MY_BLUE: Color.BLUE,
-    Color.MY_BLACK: Color.BLACK,
-    Color.MY_WHITE: Color.WHITE,
-    Color.MY_NONE: Color.NONE,
-    Color.MY_YELLOW: Color.YELLOW,
-}
+#colorToDefault = {
+    #Color.MY_GREEN: Color.GREEN,
+    #Color.MY_MAGENTA: Color.MAGENTA,
+    #Color.MY_RED: Color.RED,
+  #  Color.MY_ORANGE: Color.ORANGE, # pyright: ignore[reportUnhashable]
+   # Color.MY_BLUE: Color.BLUE,
+  #  Color.MY_BLACK: Color.BLACK,
+   # Color.MY_WHITE: Color.WHITE,
+   # Color.MY_NONE: Color.NONE,
+    #Color.MY_YELLOW: Color.YELLOW,
+
 
 
 def scan_colors(sensor):
@@ -69,23 +69,23 @@ def set_colors(sensor):
     # Use your measurements to override the default colors, or add new colors:
 
     # Put your colors in a list or tuple.
-    my_colors = (
+    #my_colors = (
         Color.MY_GREEN,
         Color.MY_MAGENTA,
         Color.MY_RED,
-        Color.MY_ORANGE,
-        Color.MY_BLUE,
-        Color.MY_BLACK,
-        Color.MY_WHITE,
-        Color.MY_NONE,
-        Color.MY_YELLOW,
+        Color.MY_ORANGE
+       # Color.MY_BLUE,
+        #Color.MY_BLACK,
+        #Color.MY_WHITE,
+        #Color.MY_NONE,
+        #Color.MY_YELLOW,
     )
 
     # Save your colors.
-    sensor.detectable_colors(my_colors)
+   # sensor.detectable_colors(my_colors)
 
 
-def show_icon(color, first_run):
+#def show_icon(color, first_run):
     if color == Color.MY_GREEN:
         hub.display.icon(Icon.ARROW_RIGHT_DOWN)
         print("Run Green Attanchement")
@@ -147,7 +147,7 @@ if __name__ == "__main__":
             if color == Color.MY_NONE:
                 hub.light.off()
             else:
-                hub.light.on(colorToDefault[color])
+                #hub.light.on(colorToDefault[color])
 
             # Show the arrow
             show_icon(color, first_run)
@@ -171,13 +171,14 @@ if __name__ == "__main__":
                 print("run angler fish")
                 first_run = False
 
-            if Button.RIGHT in pressed and color == Color.MY_BLUE:
+            if Button.RIGHT in pressed and color == Color.BLUE:
                 print("Run whale")
                 Run_Cross_The_Terrain.run_Anshi(td, ta)
 
             if Button.RIGHT in pressed and color == Color.MY_WHITE:
                 print("Run sumersible")
                 Run_.run_submersible(td, ta)
+                
 
             if Button.RIGHT in pressed and color == Color.MY_YELLOW:
                 print("Run deliver coral")
@@ -196,14 +197,11 @@ if __name__ == "__main__":
             if Button.RIGHT in pressed and color == Color.MY_BLACK:
                 print("Run kracken")
                 run_krackan.run_kracken(td, ta)
+            
 
-            if Button.LEFT in pressed and color == Color.MY_ORANGE:
-                print("coral delivery")
-                run_coral_delivery.run_boat_shark(td, ta)
-
-            if Button.RIGHT in pressed and color == Color.MY_ORANGE:
-                print("Run boat shark2")
-                run_boat_shark2.run_boat_shark2(td, ta)
+            if Button.RIGHT in pressed and color == Color.:
+                print("Run Seal Deliver")
+                Run_Seal_Deliver.Run_Seal_Deliver(td, ta)
 
             td.brake()
             td.stop()
