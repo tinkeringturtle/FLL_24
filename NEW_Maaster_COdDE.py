@@ -65,5 +65,29 @@ if __name__ == "__main__":
             Run_artifact.Run_Alice(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
+        if Button.RIGHT in pressed and color == Color.Light_Green :
+            print("Run Cross the Terrain")
+            Run_Shipreck.run_Shipreck(td, ta)
+            while Button.RIGHT in hub.buttons.pressed():
+                wait(10)
+
+     if Button.RIGHT in pressed and color == Color.Dark_Green :
+            print("Run Cross the Terrain")
+            Run_Map_Reveal.run_Map_Reveal(td, ta)
+            while Button.RIGHT in hub.buttons.pressed():
+                wait(10)
+
+    if Button.RIGHT in pressed and color == Color.WHITE :
+            print("Run Cross the Terrain")
+            Run_Bolders.run_bolders(td, ta) for right 
+            Run_Market.run_market(td, ta) for left
+            while Button.RIGHT in hub.buttons.pressed():
+                wait(10)
 
         wait(50)
+
+    if Button.RIGHT in pressed and color == Color.ORANGE:
+            print("Run Seal Deliver")
+            Run_Seal_Deliver.Run_Seal_Deliver(td, ta)
+            while Button.RIGHT in hub.buttons.pressed():
+                wait(10)
