@@ -112,10 +112,12 @@ ta = TurtleAttachment()
 # --- START-GATE WAIT LOOP ---
 hub.light.on(Color.BLUE)
 while Button.RIGHT not in hub.buttons.pressed():
+    print("--- Robot Ready: Press Right Button to Start 1 ---")
     wait(10)
 
 hub.light.off()
 print("--- STARTING MISSION ---")
+# Flag to control program flow during long missions
 mission_active = False
 
 # Main mission loop for color detection and mission triggering
@@ -127,7 +129,11 @@ while True:
     # Check which buttons are being held down
     is_right_pressed = Button.RIGHT in buttons_pressed
     is_left_pressed = Button.LEFT in buttons_pressed
+    is_center_pressed = (
+        Button.CENTER in buttons_pressed
+    )  # Check for Center Button interference
 
+    # If a mission is running, skip the detection and button logic.
     if mission_active:
         wait(50)
         continue
@@ -136,87 +142,105 @@ while True:
     # --- 1. PRIORITY MISSIONS (Requires Color AND Button Press) ---
     # ------------------------------------------------------------------
 
-    # --- WHITE MISSION (SIMULTANEOUS DUAL BUTTON LOGIC) ---
-    # --- WHITE MISSION ---
-
-    # --- WHITE MISSION (Bolders/Market) ---
-    # --- Check for Center Button ---
-    is_center_pressed = Button.CENTER in buttons_pressed
-
-    # --- WHITE MISSION (Bolders/Market) ---
+    # --- WHITE MISSION (Market/Bolders) ---
     if detected_color == "WHITE":
-
+        print("--- Robot Ready: Press Right Button to Start 2 ---")
         # 1. PRIMARY CHECK: LEFT BUTTON (RUNS MARKET)
-        # Check that ONLY the Left Button is pressed and Center is OFF.
+        # Guarantees ONLY the Left Button is pressed and CENTER is OFF.
         if is_left_pressed and not is_right_pressed and not is_center_pressed:
-
-            # --- Robust Button Wait for Press-and-Release ---
+            print("--- Robot Ready: Press Right Button to Start 2left ---")
+            # Wait for the user to lift their finger (confirms the command)
             while Button.LEFT in hub.buttons.pressed():
                 wait(10)
-            # -------------------------------------------------
 
             print("White + Left Button: RUNNING MARKET!")
             td.stop()
             hub.light.on(Color.YELLOW)
             mission_active = True
-            Run_Market.run_market(td, ta)  # Assuming Left Button runs MARKET
+            Run_Market.run_market(td, ta)
             mission_active = False
-
             hub.light.off()
 
         # 2. SECONDARY CHECK: RIGHT BUTTON (RUNS BOLDERS)
+        # Guarantees ONLY the Right Button is pressed and CENTER is OFF.
         elif is_right_pressed and not is_left_pressed and not is_center_pressed:
-
-            # --- Robust Button Wait for Press-and-Release ---
+            print("--- Robot Ready: Press Right Button to Start 2 right---")
+            # Wait for the user to lift their finger (confirms the command)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
-            # -------------------------------------------------
 
             print("White + Right Button: RUNNING BOLDERS!")
             td.stop()
             hub.light.on(Color.YELLOW)
             mission_active = True
-            Run_Bolders.run_bolders(td, ta)  # Assuming Right Button runs BOLDERS
+            Run_Bolders.run_bolders(td, ta)
             mission_active = False
-
             hub.light.off()
 
     # --- DARK_GREEN MISSION ---
-    elif detected_color == "GREEN" and is_right_pressed:
+    elif (
+        detected_color == "GREEN"
+        and is_right_pressed
+        and not is_left_pressed
+        and not is_center_pressed
+    ):
         print("Dark Green + Button: RUNNING MAP REVEAL!")
         td.stop()
         hub.light.on(Color.WHITE)
+        mission_active = True
         Run_Map_Reveal.run_Map_Reveal(td, ta)
+        mission_active = False
         while is_right_pressed:
             wait(10)
         hub.light.off()
 
     # --- LIGHT_GREEN MISSION ---
-    elif detected_color == "LIGHT_GREEN" and is_right_pressed:
+    elif (
+        detected_color == "LIGHT_GREEN"
+        and is_right_pressed
+        and not is_left_pressed
+        and not is_center_pressed
+    ):
         print("Light Green + Button: RUNNING SHIPRECK!")
         td.stop()
         hub.light.on(Color.GREEN)
+        mission_active = True
         Run_Shipreck.run_Shipreck(td, ta)
+        mission_active = False
         while is_right_pressed:
             wait(10)
         hub.light.off()
 
     # --- ORANGE MISSION ---
-    elif detected_color == "ORANGE" and is_right_pressed:
+    elif (
+        detected_color == "ORANGE"
+        and is_right_pressed
+        and not is_left_pressed
+        and not is_center_pressed
+    ):
         print("Orange + Button: RUNNING SEAL DELIVER!")
         td.stop()
         hub.light.on(Color.ORANGE)
+        mission_active = True
         Run_Seal_Deliver.Run_Seal_Deliver(td, ta)
+        mission_active = False
         while is_right_pressed:
             wait(10)
         hub.light.off()
 
     # --- BLUE MISSION ---
-    elif detected_color == "BLUE" and is_right_pressed:
+    elif (
+        detected_color == "BLUE"
+        and is_right_pressed
+        and not is_left_pressed
+        and not is_center_pressed
+    ):
         print("Blue + Button: RUNNING CROSS THE TERRAIN (ANSHI)!")
         td.stop()
         hub.light.on(Color.BLUE)
+        mission_active = True
         Run_Cross_The_Terrain.run_Anshi(td, ta)
+        mission_active = False
         while is_right_pressed:
             wait(10)
         hub.light.off()
@@ -230,7 +254,9 @@ while True:
         print("Black detected: RUNNING ARTIFACT (ALICE)!")
         td.stop()
         hub.light.off()
+        mission_active = True
         Run_artifact.Run_Alice(td, ta)
+        mission_active = False
         # Wait for button release just in case, then continue the loop.
         while is_right_pressed or is_left_pressed:
             wait(10)
