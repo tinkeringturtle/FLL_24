@@ -16,14 +16,15 @@ def run_market(td, ta):
     td.straight_drive(-290)
     td.turn(-45)
     td.straight_drive(390)
-    # td.straight_drive(195)
-    # td.turn(-45)
-    # td.straight_drive(335)
-    run_task(ta.move_C_angle(200))
 
-    # td.straight_drive(40)
+    # FIX: Removed the undefined run_task() wrapper
+    ta.move_C_angle(200)
+
     td.straight_drive(-130)
-    run_task(ta.move_C_angle(-200))
+
+    # FIX: Removed the undefined run_task() wrapper
+    ta.move_C_angle(-200)
+
     td.straight_drive(-300)
 
 

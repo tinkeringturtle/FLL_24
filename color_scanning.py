@@ -116,7 +116,7 @@ while Button.RIGHT not in hub.buttons.pressed():
 
 hub.light.off()
 print("--- STARTING MISSION ---")
-
+mission_active = False
 
 # Main mission loop for color detection and mission triggering
 while True:
@@ -128,30 +128,57 @@ while True:
     is_right_pressed = Button.RIGHT in buttons_pressed
     is_left_pressed = Button.LEFT in buttons_pressed
 
+    if mission_active:
+        wait(50)
+        continue
+
     # ------------------------------------------------------------------
     # --- 1. PRIORITY MISSIONS (Requires Color AND Button Press) ---
     # ------------------------------------------------------------------
 
     # --- WHITE MISSION (SIMULTANEOUS DUAL BUTTON LOGIC) ---
-    if detected_color == "WHITE":
-        if is_right_pressed:
-            print("White + Right Button: RUNNING BOLDERS!")
-            td.stop()
-            hub.light.on(Color.YELLOW)
-            Run_Bolders.run_bolders(td, ta)
-            # Wait for button release, then continue loop (program doesn't stop)
-            while Button.RIGHT in hub.buttons.pressed():
-                wait(10)
-            hub.light.off()
+    # --- WHITE MISSION ---
 
-        elif is_left_pressed:
+    # --- WHITE MISSION (Bolders/Market) ---
+    # --- Check for Center Button ---
+    is_center_pressed = Button.CENTER in buttons_pressed
+
+    # --- WHITE MISSION (Bolders/Market) ---
+    if detected_color == "WHITE":
+
+        # 1. PRIMARY CHECK: LEFT BUTTON (RUNS MARKET)
+        # Check that ONLY the Left Button is pressed and Center is OFF.
+        if is_left_pressed and not is_right_pressed and not is_center_pressed:
+
+            # --- Robust Button Wait for Press-and-Release ---
+            while Button.LEFT in hub.buttons.pressed():
+                wait(10)
+            # -------------------------------------------------
+
             print("White + Left Button: RUNNING MARKET!")
             td.stop()
             hub.light.on(Color.YELLOW)
-            Run_Market.run_market(td, ta)
-            # Wait for button release, then continue loop (program doesn't stop)
-            while Button.LEFT in hub.buttons.pressed():
+            mission_active = True
+            Run_Market.run_market(td, ta)  # Assuming Left Button runs MARKET
+            mission_active = False
+
+            hub.light.off()
+
+        # 2. SECONDARY CHECK: RIGHT BUTTON (RUNS BOLDERS)
+        elif is_right_pressed and not is_left_pressed and not is_center_pressed:
+
+            # --- Robust Button Wait for Press-and-Release ---
+            while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
+            # -------------------------------------------------
+
+            print("White + Right Button: RUNNING BOLDERS!")
+            td.stop()
+            hub.light.on(Color.YELLOW)
+            mission_active = True
+            Run_Bolders.run_bolders(td, ta)  # Assuming Right Button runs BOLDERS
+            mission_active = False
+
             hub.light.off()
 
     # --- DARK_GREEN MISSION ---
