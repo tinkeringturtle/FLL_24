@@ -111,7 +111,10 @@ ta = TurtleAttachment()
 
 # --- START-GATE WAIT LOOP ---
 hub.light.on(Color.BLUE)
-while Button.RIGHT not in hub.buttons.pressed():
+while (
+    Button.RIGHT not in hub.buttons.pressed()
+    and Button.LEFT not in hub.buttons.pressed()
+):
     wait(10)
 
 hub.light.off()
