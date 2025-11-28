@@ -20,7 +20,7 @@ def set_speed_percentage(
 #   run_task(ta.move_D_angle(-300))
 
 
-# line nine
+# line eight (second black line)
 def Run_Seal_Deliver(td, ta):
     print("start run")
     # second balck line from the left, (on the right edge)
