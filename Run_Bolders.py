@@ -7,22 +7,22 @@ from pybricks.tools import wait, multitask, run_task
 def run_bolders(td, ta):
     print("start run")
     td.straight_drive(725)  # 725
-    td.turn(-55)
-    td.straight_drive(30)
-    td.turn(-30)
-    td.straight_drive(75)  # getting market
-    td.turn(30)
-    td.straight_drive(-80)
-    td.turn(-30)
+    td.turn(-60)
+    td.straight_drive(30)  # boulders
+    td.turn(-35)
+    td.straight_drive(77)  # market thing
+    td.turn(90)
+    td.straight_drive(-90)
+    td.turn(-93)  # going for boulders angle
     td.set_speed_percentage(20)
-    td.straight_drive(-240)  # pushing in boulders
+    td.straight_drive(-270)  # going in for boulders
     td.set_speed_percentage(75)
-    td.straight_drive(160)
-    td.turn(-52)
-    # td.straight_drive(370)
-    # td.straight_drive(-100)
-    # td.turn(-70)
-    # td.straight_drive(450)
+    td.straight_drive(160)  # coming out
+    td.turn(-51)  # change for the lever hting
+    td.straight_drive(370)  # hit the lever
+    td.straight_drive(-100)
+    td.turn(-70)  # back up
+    td.straight_drive(470)  # going home
 
 
 if __name__ == "__main__":
