@@ -15,12 +15,12 @@ def run_market(td, ta):
     ta.move_D_time(speed_percentage=-100, time_millisec=1000)
     ta.move_D_time(speed_percentage=100, time_millisec=1500)
     td.straight_drive(-290)
-    td.turn(-45)
-    td.straight_drive(390)
+    td.turn(-50)
+    td.straight_drive(400)
     run_task(ta.move_C_angle(200))
-    td.straight_drive(-130)
+    td.straight_drive(-120)
     run_task(ta.move_C_angle(-200))
-    td.straight_drive(-300)
+    td.straight_drive(-400)
 
 
 if __name__ == "__main__":
