@@ -11,13 +11,13 @@ async def runAttachemnt(ta, angle):
 
 def run_Anshi(td, ta):
     print("start run")
-    td.straight_drive(-163)
+    td.straight_drive(-159)
     td.turn(-90)
     td.straight_drive(-720)
     td.turn(95)
     td.straight_drive(224)
     run_task(ta.move_D_angle(-900))
-    td.straight_drive(-226)
+    td.straight_drive(-220)
     run_task(ta.move_C_angle(330))
     run_task(ta.move_C_angle(-330))
     td.straight_drive(15)
