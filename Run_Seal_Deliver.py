@@ -25,13 +25,31 @@ def Run_Seal_Deliver(td, ta):
     print("start run")
     # second balck line from the left, (on the right edge)
     # run starts here
-    td.straight_drive(550)  # forward
+    td.straight_drive(270)
+    td.curve(6, 53)
+    td.straight_drive(260)
+    td.straight_drive(-260)
+    td.curve(6, -55)
+    td.straight_drive(360)
+    td.curve(185, 145)  # curving in
+    run_task(ta.move_D_angle(210))  # dropping arm
+    td.set_speed_percentage(30)
+    td.straight_drive(160)  # driving in
+    run_task(ta.move_D_angle(-300))  # lifting arm
+    td.set_speed_percentage(50)
+    td.straight_drive(-100)
+    td.turn(-95)
+    td.set_speed_percentage(100)
+    td.straight_drive(-700)
+
+    """
+    td.straight_drive(520)  # forward
     td.set_speed_percentage(turn_rate_percentage=30)
-    td.curve(215, 155)  # curving in
-    td.straight_drive(80)  # going in to raise arm
-    run_task(ta.move_D_angle(-100))  # lifting arm
+    td.curve(215, 150)  # curving in
+    td.straight_drive(60)  # going in to raise arm
+    run_task(ta.move_D_angle(-200))  # lifting arm
     td.set_speed_percentage(25)
-    td.straight_drive(60)  # going in for artifacts
+    td.straight_drive(75)  # going in for artifacts
     td.set_speed_percentage(50)
     td.straight_drive(-125)  # backing up
     td.turn(-50)
@@ -39,6 +57,7 @@ def Run_Seal_Deliver(td, ta):
     td.curve(-100, 75)
     td.set_speed_percentage(100)
     td.straight_drive(-700)
+    """
 
 
 # run ends here
