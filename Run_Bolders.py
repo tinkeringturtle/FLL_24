@@ -12,14 +12,23 @@ def run_bolders(td, ta):
     td.turn(-32)
     td.straight_drive(77)  # market thing
     td.turn(90)
-    td.straight_drive(-80)
-    td.turn(-93)  # going for boulders angle
+    td.straight_drive(-75)
+    td.turn(-90)  # going for boulders angle
     td.set_speed_percentage(20)
-    td.straight_drive(
-        -320
-    )  # going in for boulders, we also need to go all the way back here, also idk why the code looks like that i cant do anythign about it
-    td.set_speed_percentage(100)
-    td.straight_drive(-160)
+    td.straight_drive(-130)  # going in for boulders
+    ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
+    ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
+    ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
+    ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
+    ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
+    ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
+    td.straight_drive(-46.7)
+    td.set_speed_percentage(50)
+    td.straight_drive(-86.7)
+    ta.move_D_time(speed_percentage=-100, time_millisec=500)  # 1 hit
+    td.straight_drive(-167)
+    # td.set_speed_percentage(100)
+    # td.straight_drive(-160)
     # td.set_speed_percentage(75)
     # td.straight_drive(160)  # coming out
     # td.turn(-51)  # change for the lever hting
