@@ -12,7 +12,7 @@ def run_bolders(td, ta):
     td.turn(-32)
     td.straight_drive(77)  # market thing
     td.turn(90)
-    td.straight_drive(-90)
+    td.straight_drive(-80)
     td.turn(-93)  # going for boulders angle
     td.set_speed_percentage(20)
     td.straight_drive(

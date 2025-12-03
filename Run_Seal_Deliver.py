@@ -28,12 +28,12 @@ def Run_Seal_Deliver(td, ta):
     td.straight_drive(550)  # forward
     td.set_speed_percentage(turn_rate_percentage=30)
     td.curve(215, 155)  # curving in
-    td.straight_drive(95)  # going in to raise arm
+    td.straight_drive(80)  # going in to raise arm
     run_task(ta.move_D_angle(-100))  # lifting arm
     td.set_speed_percentage(25)
     td.straight_drive(60)  # going in for artifacts
     td.set_speed_percentage(50)
-    td.straight_drive(-140)  # backing up
+    td.straight_drive(-125)  # backing up
     td.turn(-50)
     td.straight_drive(-120)
     td.curve(-100, 75)
