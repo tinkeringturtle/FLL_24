@@ -32,32 +32,18 @@ def Run_Seal_Deliver(td, ta):
     td.curve(6, -55)
     td.straight_drive(360)
     td.curve(185, 145)  # curving in
-    run_task(ta.move_D_angle(210))  # dropping arm
+    run_task(ta.move_D_angle(220))  # dropping arm
     td.set_speed_percentage(30)
-    td.straight_drive(160)  # driving in
-    run_task(ta.move_D_angle(-300))  # lifting arm
+    td.straight_drive(135)  # driving in
+    run_task(ta.move_D_angle(-205))  # lifting arm
     td.set_speed_percentage(50)
-    td.straight_drive(-100)
-    td.turn(-95)
-    td.set_speed_percentage(100)
-    td.straight_drive(-700)
-
-    """
-    td.straight_drive(520)  # forward
-    td.set_speed_percentage(turn_rate_percentage=30)
-    td.curve(215, 150)  # curving in
-    td.straight_drive(60)  # going in to raise arm
-    run_task(ta.move_D_angle(-200))  # lifting arm
-    td.set_speed_percentage(25)
-    td.straight_drive(75)  # going in for artifacts
-    td.set_speed_percentage(50)
-    td.straight_drive(-125)  # backing up
-    td.turn(-50)
-    td.straight_drive(-120)
-    td.curve(-100, 75)
-    td.set_speed_percentage(100)
-    td.straight_drive(-700)
-    """
+    td.turn(-8)  # turn before backing o ut
+    td.straight_drive(-46)
+    td.turn(-4)
+    td.straight_drive(-138)
+    td.turn(80)
+    td.set_speed_percentage(670)
+    td.straight_drive(730)
 
 
 # run ends here
