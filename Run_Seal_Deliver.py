@@ -34,7 +34,7 @@ def Run_Seal_Deliver(td, ta):
     td.curve(185, 145)  # curving in
     run_task(ta.move_D_angle(220))  # dropping arm
     td.set_speed_percentage(30)
-    td.straight_drive(135)  # driving in
+    td.straight_drive(140)  # driving in
     run_task(ta.move_D_angle(-205))  # lifting arm
     td.set_speed_percentage(50)
     td.turn(-8)  # turn before backing o ut
