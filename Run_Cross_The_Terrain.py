@@ -3,7 +3,7 @@ from TurtleAttachement import *
 
 
 async def runAttachemnt(ta, angle):
-    await ta.move_D_angle(angle=angle, speed_percentage=95)
+    await ta.move_D_angle(angle=angle, speed_percentage=100)
 
 
 # from the left 12th line
@@ -17,20 +17,22 @@ def run_Anshi(td, ta):
     td.straight_drive(-695)
     td.set_speed_percentage(50)
     td.turn(95)
-    td.straight_drive(245)
-    run_task(ta.move_D_angle(-905))
+    td.straight_drive(250)
+    run_task(ta.move_D_angle(-920))
     wait(5)
-    td.straight_drive(-220)
-    td.turn(-10)
-    td.set_speed_percentage(90)
-    run_task(ta.move_C_angle(335))
-    run_task(ta.move_C_angle(-335))
-    td.set_speed_percentage(90)
+    td.straight_drive(-235)
+    td.turn(-18)
+    td.set_speed_percentage(100)
+    run_task(ta.move_C_angle(355))
+    run_task(ta.move_C_angle(-355))
+    td.set_speed_percentage(85)
     td.straight_drive(10)
-    td.turn(90)
-    td.straight_drive(410)
-    td.turn(-35)
-    td.straight_drive(615)
+    td.turn(80)
+    td.straight_drive(450)
+    td.turn(-10)
+    td.straight_drive(500)
+    td.turn(-25)
+    td.straight_drive(50)
 
 
 if __name__ == "__main__":
