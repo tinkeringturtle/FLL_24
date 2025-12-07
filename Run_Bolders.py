@@ -15,7 +15,7 @@ def run_bolders(td, ta):
     td.straight_drive(-75)
     td.turn(-88)  # going for boulders angle
     td.set_speed_percentage(20)
-    td.straight_drive(-100)  # going in for boulders
+    td.straight_drive(-110)  # going in for boulders
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
@@ -26,7 +26,6 @@ def run_bolders(td, ta):
     ta.move_D_time(speed_percentage=-100, time_millisec=500)  # 1 hit
     td.straight_drive(-66.7)
     td.set_speed_percentage(50)
-
     td.straight_drive(-226.7)
     # td.set_speed_percentage(100)
     # td.straight_drive(-160)
