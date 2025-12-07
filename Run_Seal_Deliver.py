@@ -29,7 +29,7 @@ def Run_Seal_Deliver(td, ta):
 
     # second balck line from the left, (on the right edge)
     # run starts here
-    td.straight_drive(270)
+    td.straight_drive(260)
     td.curve(6, 53)
     td.straight_drive(260)
     td.straight_drive(-260)
@@ -38,7 +38,7 @@ def Run_Seal_Deliver(td, ta):
     td.curve(175, 145)  # curving in
     run_task(ta.move_D_angle(220))  # dropping arm
     td.set_speed_percentage(20)
-    td.straight_drive(150)  # driving in
+    td.straight_drive(155)  # driving in
     td.turn(-6)
     # wait(5)
 
