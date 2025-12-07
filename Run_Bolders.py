@@ -10,12 +10,12 @@ def run_bolders(td, ta):
     td.turn(-60)
     td.straight_drive(30)  # boulders
     td.turn(-32)
-    td.straight_drive(77)  # market thing
+    td.straight_drive(90)  # market thing
     td.turn(90)
     td.straight_drive(-75)
     td.turn(-88)  # going for boulders angle
     td.set_speed_percentage(20)
-    td.straight_drive(-125)  # going in for boulders
+    td.straight_drive(-100)  # going in for boulders
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit

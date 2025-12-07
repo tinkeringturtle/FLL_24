@@ -34,12 +34,12 @@ def Run_Seal_Deliver(td, ta):
     td.straight_drive(260)
     td.straight_drive(-260)
     td.curve(6, -55)
-    td.straight_drive(360)
-    td.curve(175, 145)  # curving in
+    td.straight_drive(345)
+    td.curve(170, 145)  # curving in
     run_task(ta.move_D_angle(220))  # dropping arm
     td.set_speed_percentage(20)
     td.straight_drive(155)  # driving in
-    td.turn(-6)
+    td.turn(-4)
     # wait(5)
 
     async def runAttachemnt(ta, angle):
