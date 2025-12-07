@@ -39,18 +39,18 @@ def Run_Seal_Deliver(td, ta):
     run_task(ta.move_D_angle(220))  # dropping arm
     td.set_speed_percentage(20)
     td.straight_drive(150)  # driving in
-    td.turn(-10)
-    wait(5)
+    td.turn(-6)
+    # wait(5)
 
     async def runAttachemnt(ta, angle):
         await ta.move_D_angle(angle=(-100), speed_percentage=(5))
 
-    run_task(ta.move_D_angle(-100))  # lifting arm
-    wait(5)
+    run_task(ta.move_D_angle(-120))  # lifting arm
+    # wait(5)
     td.turn(15)
     td.set_speed_percentage(50)
     td.set_speed_percentage(turn_rate_percentage=30)
-    td.turn(-8)  # turn before backing o ut
+    td.turn(-11)  # turn before backing out
     td.straight_drive(-40)
     td.turn(-15)
     td.straight_drive(-138)
