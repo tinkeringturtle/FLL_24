@@ -105,7 +105,7 @@ def get_detected_color(color_data):
 # ----------------------------------------------------------------------
 
 print(
-    "Brainrot compilation: Tralaleo tralla, ballerina capuchina, tung tung tung sahur, los tralaritos, lirri lirri larrila, trippi troppi, assasino bandito. The End. Part 2 coming soon!"
+    "Italian Brainrot Compilation, by Meghana Mudunuri: Tralaleo tralla, ballerina capuchina, tung tung tung sahur, los tralaritos, lirri lirri larrila, trippi troppi, assasino bandito. The End. Part 2 coming soon!"
 )
 
 td = TurtleDrive()
