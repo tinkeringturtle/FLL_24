@@ -29,7 +29,7 @@ def Run_Seal_Deliver(td, ta):
 
     # second balck line from the left, (on the right edge)
     # run starts here
-    td.straight_drive(210)
+    td.straight_drive(160)
     td.curve(6, 53)
     td.straight_drive(260)
     td.straight_drive(-260)
@@ -57,7 +57,7 @@ def Run_Seal_Deliver(td, ta):
 
 # run ends here
 if __name__ == "__main__":
-    print()
+    print(" meghana was here.;)")
     td = TurtleDrive()
     ta = TurtleAttachment()
     Run_Seal_Deliver(td, ta)
