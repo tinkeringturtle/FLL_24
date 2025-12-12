@@ -1,21 +1,18 @@
 from TurtleDrive import *
 from TurtleAttachement import *
-from pybricks.tools import wait, multitask, run_task
+
+# from pybricks.tools import wait, multitask, run_task
 
 
 # line nine
 def run_bolders(td, ta):
     print("start run")
-    td.straight_drive(725)  # 725
-    td.turn(-60)
-    td.straight_drive(30)  # boulders
-    td.turn(-32)
-    td.straight_drive(77)  # market thing
-    td.turn(90)
-    td.straight_drive(-75)
-    td.turn(-88)  # going for boulders angle
+    td.straight_drive(695)
+    td.turn(-90)
+    td.straight_drive(50)
+    td.straight_drive(-25)
     td.set_speed_percentage(20)
-    td.straight_drive(-130)  # going in for boulders
+    td.straight_drive(-125)  # going in for boulders
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
