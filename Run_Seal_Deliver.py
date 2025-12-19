@@ -34,25 +34,10 @@ def Run_Seal_Deliver(td, ta):
     td.straight_drive(260)
     td.straight_drive(-260)
     td.curve(6, -55)
-    td.straight_drive(345)
-    td.curve(170, 143)  # curving in
-    run_task(ta.move_D_angle(220))  # dropping arm
-    td.set_speed_percentage(20)
-    td.straight_drive(165)  # driving in
-
-    async def runAttachemnt(ta, angle):
-        await ta.move_D_angle(angle=(-100), speed_percentage=(5))
-
-    run_task(ta.move_D_angle(-54))  # lifting arm #45 if not working after run 1.
-    wait(8)
-    td.turn(-20)
-    run_task(ta.move_D_angle(-6))
-    wait(5)
-    td.turn(20)
-    td.set_speed_percentage(50)
-    td.straight_drive(-150)
-    td.turn(-49)
-    td.straight_drive(35)
+    td.straight_drive(380)
+    td.curve(100, 93)
+    # td.turn(90)
+    td.straight_drive(70)
 
 
 # run ends here
@@ -79,3 +64,26 @@ if __name__ == "__main__":
 
 # td.turn(57)
 # td.straight_drive(325)
+
+
+##code for seal:
+"""
+td.curve(170, 143)  # curving in
+    run_task(ta.move_D_angle(220))  # dropping arm
+    td.set_speed_percentage(20)
+    td.straight_drive(165)  # driving in
+
+    async def runAttachemnt(ta, angle):
+        await ta.move_D_angle(angle=(-100), speed_percentage=(5))
+
+    run_task(ta.move_D_angle(-54))  # lifting arm #45 if not working after run 1.
+    wait(8)
+    td.turn(-20)
+    run_task(ta.move_D_angle(-6))
+    wait(5)
+    td.turn(20)
+    td.set_speed_percentage(50)
+    td.straight_drive(-130)
+    td.turn(-53)
+    td.straight_drive(50)
+"""
