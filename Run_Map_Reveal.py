@@ -10,7 +10,7 @@ async def runAttachemnt(ta, angle):
 def run_Map_Reveal(td, ta):
     print("start run")
     td.set_speed_percentage(85)
-    td.straight_drive(575)  # Go to get brush
+    td.straight_drive(705)  # Go to get brush
     td.straight_drive(-175)
     td.straight_drive(45)
     run_task(ta.move_C_angle(230))
