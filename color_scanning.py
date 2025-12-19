@@ -104,7 +104,9 @@ def get_detected_color(color_data):
 # --- 3. MAIN PROGRAM LOOP ---
 # ----------------------------------------------------------------------
 
-print("--- Robot Ready: Press Right Button to Start ---")
+print(
+    "Brainrot compilation: Tralaleo tralla, ballerina capuchina, tung tung tung sahur, los tralaritos, lirri lirri larrila, trippi troppi, assasino bandito. The End. Part 2 coming soon!"
+)
 
 td = TurtleDrive()
 ta = TurtleAttachment()

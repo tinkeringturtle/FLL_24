@@ -14,14 +14,14 @@ def Run_Alice(td, ta):
     # Run starts here
 
     td.set_speed_percentage(100)
-    td.straight_drive(-795)  # drive backwards into wall
+    td.straight_drive(-790)  # drive backwards into wall
     td.straight_drive(25)  # drive a little out of wall
     td.turn(-107)  # turn towards the mineshaft
     td.set_speed_percentage(10)
-    td.straight_drive(145)  # drive into mineshaft
+    td.straight_drive(150)  # drive into mineshaft
     wait(2)
     td.set_speed_percentage(1)
-    run_task(ta.move_D_angle(-110))  # pick up artifact
+    run_task(ta.move_D_angle(-120))  # pick up artifact
     run_task(ta.move_C_angle(-135))  # lift up cart onto other side
     td.straight_drive(-130)  # drive back out
     td.set_speed_percentage(turn_rate_percentage=5)

@@ -11,7 +11,7 @@ def set_speed_percentage(
 ):
 
     async def runAttachemnt(ta, angle):
-        await ta.move_C_angle(angle=angle, speed_percentage=20)
+        await ta.move_D_angle(angle=angle, speed_percentage=(5))
 
 
 # curve turn - first number is radius, second number is angle.
@@ -23,22 +23,36 @@ def set_speed_percentage(
 # line 6. 1 and half (black lines)
 def Run_Seal_Deliver(td, ta):
     print("start run")
+
+    # async def runAttachemnt(ta, angle):
+    # await ta.move_C_angle(angle=angle, speed_percentage=(5))
+
     # second balck line from the left, (on the right edge)
     # run starts here
-    td.straight_drive(550)  # forward
-    td.set_speed_percentage(turn_rate_percentage=30)
-    td.curve(215, 155)  # curving in
-    td.straight_drive(80)  # going in to raise arm
-    run_task(ta.move_D_angle(-100))  # lifting arm
-    td.set_speed_percentage(25)
-    td.straight_drive(60)  # going in for artifacts
+    td.straight_drive(260)
+    td.curve(6, 53)
+    td.straight_drive(260)
+    td.straight_drive(-260)
+    td.curve(6, -55)
+    td.straight_drive(345)
+    td.curve(170, 143)  # curving in
+    run_task(ta.move_D_angle(220))  # dropping arm
+    td.set_speed_percentage(20)
+    td.straight_drive(165)  # driving in
+
+    async def runAttachemnt(ta, angle):
+        await ta.move_D_angle(angle=(-100), speed_percentage=(5))
+
+    run_task(ta.move_D_angle(-54))  # lifting arm #45 if not working after run 1.
+    wait(8)
+    td.turn(-20)
+    run_task(ta.move_D_angle(-6))
+    wait(5)
+    td.turn(20)
     td.set_speed_percentage(50)
-    td.straight_drive(-125)  # backing up
-    td.turn(-50)
-    td.straight_drive(-120)
-    td.curve(-100, 75)
-    td.set_speed_percentage(100)
-    td.straight_drive(-700)
+    td.straight_drive(-150)
+    td.turn(-47)
+    td.straight_drive(25)
 
 
 # run ends here
