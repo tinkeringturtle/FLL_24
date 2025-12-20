@@ -16,6 +16,7 @@ def run_Map_Reveal(td, ta):
     run_task(ta.move_C_angle(230))
     run_task(ta.move_C_angle(-300))
     run_task(ta.move_C_angle(275))
+    td.turn(90)
     return
     run_task(ta.move_D_angle(150))
     wait(1.5)
