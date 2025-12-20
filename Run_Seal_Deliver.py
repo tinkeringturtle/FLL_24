@@ -34,15 +34,19 @@ def Run_Seal_Deliver(td, ta):
     td.straight_drive(260)
     td.straight_drive(-260)
     td.curve(6, -55)
-    td.straight_drive(380)
-    td.curve(100, 93)
+    td.straight_drive(365)
+    td.curve(100, 92)
     # td.turn(90)
-    td.straight_drive(70)
+    td.straight_drive(240)
+    run_task(ta.move_D_angle(500))
+    td.straight_drive(607)
 
 
 # run ends here
 if __name__ == "__main__":
-    print(" meghana was here.;)")
+    print(
+        " meghanas italian brainrot comlition: tralaleo trala, ballerina cappuchina, tung tung tung sahur, assasino bandito, lirri lirri larilla, los traleritos, trippi troppi, part 2 coming soon!!! )"
+    )
     td = TurtleDrive()
     ta = TurtleAttachment()
     Run_Seal_Deliver(td, ta)
