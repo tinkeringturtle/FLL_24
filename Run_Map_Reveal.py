@@ -14,14 +14,14 @@ def run_Map_Reveal(td, ta):
     td.straight_drive(-200)
     run_task(ta.move_C_angle(50))
     td.straight_drive(85)
-    run_task(ta.move_C_angle(-50))
-    run_task(ta.move_C_angle(25))  # should have brush
+    run_task(ta.move_C_angle(-55))
+    run_task(ta.move_C_angle(100))  # should have brush
     wait(1.5)
     td.set_speed_percentage(50)
     td.turn(35)
-    td.straight_drive(180)
+    td.straight_drive(175)
     td.turn(-80)  # about to go into 3 thing
-    td.straight_drive(250)
+    td.straight_drive(253)
     td.straight_drive(-45)
     td.set_speed_percentage(100)
     run_task(ta.move_D_angle(-150))
