@@ -6,7 +6,7 @@ from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
-import Run_Map_Reveal, Run_Market, Run_Seal_Deliver, Run_Shipreck
+import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
 
 # Initialize the sensor.
@@ -88,6 +88,6 @@ if __name__ == "__main__":
 
     if Button.RIGHT in pressed and color == Color.ORANGE:
             print("Run Seal Deliver")
-            Run_Seal_Deliver.Run_Seal_Deliver(td, ta)
+            Run_Forum_Plus_Flags.Run_Seal_Deliver(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)

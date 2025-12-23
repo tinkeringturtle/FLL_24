@@ -14,14 +14,14 @@ def set_speed_percentage(
         await ta.move_D_angle(angle=angle, speed_percentage=(5))
 
 
-# curve turn - first number is radius, second number is angle.
+# curve turn - first number is radius, second number is angle(turn).
 # this is the code for the attachment: run_task(ta.move_D_angle(90))
 # code for looping motor: for i in range(10)
 #   run_task(ta.move_D_angle(-300))
 
 
 # line 6. 1 and half (black lines)
-def Run_Seal_Deliver(td, ta):
+def Run_Forum_Plus_Flags(td, ta):
     print("start run")
 
     # async def runAttachemnt(ta, angle):
@@ -29,27 +29,33 @@ def Run_Seal_Deliver(td, ta):
 
     # second balck line from the left, (on the right edge)
     # run starts here
+    td.set_speed_percentage(30)
     td.straight_drive(160)
-    td.curve(6, 53)
-    td.straight_drive(260)
-    td.straight_drive(-260)
+    td.curve(6, 53)  # delivering forum curve
+    td.set_speed_percentage(40)
+    td.straight_drive(260)  # in
+    td.straight_drive(-535)  # out
+    wait(6)
+    td.straight_drive(275)
     td.curve(6, -55)
-    td.straight_drive(365)
+    td.straight_drive(375)
     td.curve(100, 92)
     # td.turn(90)
-    td.straight_drive(240)
-    run_task(ta.move_D_angle(500))
-    td.straight_drive(607)
+    td.straight_drive(275)
+    run_task(ta.move_D_angle(495))
+    td.straight_drive(560)
+    td.turn(-78)
+    td.straight_drive(190)
 
 
 # run ends here
 if __name__ == "__main__":
     print(
-        " meghanas italian brainrot comlition: tralaleo trala, ballerina cappuchina, tung tung tung sahur, assasino bandito, lirri lirri larilla, los traleritos, trippi troppi, part 2 coming soon!!! )"
+        " meghanas italian brainrot comlition: 67 mythical brainrot, tralaleo trala, ballerina cappuchina, tung tung tung sahur, assasino bandito, lirri lirri larilla, los traleritos, trippi troppi, part 2 coming soon!!! )"
     )
     td = TurtleDrive()
     ta = TurtleAttachment()
-    Run_Seal_Deliver(td, ta)
+    Run_Forum_Plus_Flags(td, ta)
 
 
 # old code :
