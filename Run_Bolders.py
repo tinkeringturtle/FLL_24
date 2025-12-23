@@ -7,12 +7,13 @@ from TurtleAttachement import *
 # line nine
 def run_bolders(td, ta):
     print("start run")
-    td.straight_drive(700)  # 725
-    td.turn(-90)
-    td.straight_drive(35)  # boulders
+    td.straight_drive(725)  # 725
+    td.turn(-85)
+    td.straight_drive(40)  # boulders
     td.straight_drive(-60)
     td.set_speed_percentage(20)
-    td.straight_drive(-65)  # going in for boulders
+    td.straight_drive(-68)  # going in for boulders
+    return
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
