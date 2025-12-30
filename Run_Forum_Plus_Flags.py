@@ -41,10 +41,10 @@ def Run_Forum_Plus_Flags(td, ta):
     td.straight_drive(375)
     td.curve(100, 92)
     # td.turn(90)
-    td.straight_drive(275)
-    run_task(ta.move_D_angle(495))
+    td.straight_drive(260)
+    run_task(ta.move_D_angle(495))  # dropping flag
     td.straight_drive(560)
-    td.turn(-78)
+    td.turn(-80)
     td.straight_drive(190)
 
 
