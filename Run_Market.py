@@ -10,14 +10,17 @@ def run_market(td, ta):
     td.straight_drive(245)
     run_task(ta.move_C_angle(200))  # dropiing for market
     td.set_speed_percentage(20)
-    td.straight_drive(-150)
+    td.straight_drive(15)
+    td.straight_drive(-155)
     td.set_speed_percentage(50)
     td.straight_drive(20)
     run_task(ta.move_C_angle(-200))  # lift
+    td.straight_drive(-50)
     td.turn(10)
-    td.straight_drive(-80)  # change to get the right position for the lever
-    run_task(ta.move_C_angle(215))  # dropping for lever
-    td.straight_drive(30)  # the go forward before moving the lever
+    td.straight_drive(-100)  # change to get the right position for the lever
+    run_task(ta.move_C_angle(180))  # dropping for lever
+
+    td.straight_drive(60)  # the go forward before moving the lever
     td.turn(-45)  # lever hits, this is where we turn to activate the lever thing
     td.turn(35)
 
