@@ -6,12 +6,13 @@ from pybricks.tools import wait, multitask, run_task
 # line nine
 def run_bolders(td, ta):
     print("start run")
-    td.straight_drive(700)  # 725
-    td.turn(-90)
-    td.straight_drive(35)  # boulders
-    td.straight_drive(-60)
+    td.straight_drive(702)  # 725
+    td.turn(-20)
+    td.turn(-70)  # hits boulders
+    td.straight_drive(70)  # market
+    td.straight_drive(-100)  # lil backup
     td.set_speed_percentage(20)
-    td.straight_drive(-65)  # going in for boulders
+    td.straight_drive(-180)  # going in for boulders
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=-100, time_millisec=1000)  # 1 hit
     ta.move_C_time(speed_percentage=100, time_millisec=1000)  # 1 hit
@@ -36,7 +37,9 @@ def run_bolders(td, ta):
 
 
 if __name__ == "__main__":
-    print("Hello")
+    print(
+        "Meghana is back again folks and today we have another amazing italian brainrot comlitation! WOOHOO LETS GO: Tralaleo tralala tung tung tung sahur, lirrili larri, bandito assisno, los traleritos, treippi troppi, grendill agorilaa , espresso tenesooo, mythical 67 brainrottttttt."
+    )
     td = TurtleDrive()
     ta = TurtleAttachment()
     run_bolders(td, ta)
