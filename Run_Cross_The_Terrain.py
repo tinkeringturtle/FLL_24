@@ -40,10 +40,10 @@ def run_Anshi(td, ta):
     # run_task(ta.move_C_angle(150, speed_percentage=50))  # arm goes up; seal goes up
     run_task(ta.move_C_angle(150, speed_percentage=35))  # arm goes up; seal goes up
     td.straight_drive(150)
-    td.turn(-50)
+    td.turn(-40)
     td.straight_drive(-400)  # heads toward anshi area
     td.turn(-15)
-    td.straight_drive(-400)
+    td.straight_drive(-420)
 
 
 if __name__ == "__main__":
