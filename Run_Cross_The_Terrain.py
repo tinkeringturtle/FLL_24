@@ -9,15 +9,8 @@ from TurtleDrive import *
 from TurtleAttachement import *
 
 
-async def runAttachemnt(ta, angle):
-    await ta.move_D_angle(angle=angle, speed_percentage=100)
-
-
-# from the left 11th line
-# hi
-
-
 def run_Anshi(td, ta):
+
     print("start run")
     td.set_speed_percentage(60)
     td.straight_drive(-167)
@@ -27,27 +20,30 @@ def run_Anshi(td, ta):
     td.set_speed_percentage(50)
     td.turn(95)
     td.straight_drive(245)
-    run_task(ta.move_D_angle(-650))
-    wait(5)
-    td.turn(-10)
-    td.straight_drive(-179)
-    td.turn(-8)
+    run_task(ta.move_D_angle(-650))  # spins Angler Artifact
+
+    td.turn(-9)
+
+    td.straight_drive(-181)
+    td.turn(2)  # grabs seabead sample
     td.set_speed_percentage(90)
-    td.straight_drive(115)
-    td.turn(-45)
-    td.straight_drive(-240)
-    td.turn(20)
-    run_task(ta.move_C_angle(350))
-    wait(10)
-    td.straight_drive(60)
-    run_task(ta.move_C_angle(-200))
-    td.turn(-65)
-    td.set_speed_percentage(100)
-    td.straight_drive(-767.67)
-
-
-# td.turn(-50)
-# td.straight_drive(-200)
+    td.straight_drive(125)  # exits seabead area
+    td.turn(-55)
+    run_task(ta.move_C_angle(-505, speed_percentage=90))  # arm goes down
+    td.set_speed_percentage(70)
+    td.turn(11)
+    td.straight_drive(-190)  # appraoches seal
+    td.turn(5)
+    td.set_speed_percentage(80)
+    td.straight_drive(-50)
+    td.turn(-8)
+    # run_task(ta.move_C_angle(150, speed_percentage=50))  # arm goes up; seal goes up
+    run_task(ta.move_C_angle(150, speed_percentage=35))  # arm goes up; seal goes up
+    td.straight_drive(150)
+    td.turn(-42)
+    td.straight_drive(-400)  # heads toward anshi area
+    td.turn(-15)
+    td.straight_drive(-420)
 
 
 if __name__ == "__main__":
