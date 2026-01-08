@@ -31,7 +31,7 @@ def Run_Forum_Plus_Flags(td, ta):
     # run starts here
 
     td.set_speed_percentage(30)
-    td.straight_drive(160)
+    td.straight_drive(252)
     td.curve(6, 53)  # delivering forum curve
     td.set_speed_percentage(40)
     td.straight_drive(260)  # in
@@ -39,16 +39,24 @@ def Run_Forum_Plus_Flags(td, ta):
     wait(6)
     td.straight_drive(275)
     td.curve(6, -55)
-    td.straight_drive(375)
-    td.curve(100, 86)
-    # td.turn(90)
-    td.straight_drive(260)
+    td.set_speed_percentage(70)
+    td.straight_drive(425)
+    td.turn(80)
+    td.straight_drive(40)
+    # td.curve(100, 86)
+    ## td.turn(90)
+    # td.set_speed_percentage(80)
+    # td.straight_drive(260)
+    # td.turn(80)
+    # our code is gone for now we will only do the forum and one single flag.
+    """
     run_task(ta.move_D_angle(495))  # dropping flag
     td.straight_drive(590)
     td.turn(-75)
     td.straight_drive(-35)
     run_task(ta.move_C_angle(-140))  # dropping arm
     td.straight_drive(240)
+    """
 
 
 # run ends here

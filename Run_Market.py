@@ -24,8 +24,10 @@ def run_market(td, ta):
     td.turn(-45)  # lever hits, this is where we turn to activate the lever thing
     td.turn(35)
 
-    td.straight_drive(-350)
-    run_task(ta.move_C_angle(-200))
+    td.straight_drive(-400)
+
+
+# run_task(ta.move_C_angle(-200))
 
 
 if __name__ == "__main__":
