@@ -29,6 +29,7 @@ def Run_Forum_Plus_Flags(td, ta):
 
     # second balck line from the left, (on the right edge)
     # run starts here
+
     td.set_speed_percentage(30)
     td.straight_drive(160)
     td.curve(6, 53)  # delivering forum curve
@@ -45,7 +46,9 @@ def Run_Forum_Plus_Flags(td, ta):
     run_task(ta.move_D_angle(495))  # dropping flag
     td.straight_drive(590)
     td.turn(-75)
-    td.straight_drive(190)
+    td.straight_drive(-35)
+    run_task(ta.move_C_angle(-140))  # dropping arm
+    td.straight_drive(240)
 
 
 # run ends here
