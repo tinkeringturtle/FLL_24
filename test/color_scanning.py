@@ -7,19 +7,22 @@ from pybricks.tools import wait
 hub = PrimeHub()
 sensor = ColorSensor(Port.F)
 
-# Visual confirmation the program is active
-hub.light.animate([Color.RED, Color.GREEN, Color.BLUE], interval=200)
+# Visual confirmation
+hub.light.on(Color.WHITE)
 
-print("--- STARTING SENSOR READ ---")
-
-# Loop forever
+print("--- STARTING YELLOW DETECTION ---")
 while True:
     # 1. Read the color data
     data = sensor.hsv()
 
-    # 2. Print it to the "Output" terminal at the bottom
-    # We use a f-string for clear formatting
-    print("H: {} | S: {} | V: {}".format(data.h, data.s, data.v))
+    # 2. Extract values for easier reading
+    h, s, v = data.h, data.s, data.v
 
-    # 3. Wait 500ms (half a second) so it's readable
-    wait(500)
+    # 3. Check for Yellow thresholds
+    # Hue: 40-70 is yellow | Saturation: > 50 (not gray) | Value: > 50 (not black)
+    if 40 <= h <= 70 and s > 50 and v > 50:
+        print("YELLOW! (H:{} S:{} V:{})".format(h, s, v))
+        hub.light.on(Color.YELLOW)
+    else:
+        print("H: {} | S: {} | V: {}".format(h, s, v))
+        hub.light.off()

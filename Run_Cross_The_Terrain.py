@@ -31,7 +31,7 @@ def run_Anshi(td, ta):
     td.turn(-55)
     run_task(ta.move_C_angle(-505, speed_percentage=90))  # arm goes down
     td.set_speed_percentage(70)
-    td.turn(13)
+    td.turn(11)
     td.straight_drive(-190)  # appraoches seal
     td.turn(5)
     td.set_speed_percentage(80)
@@ -39,10 +39,10 @@ def run_Anshi(td, ta):
     td.turn(-8)
     # run_task(ta.move_C_angle(150, speed_percentage=50))  # arm goes up; seal goes up
     run_task(ta.move_C_angle(150, speed_percentage=35))  # arm goes up; seal goes up
-    td.straight_drive(146)
-    td.turn(-45)
+    td.straight_drive(150)
+    td.turn(-42)
     td.straight_drive(-400)  # heads toward anshi area
-    td.turn(-19)
+    td.turn(-15)
     td.straight_drive(-420)
 
 
