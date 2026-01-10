@@ -18,67 +18,68 @@ bottom_sensor = ColorSensor(Port.E)
 front_sensor = ColorSensor(Port.F)
 
 # ----------------------------------------------------------------------
-# --- 1. CUSTOM HSV RANGES ---
+# --- 1. CUSTOM HSV RANGES (CALIBRATED) ---
 # ----------------------------------------------------------------------
-BLACK_SAT_MAX, BLACK_VAL_MAX = 20, 15
-WHITE_SAT_MAX, WHITE_VAL_MIN = 25, 16
 
-ORANGE_HUE_MIN, ORANGE_HUE_MAX = 0, 45
-ORANGE_SAT_MIN, ORANGE_VAL_MIN = 50, 40
+# --- BLACK ---
+BLACK_SAT_MAX = 20
+BLACK_VAL_MAX = 15
 
-# --- NEW YELLOW RANGE ---
-YELLOW_HUE_MIN, YELLOW_HUE_MAX = 46, 80
-YELLOW_SAT_MIN, YELLOW_VAL_MIN = 50, 50
+# --- WHITE ---
+WHITE_SAT_MAX = 25
+WHITE_VAL_MIN = 16
 
-LIGHT_GREEN_HUE_MIN, LIGHT_GREEN_HUE_MAX = 85, 110
-LIGHT_GREEN_SAT_MIN, LIGHT_GREEN_VAL_MIN = 30, 40
+# --- ORANGE ---
+ORANGE_HUE_MIN = 0
+ORANGE_HUE_MAX = 45
+ORANGE_SAT_MIN = 50
+ORANGE_VAL_MIN = 40
 
-GREEN_HUE_MIN, GREEN_HUE_MAX = 110, 170
-GREEN_SAT_MIN, GREEN_VAL_MIN = 40, 20
+# --- LIGHT_GREEN (UPDATED FOR HUE 84) ---
+LIGHT_GREEN_HUE_MIN = 70  # Lowered to catch your reading
+LIGHT_GREEN_HUE_MAX = 100
+LIGHT_GREEN_SAT_MIN = 30
+LIGHT_GREEN_VAL_MIN = 30
 
-BLUE_HUE_MIN, BLUE_HUE_MAX = 190, 270
-BLUE_SAT_MIN, BLUE_VAL_MIN = 50, 20
+# --- DARK_GREEN (Named GREEN) ---
+GREEN_HUE_MIN = 110  # Gap created between 100 and 110
+GREEN_HUE_MAX = 170
+GREEN_SAT_MIN = 40
+GREEN_VAL_MIN = 20
 
+# --- BLUE ---
+BLUE_HUE_MIN = 190
+BLUE_HUE_MAX = 270
+BLUE_SAT_MIN = 50
+BLUE_VAL_MIN = 20
 
 # ----------------------------------------------------------------------
 # --- 2. DETECTION FUNCTION ---
 # ----------------------------------------------------------------------
+
+
 def get_detected_color(color_data):
-    h, s, v = color_data.h, color_data.s, color_data.v
+    h = color_data.h
+    s = color_data.s
+    v = color_data.v
 
     if v <= BLACK_VAL_MAX and s <= BLACK_SAT_MAX:
         return "BLACK"
     if v >= WHITE_VAL_MIN and s <= WHITE_SAT_MAX:
         return "WHITE"
 
-    if (
-        (ORANGE_HUE_MIN <= h <= ORANGE_HUE_MAX)
-        and s >= ORANGE_SAT_MIN
-        and v >= ORANGE_VAL_MIN
-    ):
+    # Check Hues
+    if (h >= ORANGE_HUE_MIN) and (h <= ORANGE_HUE_MAX) and s >= ORANGE_SAT_MIN:
         return "ORANGE"
-
-    # Yellow Check
     if (
-        (YELLOW_HUE_MIN <= h <= YELLOW_HUE_MAX)
-        and s >= YELLOW_SAT_MIN
-        and v >= YELLOW_VAL_MIN
-    ):
-        return "YELLOW"
-
-    if (
-        (LIGHT_GREEN_HUE_MIN <= h <= LIGHT_GREEN_HUE_MAX)
+        (h >= LIGHT_GREEN_HUE_MIN)
+        and (h <= LIGHT_GREEN_HUE_MAX)
         and s >= LIGHT_GREEN_SAT_MIN
-        and v >= LIGHT_GREEN_VAL_MIN
     ):
         return "LIGHT_GREEN"
-    if (
-        (GREEN_HUE_MIN <= h <= GREEN_HUE_MAX)
-        and s >= GREEN_SAT_MIN
-        and v >= GREEN_VAL_MIN
-    ):
+    if (h >= GREEN_HUE_MIN) and (h <= GREEN_HUE_MAX) and s >= GREEN_SAT_MIN:
         return "GREEN"
-    if (BLUE_HUE_MIN <= h <= BLUE_HUE_MAX) and s >= BLUE_SAT_MIN and v >= BLUE_VAL_MIN:
+    if (h >= BLUE_HUE_MIN) and (h <= BLUE_HUE_MAX) and s >= BLUE_SAT_MIN:
         return "BLUE"
 
     return "UNKNOWN"
@@ -87,76 +88,94 @@ def get_detected_color(color_data):
 # ----------------------------------------------------------------------
 # --- 3. MAIN PROGRAM ---
 # ----------------------------------------------------------------------
+
 td = TurtleDrive()
 ta = TurtleAttachment()
 
 hub.light.on(Color.BLUE)
+print("Waiting for Button to start...")
+
 while not any(hub.buttons.pressed()):
     wait(10)
+
 hub.light.off()
+print("--- MISSION SELECTOR ACTIVE ---")
 
 while True:
-    detected_color = get_detected_color(front_sensor.hsv())
+    hsv_data = front_sensor.hsv()
+    detected_color = get_detected_color(hsv_data)
     buttons = hub.buttons.pressed()
 
-    # YELLOW MISSION: BOLDERS
-    if detected_color == "YELLOW":
-        hub.light.on(Color.YELLOW)
+    # --- WHITE MISSIONS ---
+    if detected_color == "WHITE":
         if Button.RIGHT in buttons:
+            print("RUNNING BOLDERS")
             td.stop()
+            hub.light.on(Color.YELLOW)
             Run_Bolders.run_bolders(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
-
-    # WHITE MISSION: MARKET
-    elif detected_color == "WHITE":
-        hub.light.on(Color.YELLOW)  # Keeping your yellow light feedback for white
-        if Button.LEFT in buttons:
+        elif Button.LEFT in buttons:
+            print("RUNNING MARKET")
             td.stop()
+            hub.light.on(Color.YELLOW)
             Run_Market.run_market(td, ta)
             while Button.LEFT in hub.buttons.pressed():
                 wait(10)
+        else:
+            hub.light.on(Color.YELLOW)
 
-    # GREEN MISSION: MAP REVEAL
+    # --- DARK GREEN (MAP REVEAL) ---
     elif detected_color == "GREEN":
-        hub.light.on(Color.WHITE)
         if Button.RIGHT in buttons:
             td.stop()
+            hub.light.on(Color.WHITE)
             Run_Map_Reveal.run_Map_Reveal(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
+        else:
+            hub.light.on(Color.WHITE)
 
-    # LIGHT GREEN: SHIPRECK
+    # --- LIGHT GREEN (SHIPRECK) ---
     elif detected_color == "LIGHT_GREEN":
-        hub.light.on(Color.GREEN)
         if Button.RIGHT in buttons:
             td.stop()
+            hub.light.on(Color.GREEN)
             Run_Shipreck.run_Shipreck(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
+        else:
+            hub.light.on(Color.GREEN)
 
-    # ORANGE: FORUM
+    # --- ORANGE (FORUM) ---
     elif detected_color == "ORANGE":
-        hub.light.on(Color.ORANGE)
         if Button.RIGHT in buttons:
             td.stop()
+            hub.light.on(Color.ORANGE)
             Run_Forum_Plus_Flags.Run_Forum_Plus_Flags(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
+        else:
+            hub.light.on(Color.ORANGE)
 
-    # BLUE: CROSS TERRAIN
+    # --- BLUE (CROSS TERRAIN) ---
     elif detected_color == "BLUE":
-        hub.light.on(Color.BLUE)
         if Button.RIGHT in buttons:
             td.stop()
+            hub.light.on(Color.BLUE)
             Run_Cross_The_Terrain.run_Anshi(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
+        else:
+            hub.light.on(Color.BLUE)
 
-    # BLACK: ARTIFACT (Instant)
+    # --- BLACK (ARTIFACT - INSTANT) ---
     elif detected_color == "BLACK":
+        td.stop()
         hub.light.off()
         Run_artifact.Run_Alice(td, ta)
+        while any(hub.buttons.pressed()):
+            wait(10)
 
     else:
         hub.light.off()
