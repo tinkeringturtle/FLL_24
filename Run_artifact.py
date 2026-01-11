@@ -12,7 +12,7 @@ def Run_Alice(td, ta):
     print("start run")
 
     # Run starts here
-    #     td.set_speed_percentage(100)
+    # td.set_speed_percentage(100)
     td.straight_drive(-790)  # drive backwards into wall
     td.straight_drive(25)  # drive a little out of wall
     td.turn(-107)  # turn towards the mineshaft
@@ -35,12 +35,10 @@ def Run_Alice(td, ta):
 
 
 # ATTACHEMENT MOVEMENT ANGLES
-# run_task(ta.move_D_angle(90))  ----- USE THIS CODE ----------- NEGATIVE = UP.  POSOTIVE = DOWN.
+# run_task(ta.move_D_angle(90))
 # run_task(runAttachemnt(ta, 180))
 # run_task(runAttachemnt(ta, -180))
 
-
-# COMMENTED CODE:
 
 # td.straight_drive(15)
 # td.turn(90)

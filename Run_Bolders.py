@@ -4,7 +4,7 @@ from TurtleAttachement import *
 # from pybricks.tools import wait, multitask, run_task
 
 
-# line nine
+# line up on line nine
 def run_bolders(td, ta):
     print("start run")
     td.straight_drive(690)  # 725
@@ -24,8 +24,8 @@ def run_bolders(td, ta):
     ta.move_D_time(speed_percentage=100, time_millisec=500)  # 1 hit
     td.straight_drive(-70)
     td.set_speed_percentage(50)
-
     td.straight_drive(-226.7)
+    #  CODE WE DONT USE ANYMORE ,BUT MIGHT NEED AGIAN
     # td.set_speed_percentage(100)
     # td.straight_drive(-160)
     # td.set_speed_percentage(75)
@@ -37,10 +37,8 @@ def run_bolders(td, ta):
     # td.straight_drive(470)  # going home
 
 
+# MAIN FUNCTION
 if __name__ == "__main__":
-    print(
-        "Meghana is back again folks and today we have another amazing italian brainrot comlitation! WOOHOO LETS GO: Tralaleo tralala tung tung tung sahur, lirrili larri, bandito assisno, los traleritos, treippi troppi, grendill agorilaa , espresso tenesooo, mythical 67 brainrottttttt."
-    )
     td = TurtleDrive()
     ta = TurtleAttachment()
     run_bolders(td, ta)

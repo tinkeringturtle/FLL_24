@@ -9,14 +9,15 @@ from TurtleConstant import *
 from TurtleHelper import *
 
 
+# def functions for containing the motors
 class TurtleDrive:
     def __init__(self, ENABLE_GYRO=True, ENABLE_LOGS=False):
-        # Initialize both motors. In this example, the motor on the
-        # left must turn counterclockwise to make the robot go forward.
+        # Initialize both motors.
+        # left must turn counterclockwise to make the robot go forward
         self.left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
         self.right_motor = Motor(Port.B)
         self.log_enabled = ENABLE_LOGS
-        # Initialize the drive base. In this example, the wheel diameter is 56mm.
+        # Initialize the drive base. the wheel diameter is 56mm.
         # The distance between the two wheel-ground contact points is 112mm.
         self.drive_base = DriveBase(
             self.left_motor,
@@ -148,6 +149,7 @@ class TurtleDrive:
                 )
             )
         self.drive_base.settings(speed, acceleration, turn_rate, turn_acceleration)
+
 
 def loop_motor_movement(motor_name):
     for i in range(4):

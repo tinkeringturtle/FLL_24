@@ -7,6 +7,7 @@ from TurtleConstant import *
 from TurtleHelper import *
 
 
+# Def controls for attachment motors
 class TurtleAttachment:
     def __init__(self, ENABLE_GYRO=True, ENABLE_LOGS=False):
         self.left = Motor(Port.C)

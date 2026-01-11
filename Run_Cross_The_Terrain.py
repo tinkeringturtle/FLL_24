@@ -3,12 +3,13 @@ from pybricks.parameters import Button, Icon
 from pybricks.pupdevices import ColorSensor
 from pybricks.parameters import Port, Color
 from pybricks.tools import wait
-
-# Assuming these files and functions exist in your project
 from TurtleDrive import *
 from TurtleAttachement import *
 
+# from pybricks.tools import wait, multitask, run_task
 
+
+# line up on line 2 form the right
 def run_Anshi(td, ta):
 
     print("start run")
@@ -21,9 +22,7 @@ def run_Anshi(td, ta):
     td.turn(95)
     td.straight_drive(245)
     run_task(ta.move_D_angle(-635))  # spins Angler Artifact
-
     td.turn(-9)
-
     td.straight_drive(-181)
     td.turn(2)  # grabs seabead sample
     td.set_speed_percentage(90)
@@ -46,6 +45,7 @@ def run_Anshi(td, ta):
     td.straight_drive(-420)
 
 
+# MAIN FUNCTION
 if __name__ == "__main__":
     print("Hello")
     td = TurtleDrive()

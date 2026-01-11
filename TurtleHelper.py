@@ -1,6 +1,7 @@
 from TurtleConstant import *
 
 
+# The most common funtions needed for both Drive and Attachemnt
 def percentage_to_value(percentage_value, min_actual_value, max_actual_value):
     negative = False
     if percentage_value < 0:
@@ -46,5 +47,3 @@ def get_turn_acceleration_degsec2(percentage_value):
         DEFAULT_MIN_TURN_ACCELERATION_DEGSEC2,
         DEFAULT_MAX_TURN_ACCELERATION_DEGSEC2,
     )
-
-

@@ -1,9 +1,7 @@
 from TurtleDrive import *
 from TurtleAttachement import *
 
-
-async def runAttachemnt(ta, angle):
-    await ta.move_D_angle(angle=angle, speed_percentage=20)
+# from pybricks.tools import wait, multitask, run_task
 
 
 # line nine
@@ -32,6 +30,7 @@ def run_Map_Reveal(td, ta):
     td.straight_drive(-700)
 
 
+# Main Function
 if __name__ == "__main__":
     print("Hello")
     td = TurtleDrive()

@@ -2,31 +2,29 @@ from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button, Icon, Port, Color
 from pybricks.pupdevices import ColorSensor
 from pybricks.tools import wait
-
-# Assuming these files and functions exist in your project
 from TurtleDrive import *
 from TurtleAttachement import *
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
 import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
 
-# ----------------------------------------------------------------------
-# --- SENSOR INITIALIZATION ---
-# ----------------------------------------------------------------------
+# Importing all files
+
+# SENSOR INITIALIZATION
+
 hub = PrimeHub()
 bottom_sensor = ColorSensor(Port.E)
 front_sensor = ColorSensor(Port.F)
 
-# ----------------------------------------------------------------------
-# --- 1. CUSTOM HSV RANGES ---
-# ----------------------------------------------------------------------
+# CUSTOM HSV RANGES
+
 BLACK_SAT_MAX, BLACK_VAL_MAX = 20, 15
 WHITE_SAT_MAX, WHITE_VAL_MIN = 25, 16
 
 ORANGE_HUE_MIN, ORANGE_HUE_MAX = 0, 45
 ORANGE_SAT_MIN, ORANGE_VAL_MIN = 50, 40
 
-# --- NEW YELLOW RANGE ---
+
 YELLOW_HUE_MIN, YELLOW_HUE_MAX = 46, 80
 YELLOW_SAT_MIN, YELLOW_VAL_MIN = 50, 50
 
@@ -40,9 +38,7 @@ BLUE_HUE_MIN, BLUE_HUE_MAX = 190, 270
 BLUE_SAT_MIN, BLUE_VAL_MIN = 50, 20
 
 
-# ----------------------------------------------------------------------
-# --- 2. DETECTION FUNCTION ---
-# ----------------------------------------------------------------------
+# Def functions
 def get_detected_color(color_data):
     h, s, v = color_data.h, color_data.s, color_data.v
 
@@ -58,7 +54,6 @@ def get_detected_color(color_data):
     ):
         return "ORANGE"
 
-    # Yellow Check
     if (
         (YELLOW_HUE_MIN <= h <= YELLOW_HUE_MAX)
         and s >= YELLOW_SAT_MIN
@@ -84,9 +79,7 @@ def get_detected_color(color_data):
     return "UNKNOWN"
 
 
-# ----------------------------------------------------------------------
-# --- 3. MAIN PROGRAM ---
-# ----------------------------------------------------------------------
+# Main Loop
 td = TurtleDrive()
 ta = TurtleAttachment()
 
@@ -100,17 +93,17 @@ while True:
     buttons = hub.buttons.pressed()
 
     # YELLOW MISSION: BOLDERS
-    if detected_color == "YELLOW":
+    if detected_color == "YELLOW":  # WHEN YELLOW IS DETECTES
         hub.light.on(Color.YELLOW)
-        if Button.RIGHT in buttons:
+        if Button.RIGHT in buttons:  # AND RIGHT BUTTON IS PRESSED
             td.stop()
-            Run_Bolders.run_bolders(td, ta)
+            Run_Bolders.run_bolders(td, ta)  # THEN RUN BLODERS WILL LAUNCH
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
     # WHITE MISSION: MARKET
     elif detected_color == "WHITE":
-        hub.light.on(Color.YELLOW)  # Keeping your yellow light feedback for white
+        hub.light.on(Color.YELLOW)  # Keeping your yellow light differnt form white
         if Button.LEFT in buttons:
             td.stop()
             Run_Market.run_market(td, ta)

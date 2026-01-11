@@ -2,6 +2,7 @@ from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 from pybricks.parameters import Axis
 
+# used to test lights
 # Initialize the hub.
 hub = PrimeHub()
 
