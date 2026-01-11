@@ -27,7 +27,7 @@ def run_Anshi(td, ta):
     td.straight_drive(-181)
     td.turn(2)  # grabs seabead sample
     td.set_speed_percentage(90)
-    td.straight_drive(125)  # exits seabead area
+    td.straight_drive(130)  # exits seabead area
     td.turn(-55)
     run_task(ta.move_C_angle(-505, speed_percentage=90))  # arm goes down
     td.set_speed_percentage(70)
