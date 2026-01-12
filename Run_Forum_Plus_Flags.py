@@ -34,8 +34,8 @@ def Run_Forum_Plus_Flags(td, ta):
     td.straight_drive(252)
     td.curve(6, 53)  # delivering forum curve
     td.set_speed_percentage(40)
-    td.straight_drive(260)  # in
-    td.straight_drive(-535)  # out
+    td.straight_drive(270)  # in
+    td.straight_drive(-545)  # out
     wait(6)
     td.straight_drive(275)
     td.curve(6, -55)
