@@ -21,6 +21,7 @@ def run_Anshi(td, ta):
     td.set_speed_percentage(50)
     td.turn(95)
     td.straight_drive(240)
+    td.turn(4)
     run_task(ta.move_D_angle(-635))  # spins Angler Artifact
     td.turn(-9)
     td.straight_drive(-181)
