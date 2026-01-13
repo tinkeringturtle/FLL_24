@@ -9,7 +9,7 @@ from TurtleConstant import *
 from TurtleHelper import *
 
 
-# def functions for containing the motors
+# def functions for controllng  the motors
 class TurtleDrive:
     def __init__(self, ENABLE_GYRO=True, ENABLE_LOGS=False):
         # Initialize both motors.

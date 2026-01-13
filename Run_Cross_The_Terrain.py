@@ -23,8 +23,8 @@ def run_Anshi(td, ta):
     td.straight_drive(240)
     run_task(ta.move_D_angle(-635))  # spins Angler Artifact
     td.turn(-9)
-    td.straight_drive(-295)
-    td.turn(-8)  # grabs seabead sample
+    td.straight_drive(-181)
+    td.turn(2)  # grabs seabead sample
     td.set_speed_percentage(90)
     td.straight_drive(195)  # exits seabead area
     td.turn(-64)
