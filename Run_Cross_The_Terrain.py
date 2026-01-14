@@ -20,17 +20,24 @@ def run_Anshi(td, ta):
     td.straight_drive(-715)
     td.set_speed_percentage(50)
     td.turn(95)
-    td.straight_drive(240)
-    td.turn(4)
-    run_task(ta.move_D_angle(-635))  # spins Angler Artifact
+    td.straight_drive(265)
+    td.turn(-15)
+    run_task(ta.move_D_angle(-325.5))  # spins Angler Artifact
+    td.straight_drive(40)
+    run_task(ta.move_D_angle(-325.5))
     td.turn(-9)
-    td.straight_drive(-181)
-    td.turn(2)  # grabs seabead sample
+    td.straight_drive(-150)
+    td.turn(18)
+    td.straight_drive(-160)
+    td.turn(-9)  # grabs seabead sample
     td.set_speed_percentage(90)
-    td.straight_drive(195)  # exits seabead area
-    td.turn(-64)
+    td.straight_drive(190)  # exits seabead area
+    td.turn(-40)
     run_task(ta.move_C_angle(-525, speed_percentage=90))  # arm goes down
     td.set_speed_percentage(70)
+    td.straight_drive(-167)
+    td.turn(60)
+    return
     td.turn(11)
     td.straight_drive(-185)  # appraoches seal
     td.turn(5)
