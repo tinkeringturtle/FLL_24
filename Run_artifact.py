@@ -19,7 +19,7 @@ def Run_Alice(td, ta):
     td.set_speed_percentage(10)
     td.straight_drive(160)  # drive into mineshaft
     wait(2)
-    run_task(ta.move_D_angle(-190, speed_percentage=50))  # pick up cart
+    run_task(ta.move_D_angle(-155, speed_percentage=20))  # pick up cart
     run_task(ta.move_C_angle(-145, speed_percentage=10))  # artifact
     td.straight_drive(-135)  # drive back out
     td.set_speed_percentage(turn_rate_percentage=15)
