@@ -25,4 +25,4 @@ while True:
         print("H: {} | S: {} | V: {}".format(h, s, v))
         hub.light.off()
 
-        #whats up chat
+        # whats up chat
