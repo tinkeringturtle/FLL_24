@@ -83,7 +83,8 @@ class TurtleDrive:
 
     def turn_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
-        wait(time_millis)
+        if time_millis > 0:
+            wait(time_millis)
 
     """
     Turns the robot to an specified angle
