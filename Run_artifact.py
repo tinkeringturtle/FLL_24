@@ -22,7 +22,7 @@ def Run_Alice(td, ta):
     run_task(ta.move_D_angle(-155, speed_percentage=20))  # pick up cart
     run_task(ta.move_C_angle(-145, speed_percentage=10))  # artifact
     td.straight_drive(-135)  # drive back out
-    td.set_speed_percentage(turn_rate_percentage=15)
+    td.set_speed_percentage(turn_rate_percentage=7)
     td.turn(107)  # slow turn
     td.set_speed_percentage(200)
     td.straight_drive(850)  # really fast drive back home
