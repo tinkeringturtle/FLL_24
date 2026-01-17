@@ -27,7 +27,7 @@ def run_Anshi(td, ta):
     run_task(ta.move_D_angle(-325.5))
     td.turn(-9)
     td.straight_drive(-150)
-    td.turn(20)
+    td.turn(12)
     td.straight_drive(-180)
     td.turn(-9)  # grabs seabead sample
     td.set_speed_percentage(90)
@@ -35,10 +35,10 @@ def run_Anshi(td, ta):
     td.turn(-50)
     run_task(ta.move_C_angle(-525, speed_percentage=90))  # arm goes down
     td.set_speed_percentage(70)
-    td.straight_drive(-185)
+    td.straight_drive(-215)  # gose into seal
     td.turn(30)
     td.turn(-30)
-    td.straight_drive(150)
+    td.straight_drive(170)
     td.turn(-30)
     td.set_speed_percentage(100)
     td.straight_drive(-240)
