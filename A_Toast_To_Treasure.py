@@ -5,38 +5,12 @@ from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
-from test_bottom_color import detect_bottom_color
-
-
-def detect_bottom_color(td):
-    td.turn_drive(200, 0, 0)
-
-    while True:
-        # Read the current color
-        detected_color = sensor.color()
-
-        if detected_color == Color.WHITE:
-            print("White detected")
-        elif detected_color == Color.BLACK or detected_color == Color.NONE:
-            # Pybricks often reports very dark surfaces as Color.NONE
-            print("Black detected")
-            td.stop()
-            break
-    wait(10)
-
-
-td = TurtleDrive()
-detect_bottom_color(td)
-
-
-sensor = ColorSensor(Port.E)
 
 
 def run_Elly(td, ta):
 
     print("start run")
-    # td.straight_drive(-170)
-    run_task(ta.move_C_angle(-325.5))  # spins Angler Artifact)
+    run_task(ta.move_D_angle(325.5))  # spins Angler Artifact)
 
 
 # MAIN FUNCTION
