@@ -34,21 +34,27 @@ def Run_Forum_Plus_Flags(td, ta):
     td.straight_drive(252)
     td.curve(6, 53)  # delivering forum curve
     td.set_speed_percentage(40)
-    td.straight_drive(260)  # in
-    td.straight_drive(-535)  # out
-    wait(6)
-    td.straight_drive(275)
-    td.curve(6, -55)
+    td.straight_drive(300)  # in
+    td.straight_drive(-415)  # out
+    wait(20)
+    td.turn(-30)
     td.set_speed_percentage(70)
-    td.straight_drive(415)
-    td.turn(80)
-    td.straight_drive(40)
+    td.straight_drive(505)
+    # td.turn(-10)  # erm like 67?
+    # td.curve(6, -55)
+    # td.set_speed_percentage(70)
+    # td.straight_drive(415)
+    # td.turn(80)
+    # td.straight_drive(40)
+    """
     # td.curve(100, 86)
     ## td.turn(90)
     # td.set_speed_percentage(80)
     # td.straight_drive(260)
     # td.turn(80)
     # our code is gone for now we will only do the forum and one single flag.
+    #this is the code for Iana and 3rd flag
+    """
     """
     run_task(ta.move_D_angle(495))  # dropping flag
     td.straight_drive(590)
