@@ -6,14 +6,40 @@ from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 
+
 # from pybricks.tools import wait, multitask, run_task
+def detect_bottom_color(td):
+    td.turn_drive(200, 0, 0)
+
+    while True:
+        # Read the current color
+        detected_color = sensor.color()
+
+        if detected_color == Color.WHITE:
+            print("White detected")
+        elif detected_color == Color.BLACK or detected_color == Color.NONE:
+            # Pybricks often reports very dark surfaces as Color.NONE
+            print("Black detected")
+            td.stop()
+            break
+    wait(10)
+
+
+td = TurtleDrive()
+detect_bottom_color(td)
+
+
+sensor = ColorSensor(Port.E)
 
 
 def run_Anshi(td, ta):
 
     print("start run")
-    td.straight_drive(-170)
-    run_task(ta.move_C_angle(-325.5))  # spins Angler Artifact
+
+    td.straight_drive(150)
+    td.turn(-90)
+    detect_bottom_color(td)
+    # td.straight_drive(150)
 
 
 # MAIN FUNCTION

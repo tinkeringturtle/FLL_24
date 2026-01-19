@@ -35,9 +35,8 @@ sensor = ColorSensor(Port.E)
 def run_Elly(td, ta):
 
     print("start run")
-    td.straight_drive(40)
-    td.turn(-90)
-    detect_bottom_color(td)
+    # td.straight_drive(-170)
+    run_task(ta.move_C_angle(-325.5))  # spins Angler Artifact)
 
 
 # MAIN FUNCTION
