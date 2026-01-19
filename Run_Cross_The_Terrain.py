@@ -17,6 +17,8 @@ def run_Anshi(td, ta):
     td.straight_drive(-170)
     td.set_speed_percentage(75)
     td.turn(-90)
+    td.straight_drive(-200)
+    return
     td.straight_drive(-715)
     td.set_speed_percentage(50)
     td.turn(95)
