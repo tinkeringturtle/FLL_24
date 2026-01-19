@@ -12,7 +12,7 @@ from TurtleAttachement import *
 # line up on line 2 form the right
 def run_Anshi(td, ta):
 
-    run_task(ta.move_D_angle(-525, speed_percentage=90))  # arm goes down
+    run_task(ta.move_D_angle(-100000, speed_percentage=90))  # arm goes down
 
 
 # MAIN FUNCTION
