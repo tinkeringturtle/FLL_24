@@ -8,9 +8,9 @@ from TurtleAttachement import *
 def run_Shipreck(td, ta):
     print("start run")
     td.set_speed_percentage(66)
-    td.straight_drive(475)
+    td.straight_drive(480)
     td.set_speed_percentage(10)
-    run_task(ta.move_C_angle(-100))  # dropping flag
+    run_task(ta.move_C_angle(93))  # dropping flag
     run_task(ta.move_D_angle(-140))  # Grabbing sand
     td.set_speed_percentage(100)
     td.straight_drive(-175)
