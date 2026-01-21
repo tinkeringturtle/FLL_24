@@ -6,13 +6,11 @@ from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 
-# from pybricks.tools import wait, multitask, run_task
 
+def run_Elly(td, ta):
 
-# line up on line 2 form the right
-def run_Anshi(td, ta):
-
-    run_task(ta.move_D_angle(-100000, speed_percentage=90))  # arm goes down
+    print("start run")
+    run_task(ta.move_D_angle(325.5))  # spins Angler Artifact)
 
 
 # MAIN FUNCTION
@@ -20,4 +18,4 @@ if __name__ == "__main__":
     print("Hello")
     td = TurtleDrive()
     ta = TurtleAttachment()
-    run_Anshi(td, ta)
+    run_Elly(td, ta)
