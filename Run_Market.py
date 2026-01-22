@@ -7,18 +7,17 @@ from pybricks.tools import wait, multitask, run_task
 
 # line up left side second dark line from left
 def run_market(td, ta):
-
     td.straight_drive(325)  # going forward
     run_task(
         ta.move_C_angle(-280, speed_percentage=2000)
     )  # arm to get the artifact thing,
     run_task(ta.move_D_angle(-220))  # market and lever
-    ta.move_C_angle(270, speed_percentage=1000)
+    run_task(ta.move_C_angle(280, speed_percentage=1000))
     # arm to get the artifact thing back
-    td.straight_drive(-100)
-    run_task(ta.move_D_angle(225))
+    td.straight_drive(-110)  # back up befroe pull
+    run_task(ta.move_D_angle(225))  # lift arm
     td.set_speed_percentage(100)
-    td.straight_drive(-250)
+    td.straight_drive(-250)  # fats backup
 
     return
     td.straight_drive(250)
