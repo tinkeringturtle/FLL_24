@@ -12,14 +12,13 @@ def run_market(td, ta):
     run_task(
         ta.move_C_angle(-280, speed_percentage=2000)
     )  # arm to get the artifact thing,
-    run_task(ta.move_D_angle(-240))  # market and lever
-    run_task(
-        ta.move_C_angle(270, speed_percentage=1000)
-    )  # arm to get the artifact thing back
-    td.straight_drive(-110)
-    run_task(ta.move_D_angle(240))
+    run_task(ta.move_D_angle(-220))  # market and lever
+    ta.move_C_angle(270, speed_percentage=1000)
+    # arm to get the artifact thing back
+    td.straight_drive(-100)
+    run_task(ta.move_D_angle(225))
     td.set_speed_percentage(100)
-    td.straight_drive(-230)
+    td.straight_drive(-250)
 
     return
     td.straight_drive(250)
