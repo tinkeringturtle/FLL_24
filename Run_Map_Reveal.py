@@ -8,11 +8,19 @@ from TurtleAttachement import *
 def run_Map_Reveal(td, ta):
     print("start run")
     td.set_speed_percentage(85)
-    td.straight_drive(566)  # Go to get brush
-    run_task(ta.move_C_angle(800))
-    run_task(ta.move_C_angle(-800))
+    td.straight_drive(565)  # Go to get brush
+    run_task(ta.move_C_angle(750))
+    run_task(ta.move_C_angle(-750))
     td.turn(45)
-    td.straight_drive(200)
+    td.straight_drive(220)
+    td.turn(-91)  # about to go into map reveal like in front of it
+    td.set_speed_percentage(45)
+    td.straight_drive(301.5)
+    run_task(ta.move_D_angle(-125))
+    td.straight_drive(-125)
+    td.turn(50)
+    td.set_speed_percentage(1000)
+    td.straight_drive(-700)
 
     return
     td.straight_drive(-200)
