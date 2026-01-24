@@ -53,9 +53,7 @@ def Run_Alice(td, ta):
 
 
 if __name__ == "__main__":
-    print(
-        "Brain rot compliation: Tralaleo tralala shark with blue shoes. Ballerina Capuchina. Tung Tung Tung sahur "
-    )
+    print()
     td = TurtleDrive()
     ta = TurtleAttachment()
     Run_Alice(td, ta)
