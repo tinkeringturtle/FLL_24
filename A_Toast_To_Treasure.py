@@ -7,10 +7,16 @@ from TurtleDrive import *
 from TurtleAttachement import *
 
 
+async def runAttachment(ta, angle):
+    await ta.move_D_angle(angle=angle, speed_percentage=(100))
+
+
 def run_Elly(td, ta):
 
     print("start run")
-    run_task(ta.move_D_angle(325.5))  # spins Angler Artifact)
+    td.straight_drive(480)
+    run_task(ta.move_D_angle(540.5))  # spins Angler Artifact)
+    td.straight_drive(-480)
 
 
 # MAIN FUNCTION
