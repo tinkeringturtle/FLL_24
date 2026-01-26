@@ -58,6 +58,12 @@ def run_Anshi(td, ta):
     td.straight_drive(500)
 
 
+if __name__ == "__main__":
+    print("Hello")
+    td = TurtleDrive()
+    ta = TurtleAttachment()
+    run_Anshi(td, ta)
+
 # --- Main Execution ---
 # td = TurtleDrive()
 # ta = TurtleAttachment()

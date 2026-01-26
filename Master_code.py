@@ -5,7 +5,7 @@ from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
-import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck, A_Toast_To_Treasure
+import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
 
 # Importing the new Treasure file
@@ -174,14 +174,6 @@ while True:
     elif detected_color == "BLACK":
         hub.light.off()
         Run_artifact.Run_Alice(td, ta)
-    # RED: TOAST TO TREASURE (Instant start)
-    elif detected_color == "RED":
-        hub.light.on(Color.RED)
-        if Button.RIGHT in buttons:
-            td.stop()
-            Run_Toast_To_Treasure.run_Elly(td, ta)
-            while Button.RIGHT in hub.buttons.pressed():
-                wait(10)
 
     else:
         hub.light.off()
