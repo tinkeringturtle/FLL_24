@@ -24,7 +24,7 @@ def Run_Alice(td, ta):
     td.straight_drive(-135)  # drive back out
     td.set_speed_percentage(turn_rate_percentage=7)
     td.turn(107)  # slow turn
-    td.set_speed_percentage(200)
+    td.set_speed_percentage(1000)
     td.straight_drive(850)  # really fast drive back home
 
 
