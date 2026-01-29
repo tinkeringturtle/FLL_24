@@ -11,6 +11,8 @@ import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
 import A_Toast_To_Treasure
 
+# 1. FIXED: Corrected the import name to match your file
+import Run_2nd_Flag
 
 # ================== SENSOR INITIALIZATION ==================
 hub = PrimeHub()
@@ -34,35 +36,27 @@ BLUE_SAT_MIN, BLUE_VAL_MIN = 50, 20
 def get_detected_color(color_data):
     h, s, v = color_data.h, color_data.s, color_data.v
 
-    # BLACK
     if v <= BLACK_VAL_MAX and s <= BLACK_SAT_MAX:
         return "BLACK"
 
-    # WHITE
     if v >= WHITE_VAL_MIN and s <= WHITE_SAT_MAX:
         return "WHITE"
 
-    # ORANGE (FIRST ON PURPOSE)
     if 6 <= h <= 45 and s >= ORANGE_SAT_MIN and v >= ORANGE_VAL_MIN:
         return "ORANGE"
 
-    # RED (VERY NARROW)
     if (h <= 5 or h >= 350) and s >= RED_SAT_MIN and v >= RED_VAL_MIN:
         return "RED"
 
-    # YELLOW
     if 46 <= h <= 80 and s >= YELLOW_SAT_MIN and v >= YELLOW_VAL_MIN:
         return "YELLOW"
 
-    # LIGHT GREEN
     if 85 <= h <= 110 and s >= LIGHT_GREEN_SAT_MIN and v >= LIGHT_GREEN_VAL_MIN:
         return "LIGHT_GREEN"
 
-    # GREEN
     if 110 <= h <= 170 and s >= GREEN_SAT_MIN and v >= GREEN_VAL_MIN:
         return "GREEN"
 
-    # BLUE
     if 190 <= h <= 270 and s >= BLUE_SAT_MIN and v >= BLUE_VAL_MIN:
         return "BLUE"
 
@@ -86,10 +80,6 @@ while True:
     detected_color = get_detected_color(front_sensor.hsv())
     buttons = hub.buttons.pressed()
 
-    # DEBUG (optional)
-    # hsv = front_sensor.hsv()
-    # print("HSV:", hsv.h, hsv.s, hsv.v, detected_color)
-
     if detected_color == "RED":
         hub.light.on(Color.RED)
         if Button.RIGHT in buttons:
@@ -100,10 +90,18 @@ while True:
 
     elif detected_color == "ORANGE":
         hub.light.on(Color.ORANGE)
+        # RIGHT Button runs original Forum
         if Button.RIGHT in buttons:
             td.stop()
             Run_Forum_Plus_Flags.Run_Forum_Plus_Flags(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
+                wait(10)
+
+        # 2. FIXED: LEFT Button now runs your specific file/function
+        if Button.LEFT in buttons:
+            td.stop()
+            Run_2nd_Flag.run_2nd_Flag(td, ta)
+            while Button.LEFT in hub.buttons.pressed():
                 wait(10)
 
     elif detected_color == "YELLOW":

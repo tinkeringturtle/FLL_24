@@ -15,7 +15,11 @@ def run_Elly(td, ta):
 
     print("start run")
     td.straight_drive(480)
-    run_task(ta.move_D_angle(540.5))  # spins Angler Artifact)
+
+    async def runAttachment(ta, angle):
+        await ta.move_D_angle(angle=angle, speed_percentage=(100))
+
+    run_task(ta.move_D_angle(555))  # spins Angler Artifact)
     td.straight_drive(-480)
 
 

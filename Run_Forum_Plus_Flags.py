@@ -40,6 +40,8 @@ def Run_Forum_Plus_Flags(td, ta):
     td.turn(-30)
     td.set_speed_percentage(70)
     td.straight_drive(505)
+    td.set_speed_percentage(100)
+    td.straight_drive(-650)
     # td.turn(-10)  # erm like 67?
     # td.curve(6, -55)
     # td.set_speed_percentage(70)
