@@ -7,6 +7,7 @@ from TurtleAttachement import *
 # line up on line nine
 def run_2nd_Flag(td, ta):
     print("start run")
+    td.set_speed_percentage
     td.straight_drive(390)
     td.curve(400, -64)
     td.straight_drive(570)
