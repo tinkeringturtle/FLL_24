@@ -45,11 +45,11 @@ def run_Anshi(td, ta):
 
     # Final Turn
     td.set_speed_percentage(50)
-    td.turn(40)
+    td.turn(41)
     run_task(ta.move_D_angle(-500))
-    td.straight_drive(300)
-    run_task(ta.move_D_angle(230))
-    td.turn(12)
+    td.straight_drive(190)
+    td.turn(10.9)
+    td.straight_drive(100)
     td.straight_drive(-235)
     td.set_speed_percentage(100)
     run_task(ta.move_D_angle(230))
