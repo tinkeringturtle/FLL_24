@@ -8,9 +8,8 @@ from TurtleAttachement import *
 def run_2nd_Flag(td, ta):
     print("start run")
     td.set_speed_percentage
-    td.straight_drive(400)
-    td.curve(400, -64)
-    td.straight_drive(570)
+    td.straight_drive(4000)
+    td.straight_drive(-5700)
 
 
 # MAIN FUNCTION
