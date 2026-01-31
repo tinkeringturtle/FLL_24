@@ -10,7 +10,7 @@ def run_2nd_Flag(td, ta):
     td.set_speed_percentage
     td.straight_drive(400)
     td.curve(400, -64)
-    td.straight_drive(555)
+    td.straight_drive(548)
 
 
 # MAIN FUNCTION
