@@ -32,11 +32,10 @@ def detect_bottom_color(td):
 
 
 def run_Anshi(td, ta):
-    # Mission Steps
+
     td.straight_drive(-250)
     td.straight_drive(1060)
 
-    # Line Detection
     detect_bottom_color(td)
 
     # Full stop before turn
@@ -45,11 +44,11 @@ def run_Anshi(td, ta):
 
     # Final Turn
     td.set_speed_percentage(50)
-    td.turn(41)
+    td.turn(40)
     run_task(ta.move_D_angle(-500))
-    td.straight_drive(190)
-    td.turn(10.9)
-    td.straight_drive(100)
+    td.straight_drive(205)
+    td.turn(35)
+    td.turn(-35)
     td.straight_drive(-235)
     td.set_speed_percentage(100)
     run_task(ta.move_D_angle(230))
