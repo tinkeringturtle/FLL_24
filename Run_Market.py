@@ -9,7 +9,7 @@ def run_market(td, ta):
     td.straight_drive(325)
     # Arm movements
     run_task(ta.move_C_angle(-280, speed_percentage=2000))
-    run_task(ta.move_D_angle(-220))
+    run_task(ta.move_D_angle(-230))
     run_task(ta.move_C_angle(280, speed_percentage=1000))
     # Back up
     td.straight_drive(-110)
