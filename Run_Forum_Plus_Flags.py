@@ -34,11 +34,9 @@ def Run_Forum_Plus_Flags(td, ta):
     td.set_speed_percentage(turn_rate_percentage=7)
     td.turn(48)
     td.straight_drive(260)
-    run_task(ta.move_C_angle(-99, speed_percentage=20))
+    run_task(ta.move_C_angle(-105, speed_percentage=20))
     run_task(ta.move_C_angle(200))
-    td.straight_drive(-260)
-    td.turn(-48)
-    td.straight_drive(-235)
+    td.straight_drive(-490)
 
     """
     td.set_speed_percentage(30)
