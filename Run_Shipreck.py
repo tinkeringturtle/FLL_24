@@ -13,6 +13,7 @@ def run_Shipreck(td, ta):
     run_task(ta.move_C_angle(93))  # dropping flag
     run_task(ta.move_D_angle(-140))  # Grabbing sand
     td.set_speed_percentage(100)
+    td.turn(-10)
     td.straight_drive(-175)
     run_task(ta.move_D_angle(150))
     td.straight_drive(-450)
