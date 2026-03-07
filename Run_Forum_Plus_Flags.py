@@ -27,9 +27,20 @@ def Run_Forum_Plus_Flags(td, ta):
     # async def runAttachemnt(ta, angle):
     # await ta.move_C_angle(angle=angle, speed_percentage=(5))
 
-    # second balck line from the left, (on the right edge)
+    # new line up = first black line from the right, right side of the robot
+    # old line up is 2nd black line from the left
     # run starts here
+    td.straight_drive(235)
+    td.set_speed_percentage(turn_rate_percentage=7)
+    td.turn(48)
+    td.straight_drive(260)
+    run_task(ta.move_C_angle(-99, speed_percentage=20))
+    run_task(ta.move_C_angle(200))
+    td.straight_drive(-260)
+    td.turn(-48)
+    td.straight_drive(-235)
 
+    """
     td.set_speed_percentage(30)
     td.straight_drive(252)
     td.curve(6, 53)  # delivering forum curve
@@ -42,6 +53,7 @@ def Run_Forum_Plus_Flags(td, ta):
     td.straight_drive(505)
     td.set_speed_percentage(95)
     td.straight_drive(-650)
+    """
     # td.turn(-10)  # erm like 67?
     # td.curve(6, -55)
     # td.set_speed_percentage(70)
