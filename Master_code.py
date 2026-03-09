@@ -12,7 +12,7 @@ import Run_silo
 import A_Toast_To_Treasure
 
 # 1. FIXED: Corrected the import name to match your file
-import Run_2nd_Flag
+import Dance_Party
 
 # ================== SENSOR INITIALIZATION ==================
 hub = PrimeHub()
@@ -100,7 +100,7 @@ while True:
         # 2. FIXED: LEFT Button now runs your specific file/function
         if Button.LEFT in buttons:
             td.stop()
-            Run_2nd_Flag.run_2nd_Flag(td, ta)
+            Dance_Party.run_2nd_Flag(td, ta)
             while Button.LEFT in hub.buttons.pressed():
                 wait(10)
 

@@ -30,17 +30,24 @@ def Run_Forum_Plus_Flags(td, ta):
     # new line up = first black line from the right, right side of the robot
     # old line up is 2nd black line from the left
     # run starts here
+
     td.straight_drive(235)
     td.set_speed_percentage(turn_rate_percentage=7)
     td.turn(48)
     td.straight_drive(260)
-    run_task(ta.move_C_angle(-107, speed_percentage=20))
-    run_task(ta.move_C_angle(200))
+    run_task(ta.move_C_angle(-111, speed_percentage=20))  # deliver first flag
+    run_task(ta.move_C_angle(200))  # brign arm bakc
     td.straight_drive(-530)
     td.turn(25)
+    wait(100)  # ready to leave
     td.straight_drive(607)
-    td.curve(400, -53)
-    td.straight_drive(500)
+    # note the rest of the code is for backup incase we need to do 2nd flag + aina. Most likely just make this distnace longer
+    td.curve(500, -48)
+    td.straight_drive(370)
+    td.set_speed_percentage(100)
+    td.straight_drive(-470)
+    td.turn(90)
+    td.straight_drive(750)
 
     """
     td.set_speed_percentage(30)
