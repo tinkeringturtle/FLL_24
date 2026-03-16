@@ -12,11 +12,11 @@ def Run_blank(td, ta):
     print("start run")
     td.straight_drive(200)
     td.curve(530, -70)
-    td.straight_drive(280)
-    td.turn(80)
-    run_task(ta.move_D_angle(-150))
-    td.straight_drive(60)
-    run_task(ta.move_D_angle(150))
+    td.straight_drive(260)
+    td.turn(60)
+    run_task(ta.move_D_angle(-130))
+    td.straight_drive(30)
+    run_task(ta.move_D_angle(130))
 
 
 # Main Function
