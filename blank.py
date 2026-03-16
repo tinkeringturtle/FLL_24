@@ -11,10 +11,12 @@ async def runAttachemnt(ta, angle):
 def Run_blank(td, ta):
     print("start run")
     td.straight_drive(200)
-    td.curve(520, -70)
+    td.curve(530, -70)
     td.straight_drive(280)
     td.turn(80)
-    run_task(ta.move_D_angle(300))
+    run_task(ta.move_D_angle(-150))
+    td.straight_drive(60)
+    run_task(ta.move_D_angle(150))
 
 
 # Main Function
