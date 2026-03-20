@@ -12,15 +12,16 @@ def Run_blank(td, ta):
     print("start run")
     td.straight_drive(150)
     td.curve(530, -50)
-    run_task(ta.move_D_angle(-125))  # lower arm down
+    run_task(ta.move_D_angle(-130))  # lower arm down
     wait(1000)
     td.straight_drive(380)
+    run_task(ta.move_D_angle(130))
     td.turn(20)
-    run_task(ta.move_D_angle(125))  # pick up Iana
-    td.straight_drive(60)  # turn to get flag in
-    td.straight_drive(-160)  # back up form Iana
-    td.turn(-70)
-    return
+    run_task(ta.move_D_angle(115))  # pick up Iana
+    td.straight_drive(27)
+
+    td.straiht_drive(-25)
+
     td.turn(-90)
     td.straight_drive(445)
     td.turn(-35)
