@@ -43,7 +43,7 @@ def Run_Forum_Plus_Flags(td, ta):
     td.set_speed_percentage(1000)
     td.straight_drive(740)
     td.turn(30)
-    td.straight_drive(967)
+    td.straight_drive(1000.67)
     # note the rest of the code is for backup incase we need to do 2nd flag + aina. Most likely just make this distnace longer
     # td.curve(500, -48)
     # td.straight_drive(370)
