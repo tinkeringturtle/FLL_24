@@ -1,7 +1,3 @@
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button, Color, Port
-from pybricks.pupdevices import ColorSensor
-from pybricks.tools import wait
 from TurtleDrive import *
 from TurtleAttachement import *
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
