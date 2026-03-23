@@ -1,3 +1,4 @@
+import blank
 from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button, Icon, Port, Color
 from pybricks.pupdevices import ColorSensor
@@ -140,7 +141,7 @@ while True:
         hub.light.on(Color.BLUE)
         if Button.RIGHT in buttons:
             td.stop()
-            Run_Cross_The_Terrain.run_Anshi(td, ta)
+            blank.Run_blank(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
