@@ -10,8 +10,8 @@ def run_Map_Reveal(td, ta):
     td.set_speed_percentage(85)
     td.straight_drive(-10)
     td.straight_drive(570)  # Go to get brush
-    run_task(ta.move_C_angle(765, speed_percentage=1000))  # get brush
-    run_task(ta.move_C_angle(-765, speed_percentage=1000))  # should have brush
+    run_task(ta.move_C_angle(780, speed_percentage=1000))  # get brush
+    run_task(ta.move_C_angle(-780, speed_percentage=1000))  # should have brush
     td.straight_drive(-320)
     td.turn(15)
     td.straight_drive(510)
