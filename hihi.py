@@ -10,11 +10,14 @@ def Run_blank(td, ta):
     print("start run")
     td.straight_drive(400)
     td.curve(300, -50)
-    run_task(ta.move_D_angle(180, speed_percentage=60))
+    run_task(ta.move_D_angle(250, speed_percentage=60))
     td.turn(-15)
     td.straight_drive(420)
     td.turn(20)
-    td.straight_drive(-120)  # back up form Iana
+    td.straight_drive(-115)  # back up form Iana
+    td.turn(20)
+    td.straight_drive(80)
+    return
     td.turn(-50)
     td.straight_drive(345)
     td.turn(-40)
