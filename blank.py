@@ -8,20 +8,18 @@ from TurtleAttachement import *
 # line nine
 def Run_blank(td, ta):
     print("start run")
-    td.straight_drive(150)
-    td.curve(530, -50)
-    # wait(1000)
-    td.straight_drive(380)
+    td.straight_drive(400)
+    td.curve(300, -50)
+    td.turn(-10)
+    td.straight_drive(400)
     td.turn(20)
-    td.straight_drive(20)  # turn to get flag in
-    td.straight_drive(80)
+
     td.straight_drive(-100)  # back up form Iana
-    td.turn(-70)
+    td.turn(-50)
     td.straight_drive(320)
     td.turn(-40)
     td.straight_drive(140)
     run_task(ta.move_C_angle(-999, speed_percentage=100))
-    td.straight_drive(-100)
     return
     td.turn(-90)
     td.straight_drive(445)
