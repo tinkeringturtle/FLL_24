@@ -93,9 +93,9 @@ while True:
         hub.light.on(Color.ORANGE)
         # RIGHT Button runs original Forum
         if Button.RIGHT in buttons:
-            td.stop()
+            td.stop()  # clockit
             Run_Forum_Plus_Flags.Run_Forum_Plus_Flags(td, ta)
-            while Button.RIGHT in hub.buttons.pressed():
+            while Button.RIGHT in hub.buttons.pressed():  # anshi is not tuff
                 wait(10)
 
         # 2. FIXED: LEFT Button now runs your specific file/function
