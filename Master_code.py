@@ -10,7 +10,8 @@ from TurtleAttachement import *
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
 import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
-import A_Toast_To_Treasure
+import A_Toast_To_Treasure, hihi
+
 
 # 1. FIXED: Corrected the import name to match your file
 import Dance_Party
@@ -141,7 +142,7 @@ while True:
         hub.light.on(Color.BLUE)
         if Button.RIGHT in buttons:
             td.stop()
-            blank.Run_blank(td, ta)
+            hihi.Run_blank(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
