@@ -29,6 +29,7 @@ def Run_blank(td, ta):
     td.straight_drive(190)
     td.turn(-90)
     run_task(ta.move_D_angle(100, speed_percentage=60))
+    td.straight_drive(-20)
 
     return
     td.straight_drive(400)
