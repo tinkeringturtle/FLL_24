@@ -20,7 +20,7 @@ def run_Map_Reveal(td, ta):
     td.straight_drive(240)
     run_task(ta.move_D_angle(-120))
     td.straight_drive(-125)
-    td.turn(50)
+    td.turn(60)
     td.set_speed_percentage(1000)
     td.straight_drive(-700)
     run_task(ta.move_D_angle(121))
