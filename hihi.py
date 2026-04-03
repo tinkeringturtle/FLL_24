@@ -21,8 +21,8 @@ def Run_blank(td, ta):
     td.turn(-45)  # turn towards seal
     td.straight_drive(180)
     td.straight_drive(-20)
-    run_task(ta.move_C_angle(-705, speed_percentage=100))
-    run_task(ta.move_C_angle(705, speed_percentage=100))
+    run_task(ta.move_C_angle(-715, speed_percentage=100))
+    run_task(ta.move_C_angle(715, speed_percentage=100))
     td.straight_drive(-100)  # go away form seal
 
     td.turn(45)
