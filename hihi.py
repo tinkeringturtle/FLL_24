@@ -17,7 +17,7 @@ def Run_blank(td, ta):
     run_task(ta.move_D_angle(-70, speed_percentage=60))  # pick up Iana
     td.straight_drive(-110)  # back up form Iana
     td.turn(-90)
-    td.straight_drive(195)
+    td.straight_drive(165)  # 195
     td.turn(-45)  # turn towards seal
     td.straight_drive(180)
     td.straight_drive(-20)
