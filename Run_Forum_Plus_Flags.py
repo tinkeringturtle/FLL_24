@@ -37,9 +37,8 @@ def Run_Forum_Plus_Flags(td, ta):
     td.straight_drive(260)
     run_task(ta.move_C_angle(-93, speed_percentage=20))  # deliver first flag
     run_task(ta.move_C_angle(200))  # brign arm bakc
-    # pick up robot and take penalty to save time :)
-
-    # td.straight_drive(-530)
+    set_speed_percentage(100)
+    td.straight_drive(-150)
     # td.turn(25)
     # wait(100)  # ready to leave
     # td.set_speed_percentage(1000)

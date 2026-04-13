@@ -15,12 +15,12 @@ def Run_blank(td, ta):
     td.turn(65)  # get flag in
     td.straight_drive(40)
     run_task(ta.move_D_angle(-70, speed_percentage=60))  # pick up Iana
-    td.straight_drive(-110)  # back up form Iana
+    td.straight_drive(-100)  # back up form Iana
     td.turn(-90)
     td.straight_drive(165)  # 195
     td.turn(-45)  # turn towards seal
     td.straight_drive(185)
-    td.straight_drive(-20)
+    td.straight_drive(-15)
     run_task(ta.move_C_angle(-715, speed_percentage=100))
     run_task(ta.move_C_angle(715, speed_percentage=100))
     td.straight_drive(-130)  # go away form seal
