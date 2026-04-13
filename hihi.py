@@ -19,7 +19,7 @@ def Run_blank(td, ta):
     td.turn(-90)
     td.straight_drive(165)  # 195
     td.turn(-45)  # turn towards seal
-    td.straight_drive(185)
+    td.straight_drive(195)
     td.straight_drive(-15)
     run_task(ta.move_C_angle(-715, speed_percentage=100))
     run_task(ta.move_C_angle(715, speed_percentage=100))
