@@ -6,7 +6,7 @@ from TurtleAttachement import *
 
 
 # line nine
-def Run_blank(td, ta):
+def Run_Blank(td, ta):
     print("start run")
     td.straight_drive(400)
     td.curve(300, -50)
@@ -41,4 +41,4 @@ if __name__ == "__main__":
     print("Hello")
     td = TurtleDrive()
     ta = TurtleAttachment()
-    Run_blank(td, ta)
+    Run_Blank(td, ta)
