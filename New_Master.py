@@ -1,8 +1,16 @@
+import blank
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Button, Icon, Port, Color
+from pybricks.pupdevices import ColorSensor
+from pybricks.tools import wait
+
 from TurtleDrive import *
 from TurtleAttachement import *
+
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
 import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
-import A_Toast_To_Treasure
+import Run_silo
+import A_Toast_To_Treasure, hihi
 
 # --- SENSOR INIT ---
 hub = PrimeHub()

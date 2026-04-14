@@ -160,3 +160,6 @@ def loop_motor_movement(motor_name):
         elif motor_name == "D":
             ta.move_D_time(speed_percentage=-100, time_millisec=800)
             ta.move_D_time(speed_percentage=100, time_millisec=1000)
+
+
+# jq lolol

@@ -10,7 +10,8 @@ from TurtleAttachement import *
 import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
 import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
-import A_Toast_To_Treasure
+import A_Toast_To_Treasure, hihi
+
 
 # 1. FIXED: Corrected the import name to match your file
 import Dance_Party
@@ -26,7 +27,7 @@ BLACK_SAT_MAX, BLACK_VAL_MAX = 20, 15
 WHITE_SAT_MAX, WHITE_VAL_MIN = 25, 16
 
 RED_SAT_MIN, RED_VAL_MIN = 60, 40
-ORANGE_SAT_MIN, ORANGE_VAL_MIN = 50, 40
+ORANGE_SAT_MIN, ORANGE_VAL_MIN = 70, 60
 YELLOW_SAT_MIN, YELLOW_VAL_MIN = 50, 50
 LIGHT_GREEN_SAT_MIN, LIGHT_GREEN_VAL_MIN = 30, 40
 GREEN_SAT_MIN, GREEN_VAL_MIN = 40, 20
@@ -93,9 +94,9 @@ while True:
         hub.light.on(Color.ORANGE)
         # RIGHT Button runs original Forum
         if Button.RIGHT in buttons:
-            td.stop()
+            td.stop()  # clockit
             Run_Forum_Plus_Flags.Run_Forum_Plus_Flags(td, ta)
-            while Button.RIGHT in hub.buttons.pressed():
+            while Button.RIGHT in hub.buttons.pressed():  # anshi is not tuff
                 wait(10)
 
         # 2. FIXED: LEFT Button now runs your specific file/function
@@ -141,7 +142,7 @@ while True:
         hub.light.on(Color.BLUE)
         if Button.RIGHT in buttons:
             td.stop()
-            blank.Run_Blank(td, ta)
+            blank.Run_blank(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
