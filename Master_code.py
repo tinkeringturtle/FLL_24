@@ -11,10 +11,8 @@ import Run_Cross_The_Terrain, Run_artifact, Run_Bolders
 import Run_Map_Reveal, Run_Market, Run_Forum_Plus_Flags, Run_Shipreck
 import Run_silo
 import A_Toast_To_Treasure, hihi
-
-
-# 1. FIXED: Corrected the import name to match your file
 import Dance_Party
+
 
 # ================== SENSOR INITIALIZATION ==================
 hub = PrimeHub()
@@ -38,27 +36,41 @@ BLUE_SAT_MIN, BLUE_VAL_MIN = 50, 20
 def get_detected_color(color_data):
     h, s, v = color_data.h, color_data.s, color_data.v
 
+    # BLACK
     if v <= BLACK_VAL_MAX and s <= BLACK_SAT_MAX:
         return "BLACK"
 
+    # WHITE
     if v >= WHITE_VAL_MIN and s <= WHITE_SAT_MAX:
         return "WHITE"
 
+    # ================== FIXED PINK / RED SPLIT ==================
+
+    # PINK = only very dark red (your mat)
+    if (h >= 330 or h <= 10) and s >= 70 and v <= 45:
+        return "PINK"
+
+    # RED = normal red (everything brighter than pink)
+    if (h >= 330 or h <= 10) and s >= 60 and v > 45:
+        return "RED"
+
+    # ORANGE
     if 6 <= h <= 45 and s >= ORANGE_SAT_MIN and v >= ORANGE_VAL_MIN:
         return "ORANGE"
 
-    if (h <= 5 or h >= 350) and s >= RED_SAT_MIN and v >= RED_VAL_MIN:
-        return "RED"
-
+    # YELLOW
     if 46 <= h <= 80 and s >= YELLOW_SAT_MIN and v >= YELLOW_VAL_MIN:
         return "YELLOW"
 
+    # LIGHT GREEN
     if 85 <= h <= 110 and s >= LIGHT_GREEN_SAT_MIN and v >= LIGHT_GREEN_VAL_MIN:
         return "LIGHT_GREEN"
 
+    # GREEN
     if 110 <= h <= 170 and s >= GREEN_SAT_MIN and v >= GREEN_VAL_MIN:
         return "GREEN"
 
+    # BLUE
     if 190 <= h <= 270 and s >= BLUE_SAT_MIN and v >= BLUE_VAL_MIN:
         return "BLUE"
 
@@ -90,16 +102,22 @@ while True:
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
-    elif detected_color == "ORANGE":
-        hub.light.on(Color.ORANGE)
-        # RIGHT Button runs original Forum
+    elif detected_color == "PINK":
+        hub.light.on(Color.RED)
         if Button.RIGHT in buttons:
-            td.stop()  # clockit
+            td.stop()
             Run_Forum_Plus_Flags.Run_Forum_Plus_Flags(td, ta)
-            while Button.RIGHT in hub.buttons.pressed():  # anshi is not tuff
+            while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
-        # 2. FIXED: LEFT Button now runs your specific file/function
+    elif detected_color == "ORANGE":
+        hub.light.on(Color.ORANGE)
+        if Button.RIGHT in buttons:
+            td.stop()
+            Run_Forum_Plus_Flags.Run_Forum_Plus_Flags(td, ta)
+            while Button.RIGHT in hub.buttons.pressed():
+                wait(10)
+
         if Button.LEFT in buttons:
             td.stop()
             Dance_Party.run_2nd_Flag(td, ta)
