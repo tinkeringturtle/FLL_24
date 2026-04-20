@@ -35,7 +35,7 @@ def Run_Forum_Plus_Flags(td, ta):
     td.set_speed_percentage(turn_rate_percentage=7)
     td.turn(44)
     td.straight_drive(260)
-    run_task(ta.move_C_angle(-93, speed_percentage=20))  # deliver first flag
+    run_task(ta.move_C_angle(-123, speed_percentage=20))  # deliver first flag
     run_task(ta.move_C_angle(70))  # brign arm bakc
     set_speed_percentage(10000)
     td.straight_drive(-125)
