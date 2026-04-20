@@ -160,7 +160,7 @@ while True:
         hub.light.on(Color.BLUE)
         if Button.RIGHT in buttons:
             td.stop()
-            blank.Run_Blank(td, ta)
+            hihi.Run_blank(td, ta)
             while Button.RIGHT in hub.buttons.pressed():
                 wait(10)
 
