@@ -17,7 +17,7 @@ def run_Elly(td, ta):
     td.straight_drive(-550)
     wait(2000)
     td.straight_drive(230)
-    td.turn(19)
+    td.turn(23)
     td.straight_drive(820)
     td.set_speed_percentage(100)
     td.straight_drive(-1400)
