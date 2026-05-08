@@ -15,10 +15,10 @@ def run_Elly(td, ta):
     run_task(ta.move_D_angle(570, speed_percentage=1000))
 
     td.straight_drive(-550)
-    wait(2000)
+    wait(4000)
     td.straight_drive(230)
-    td.turn(23)
-    td.straight_drive(820)
+    td.turn(19)
+    td.straight_drive(860)
     td.set_speed_percentage(100)
     td.straight_drive(-1400)
 
