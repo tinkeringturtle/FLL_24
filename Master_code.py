@@ -13,7 +13,6 @@ import Run_silo
 import A_Toast_To_Treasure, hihi
 import Dance_Party
 
-
 # ================== SENSOR INITIALIZATION ==================
 hub = PrimeHub()
 bottom_sensor = ColorSensor(Port.E)
