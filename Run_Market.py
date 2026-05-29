@@ -8,14 +8,14 @@ def run_market(td, ta):
     # Move forward to start
     td.straight_drive(325)
     # Arm movements
-    run_task(ta.move_C_angle(-280, speed_percentage=2000))
+    run_task(ta.move_C_angle(-267, speed_percentage=2000))
     run_task(ta.move_D_angle(-230))
-    run_task(ta.move_C_angle(280, speed_percentage=1000))
+    run_task(ta.move_C_angle(267, speed_percentage=1000))
     # Back up
     td.straight_drive(-110)
     run_task(ta.move_D_angle(225))
     td.set_speed_percentage(100)
-    td.straight_drive(-250)
+    td.straight_drive(-300)
 
     # You can add extra steps here if needed
     return
