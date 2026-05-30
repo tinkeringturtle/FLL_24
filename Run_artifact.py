@@ -14,11 +14,8 @@ def Run_Alice(td, ta):
     td.set_speed_percentage(1000000)
     td.straight_drive(-785)  # drive backwards into wall stallll
     td.straight_drive(25)  # drive a little out of wall
-
-    # --- 3-SECOND TURN ADDED HERE ---
-    # Adjust the speed (e.g., 0 for a pivot turn) and turn_rate as needed for your route
-    td.turn_drive(speed=0, turn_rate=-107, time_millis=1100)
-
+    td.turn(-107)
+    wait(2)
     td.set_speed_percentage(40)
     td.straight_drive(165)  # drive into mineshaft
     wait(2)
