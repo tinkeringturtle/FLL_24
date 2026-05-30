@@ -85,22 +85,23 @@ class TurtleDrive:
         self.drive_base.drive(speed, turn_rate)
         if time_millis > 0:
             wait(time_millis)
+
     def drive_until_stalled(self, speed_percentage=DEFAULT_SPEED_PERCENTAGE):
         """
         Drives the robot forward until it hits an obstacle and stalls.
         """
         # Convert your percentage to mm/s using your helper function
         speed = get_speed_mmsec(speed_percentage)
-        
+
         self.log_data("Stall Drive Start")
-        
+
         # Start driving forward indefinitely
         self.drive_base.drive(speed, turn_rate=0)
-        
+
         # Keep looping while the drive base is NOT stalled
         while not self.drive_base.stalled():
             wait(10)
-            
+
         # Stop and hold position once stalled
         self.drive_base.stop()
         self.log_data("Stall Detected - Robot Stopped")
@@ -182,3 +183,25 @@ def loop_motor_movement(motor_name):
 
 
 # jq lolol
+
+
+def turn_until_stalled(self, turn_rate_percentage=DEFAULT_TURN_RATE_PERCENTAGE):
+    """
+    Turns the robot in place until it hits an obstacle and stalls.
+    Positive percentage turns right, negative turns left.
+    """
+    # Convert your percentage to deg/s using your helper function
+    turn_rate = get_turn_rate_degsec(turn_rate_percentage)
+
+    self.log_data("Stall Turn Start")
+
+    # Start turning in place indefinitely (speed = 0, turn_rate = target)
+    self.drive_base.drive(speed=0, turn_rate=turn_rate)
+
+    # Keep looping while the drive base is NOT stalled
+    while not self.drive_base.stalled():
+        wait(10)
+
+    # Stop and hold position once stalled so the next command can run
+    self.drive_base.stop()
+    self.log_data("Stall Detected during Turn - Robot Stopped")

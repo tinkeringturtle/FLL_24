@@ -1,4 +1,3 @@
-# line up is the right side of the second black line
 from TurtleDrive import *
 from TurtleAttachement import *
 
@@ -7,15 +6,19 @@ async def runAttachemnt(ta, angle):
     await ta.move_C_angle(angle=angle, speed_percentage=20)
 
 
-# line nine
+# Line nine
 def Run_Alice(td, ta):
     print("start run")
 
     # Run starts here
     td.set_speed_percentage(1000000)
-    td.straight_drive(-790)  # drive backwards into wall stallll
+    td.straight_drive(-100)  # drive backwards into wall stallll
     td.straight_drive(25)  # drive a little out of wall
-    td.turn(-107)  # turn towards the mineshaft
+
+    # --- 3-SECOND TURN ADDED HERE ---
+    # Adjust the speed (e.g., 0 for a pivot turn) and turn_rate as needed for your route
+    td.turn_drive(speed=0, turn_rate=-107, time_millis=1200)
+
     td.set_speed_percentage(40)
     td.straight_drive(165)  # drive into mineshaft
     wait(2)
@@ -29,28 +32,6 @@ def Run_Alice(td, ta):
 
 
 # Run ends here
-
-# run_task(ta.move_C_angle(-130))
-# td.straight_drive(-100)
-
-
-# ATTACHEMENT MOVEMENT ANGLES
-# run_task(ta.move_D_angle(90))
-# run_task(runAttachemnt(ta, 180))
-# run_task(runAttachemnt(ta, -180))
-
-
-# td.straight_drive(15)
-# td.turn(90)
-
-# td.straight_drive(500)
-# td.turn(25)
-# td.straight_drive(360)
-# td.turn(90)
-
-# run_task(ta.move_C_angle(-130))
-# td.straight_drive(-100)
-
 
 if __name__ == "__main__":
     print()
