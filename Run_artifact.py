@@ -12,7 +12,7 @@ def Run_Alice(td, ta):
 
     # Run starts here
     td.set_speed_percentage(1000000)
-    td.straight_drive(-100)  # drive backwards into wall stallll
+    td.straight_drive(-790)  # drive backwards into wall stallll
     td.straight_drive(25)  # drive a little out of wall
 
     # --- 3-SECOND TURN ADDED HERE ---
