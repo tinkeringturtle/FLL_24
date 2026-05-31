@@ -19,7 +19,6 @@ def Run_silo(td, ta):
     # ta.move_D_time(speed_percentage=100, time_millisec=100)
 
     # ta.move_C_time(speed_percentage=-100, time_millisec=100)
-    """"""
 
     td.straight_drive(130)
     wait(5000)
