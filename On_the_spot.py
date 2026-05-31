@@ -13,16 +13,33 @@ def Run_silo(td, ta):
     td.turn(35)
     td.straight_drive(620)
     td.turn(-105)
-    td.straight_drive(330)
-    td.turn(-98)
-    td.turn(8)
-    # gussing things after this
-    td.straight_drive(85)
+    td.straight_drive(365)
+    td.turn(-94)
+    """"""
+    # ta.move_D_time(speed_percentage=100, time_millisec=100)
 
+    # ta.move_C_time(speed_percentage=-100, time_millisec=100)
+    """"""
 
-#   ta.move_D_time(speed_percentage=-100, time_millisec=500)
+    td.straight_drive(130)
+    wait(5000)
+    td.straight_drive(-200)
+    td.straight_drive(35)
+    # guessing from here
+    td.turn(80)
+    td.straight_drive(200)
+    td.turn(-20)  # out of home after this
+    td.straight_drive(300)  # exiting home
+    td.turn(27)  # manuever around chicken
+    td.straight_drive(200)
+    td.turn(10)  # manouver around blue block
+    td.straight_drive(
+        400
+    )  # new home (with boulder and need to get sand and new attachmetn. )
 
-# ta.move_C_time(speed_percentage=100, time_millisec=500)
+    # ta.move_D_time(speed_percentage=-100, time_millisec=500)
+
+    # ta.move_C_time(speed_percentage=100, time_millisec=500)
 
 
 # Main Function
