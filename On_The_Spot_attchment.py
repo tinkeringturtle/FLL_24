@@ -7,13 +7,9 @@ from TurtleAttachement import *
 # line nine
 def Run_silo(td, ta):
 
-    ta.move_D_time(speed_percentage=100, time_millisec=505)
+    ta.move_D_time(speed_percentage=-100, time_millisec=400)
 
-    ta.move_C_time(speed_percentage=-100, time_millisec=510)
-    td.straight_drive(40)
-    ta.move_D_time(speed_percentage=-100, time_millisec=505)
-
-    ta.move_C_time(speed_percentage=100, time_millisec=505)
+    ta.move_C_time(speed_percentage=100, time_millisec=490)
 
 
 # Main Function

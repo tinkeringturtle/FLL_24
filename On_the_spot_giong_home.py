@@ -6,13 +6,15 @@ from TurtleAttachement import *
 
 # line nine
 def Run_going(td, ta):
-    """
-    td.straight_drive(795)
-    td.turn(90)
-    td.straight_drive(430)
-    td.turn(93)
-    """
-    td.straight_drive(300)
+
+    td.straight_drive(795)  # getting out of home area (black)
+    td.turn(90)  # turn towards the balls
+    td.straight_drive(430)  # drive towards ramp
+    td.turn(93)  # turn in front of ramp
+    ##guesing from here
+    td.straight_drive(300)  # going up the ramp
+    td.turn(-90)  # turning into blue
+    td.straight_drive(170)  # all the way through
 
 
 # run begins here
